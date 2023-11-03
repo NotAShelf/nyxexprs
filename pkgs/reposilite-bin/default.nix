@@ -32,7 +32,7 @@ in
       description = "A lightweight repository manager for Maven artifacts";
       homepage = "https://reposilite.com";
       license = lib.licenses.asl20;
-      mainPackage = finalAttrs.pname;
+      mainProgram = finalAttrs.pname;
       maintainers = with lib.maintainers; [NotAShelf];
     };
   })
