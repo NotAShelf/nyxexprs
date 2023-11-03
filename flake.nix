@@ -1,9 +1,14 @@
 {
-  description = "Description for the project";
+  description = "A personal package overlay";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
+
+    flake-compat = {
+      url = "github:edolstra/flake-compat";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {flake-parts, ...}:
@@ -11,8 +16,8 @@
       systems = ["x86_64-linux" "aarch64-linux"];
       imports = [./pkgs];
 
-      perSystem = _: {};
-
-      flake = {};
+      perSystem = {pkgs, ...}: {
+        formatter = pkgs.alejandra;
+      };
     };
 }
