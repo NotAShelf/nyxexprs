@@ -18,13 +18,22 @@
       config.allowUnfree = true;
     };
 
-    packages = {
-      ani-cli = pkgs.callPackage ./ani-cli {};
-      rat = pkgs.callPackage ./rat {};
-      mov-cli = pkgs.callPackage ./mov-cli {};
-      reposilite-bin = pkgs.callPackage ./reposilite-bin {};
-      cloneit = pkgs.callPackage ./cloneit {};
+    packages = let
+      pins = import ../npins;
+      mkPackage = path: {__functor = self: self.override;} // (pkgs.callPackage path {inherit pins;});
+    in {
+      # packages that follow npins entries
+      # they can be updated via npins
+      ani-cli = mkPackage ./ani-cli;
+      rat = mkPackage ./rat;
+      mov-cli = mkPackage ./mov-cli;
 
+      # static packages
+      # need manual intervention with each update
+      cloneit = pkgs.callPackage ./cloneit {};
+      reposilite-bin = pkgs.callPackage ./reposilite-bin {};
+
+      # patched packages
       foot-transparent = pkgs.foot.overrideAttrs (old: {
         patches =
           (old.patches or [])

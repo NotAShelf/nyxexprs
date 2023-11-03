@@ -1,0 +1,53 @@
+{
+  "pins": {
+    "ani-cli": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "pystardust",
+        "repo": "ani-cli"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "version": "v4.6",
+      "revision": "c7e6838647b57411d791bd250417eb0925d74cca",
+      "url": "https://api.github.com/repos/pystardust/ani-cli/tarball/v4.6",
+      "hash": "1ni9pzjb5qh87iz7c8252bx79qadr1qx6jnkqvvjcqrchh7q473a"
+    },
+    "cloneit": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "alok8bb",
+        "repo": "cloneit"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "version": "0.1.0",
+      "revision": "44402e101b18be0764ddb0b49bf0393e2e83c9c3",
+      "url": "https://api.github.com/repos/alok8bb/cloneit/tarball/0.1.0",
+      "hash": "18z4vxrfvyp20kig2s9k5y3034nw39wkj8zzk9qskiisv2ypy90b"
+    },
+    "mov-cli": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "mov-cli",
+        "repo": "mov-cli"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "version": "1.5.4",
+      "revision": "5f0ec5a69d37b286966d39b6596b3b76d5302387",
+      "url": "https://api.github.com/repos/mov-cli/mov-cli/tarball/1.5.4",
+      "hash": "0n6k9vyq21r88x5zgidaafjlhia20dx0psdpys7dyfr8azh0y6js"
+    },
+    "nixpkgs": {
+      "type": "Channel",
+      "name": "nixpkgs-unstable",
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-23.11pre543441.b644d97bda6d/nixexprs.tar.xz",
+      "hash": "1xq7rz2bcb115xkahpvslsqpliisv2587z93izz81lna77r4na1d"
+    }
+  },
+  "version": 3
+}

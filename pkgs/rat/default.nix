@@ -5,6 +5,7 @@
   makeWrapper,
   pkgs,
   lib,
+  pins,
 }:
 stdenv.mkDerivation rec {
   pname = "rat";
