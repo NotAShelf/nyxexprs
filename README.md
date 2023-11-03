@@ -112,3 +112,7 @@ There are several packages exposed by this flake. Each directory in `pkgs` conta
 ## 🔧 Contributing
 
 PRs are always welcome.
+
+## 🫂 Credits
+
+The repository structure is mostly borrowed from [@fufexan](https://github.com/fufexan)'s [nix-gaming](https://github.com/fufexan/nix-gaming).
