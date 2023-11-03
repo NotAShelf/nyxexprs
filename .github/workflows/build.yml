@@ -1,6 +1,7 @@
 name: Build
 
 on:
+  workflow_dispatch:
   workflow_call:
     secrets:
       CACHIX_AUTH_TOKEN:
@@ -19,5 +20,5 @@ jobs:
 
     uses: ./.github/workflows/nix.yml
     with:
-      command: nix build -L .#${{ matrix.package }}
+      command: nix build -L .#${{ matrix.package }} -v
     secrets: inherit

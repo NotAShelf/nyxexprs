@@ -1,0 +1,20 @@
+name: Checks
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  check:
+    strategy:
+      matrix:
+        command:
+          - NIXPKGS_ALLOW_INSECURE=1 nix flake check --accept-flake-config --impure
+          - nix run nixpkgs#alejandra -- -c . -e ./npins
+
+    uses: ./.github/workflows/nix.yml
+    with:
+      command: ${{ matrix.command }}
+
+  build:
+    needs: check
+    uses: ./.github/workflows/build.yml
+    secrets: inherit
