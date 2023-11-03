@@ -1,0 +1,23 @@
+name: Build
+
+on:
+  workflow_call:
+    secrets:
+      CACHIX_AUTH_TOKEN:
+        required: false
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        package:
+          - foot-transparent
+          - cloneit
+          - mov-cli
+          - rat
+          - ani-cli
+
+    uses: ./.github/workflows/nix.yml
+    with:
+      command: nix build -L .#${{ matrix.package }}
+    secrets: inherit

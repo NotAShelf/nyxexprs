@@ -1,0 +1,31 @@
+name: Update flake
+
+on:
+  schedule:
+    - cron: "0 0 * * 0" # weekly
+
+jobs:
+  update:
+    if: github.repository == 'notashelf/nyxpkgs'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - uses: DeterminateSystems/nix-installer-action@main
+
+      - uses: cachix/cachix-action@v12
+        with:
+          name: nix-gaming
+          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
+
+      - run: nix flake update
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Update flake"
+
+  build:
+    needs: update
+    uses: ./.github/workflows/build.yml
+    secrets: inherit
