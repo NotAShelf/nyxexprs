@@ -27,6 +27,8 @@
       ani-cli = mkPackage ./ani-cli;
       rat = mkPackage ./rat;
       mov-cli = mkPackage ./mov-cli;
+      rofi-calc-wayland = mkPackage ./rofi-calc-wayland;
+      rofi-emoji-wayland = mkPackage ./rofi-emoji-wayland;
 
       # static packages
       # need manual intervention with each update

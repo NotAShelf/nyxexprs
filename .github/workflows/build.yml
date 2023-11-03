@@ -17,6 +17,8 @@ jobs:
           - mov-cli
           - rat
           - ani-cli
+          - rofi-calc-wayland
+          - rofi-emoji-wayland
 
     uses: ./.github/workflows/nix.yml
     with:

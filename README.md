@@ -17,7 +17,7 @@ inputs = {
 };
 ```
 
-After adding the input, you can consume the [exposed packages](#packages) in your system configuration.
+After adding the input, you can consume the [exposed packages](#-packages) in your system configuration.
 An example `flake.nix` would be as follows:
 
 ```nix
@@ -99,15 +99,15 @@ in {
 
 There are several packages exposed by this flake. Each directory in `pkgs` contains a description of the package inside its README.
 
-| Package          |                                            Description                                             |
-| :--------------- | :------------------------------------------------------------------------------------------------: |
-| ani-cli          |                           An up-to-date, auto updated version of ani-cli                           |
-| cloneit          |                    A CLI tool to download specific GitHub directories or files                     |
-| foot-transparent |    A patched version of the foot terminal emulator that brings back fullscreen transparency[^1]    |
-| rat              | Linux shell port of the horizontally spinning rat meme, complete with soundtrack and spin counter. |
-| reposilite-bin   |                         A derivation for the reposilite maven repository.                          |
-
-[^1]: Foot has broken fullscreen transparency on 1.15, which looks **really** ugly with padding. The author is dead set on not fixing it, because it's broken on one wayland compositor that a total of 7 people use.
+| Package            |                                            Description                                             |
+| :----------------- | :------------------------------------------------------------------------------------------------: |
+| ani-cli            |                           An up-to-date, auto updated version of ani-cli                           |
+| cloneit            |                    A CLI tool to download specific GitHub directories or files                     |
+| foot-transparent   |    A patched version of the foot terminal emulator that brings back fullscreen transparency[^1]    |
+| rat                | Linux shell port of the horizontally spinning rat meme, complete with soundtrack and spin counter. |
+| reposilite-bin     |                         A derivation for the reposilite maven repository.                          |
+| rofi-calc-wayland  |          A wayland patched version of [rofi-calc](https://github.com/svenstaro/rofi-calc)          |
+| rofi-emoji-wayland |           A wayland patched version of [rofi-emoji](https://github.com/Mange/rofi-emoji)           |
 
 ## 🔧 Contributing
 
@@ -116,3 +116,5 @@ PRs are always welcome.
 ## 🫂 Credits
 
 The repository structure is mostly borrowed from [@fufexan](https://github.com/fufexan)'s [nix-gaming](https://github.com/fufexan/nix-gaming).
+
+[^1]: Foot has broken fullscreen transparency on 1.15, which looks **really** ugly with padding. The author is dead set on not fixing it, because it's broken on one wayland compositor that a total of 7 people use.

@@ -47,6 +47,34 @@
       "name": "nixpkgs-unstable",
       "url": "https://releases.nixos.org/nixpkgs/nixpkgs-23.11pre543441.b644d97bda6d/nixexprs.tar.xz",
       "hash": "1xq7rz2bcb115xkahpvslsqpliisv2587z93izz81lna77r4na1d"
+    },
+    "rofi-calc": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "svenstaro",
+        "repo": "rofi-calc"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "version": "v2.2.0",
+      "revision": "6b9729f8cfba7f83cdf7f801509ed63bb9edd6f0",
+      "url": "https://api.github.com/repos/svenstaro/rofi-calc/tarball/v2.2.0",
+      "hash": "00qcl06birzh1kpva0vzvw7xkdv4i84krv4z9f7lx5pyfm2cwq28"
+    },
+    "rofi-emoji": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "Mange",
+        "repo": "rofi-emoji"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "version": "v3.2.0",
+      "revision": "d07ba9ff3b1bd9daae043c297e65238be35b530f",
+      "url": "https://api.github.com/repos/Mange/rofi-emoji/tarball/v3.2.0",
+      "hash": "0pj44xx7lfysj2hsixcnv2zzzl4rg789f4cdwhiscw5218phgc1z"
     }
   },
   "version": 3
