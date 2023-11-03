@@ -23,12 +23,6 @@ rustPlatform.buildRustPackage rec {
 
   buildInputs = [openssl];
 
-  meta2 = with lib; {
-    mainProgram = "cloneit";
-    homepage = "https://github.com/alok8bb/cloneit";
-    license = licenses.mit;
-  };
-
   meta = {
     description = "CLI tool to download specific GitHub directories or files";
     homepage = "https://github.com/alok8bb/cloneit";
