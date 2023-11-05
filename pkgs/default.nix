@@ -36,12 +36,13 @@
       reposilite-bin = pkgs.callPackage ./reposilite-bin {};
 
       # patched packages
-      foot-transparent = pkgs.foot.overrideAttrs (old: {
+      foot-transparent = pkgs.foot.overrideAttrs (prev: {
         patches =
-          (old.patches or [])
+          (prev.patches or [])
           ++ [
             ../patches/0001-foot-transparent.patch
           ];
+        mesonFlags = prev.mesonFlags ++ ["-Dfullscreen_alpha=true"];
       });
     };
   };
