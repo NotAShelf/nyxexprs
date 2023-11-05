@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          token: "${{ secrets.GH_TOKEN}}"
 
       - uses: DeterminateSystems/nix-installer-action@main
 
@@ -26,7 +28,9 @@ jobs:
 
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Update flake"
+          commit_message: "[CI]: update flake inputs"
+          push_options: "--force"
+          commit_user_name: GitHub Actions
 
   build:
     needs: update
