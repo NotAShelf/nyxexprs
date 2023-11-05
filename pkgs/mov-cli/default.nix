@@ -25,7 +25,7 @@ in
       six
       beautifulsoup4
       tldextract
-      (python3Packages.httpx.overrideAttrs (_old: {
+      (httpx.overrideAttrs (_old: {
         src = fetchFromGitHub {
           owner = "encode";
           repo = "httpx";
@@ -34,7 +34,7 @@ in
         };
       }))
       (
-        python3Packages.buildPythonPackage rec {
+        buildPythonPackage rec {
           pname = "krfzf_py";
           version = "0.0.4";
           src = fetchPypi {
