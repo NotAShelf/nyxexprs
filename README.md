@@ -2,7 +2,42 @@
 
 > My personal package overlay for sharing my most commonly used derivations.
 
+## 📦 Packages
+
+There are several packages exposed by this flake. Each directory in `pkgs` contains a description of the package inside its README.
+
+| Package            |                                            Description                                             |
+| :----------------- | :------------------------------------------------------------------------------------------------: |
+| ani-cli            |                           An up-to-date, auto updated version of ani-cli                           |
+| cloneit            |                    A CLI tool to download specific GitHub directories or files                     |
+| foot-transparent   |    A patched version of the foot terminal emulator that brings back fullscreen transparency[^1]    |
+| mov-cli            |                       A cli tool to browse and watch Movies/Shows/TV/Sports                        |
+| rat                | Linux shell port of the horizontally spinning rat meme, complete with soundtrack and spin counter. |
+| reposilite-bin     |                         A derivation for the reposilite maven repository.                          |
+| rofi-calc-wayland  |          A wayland patched version of [rofi-calc](https://github.com/svenstaro/rofi-calc)          |
+| rofi-emoji-wayland |           A wayland patched version of [rofi-emoji](https://github.com/Mange/rofi-emoji)           |
+
 ## Usage
+
+### Binary Cache
+
+Regardless of your setup,you may want to add the [binary cache](https://app.cachix.org/cache/nyx) to your substituters to avoid building the provided packages
+on each pull. You may follow the example below to add the binary cache to your system.
+
+```nix
+nix.settings = {
+    builders-use-substitutes = true;
+    substituters = [
+        # other substituters
+        "https://nyx.cachix.org"
+    ];
+
+    trusted-public-keys = [
+        # other trusted keys
+        "nyx.cachix.org-1:xH6G0MO9PrpeGe7mHBtj1WbNzmnXr7jId2mCiq6hipE="
+    ];
+};
+```
 
 ### NixOS/Home-manager (flakes)
 
@@ -27,6 +62,7 @@ An example `flake.nix` would be as follows:
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
 
+    # ↓ add nyxpkgs as a flake input
     nyxpkgs.url = "github:notashelf/nyxpkgs";
   };
 
@@ -94,20 +130,6 @@ in {
   ];
 }
 ```
-
-## 📦 Packages
-
-There are several packages exposed by this flake. Each directory in `pkgs` contains a description of the package inside its README.
-
-| Package            |                                            Description                                             |
-| :----------------- | :------------------------------------------------------------------------------------------------: |
-| ani-cli            |                           An up-to-date, auto updated version of ani-cli                           |
-| cloneit            |                    A CLI tool to download specific GitHub directories or files                     |
-| foot-transparent   |    A patched version of the foot terminal emulator that brings back fullscreen transparency[^1]    |
-| rat                | Linux shell port of the horizontally spinning rat meme, complete with soundtrack and spin counter. |
-| reposilite-bin     |                         A derivation for the reposilite maven repository.                          |
-| rofi-calc-wayland  |          A wayland patched version of [rofi-calc](https://github.com/svenstaro/rofi-calc)          |
-| rofi-emoji-wayland |           A wayland patched version of [rofi-emoji](https://github.com/Mange/rofi-emoji)           |
 
 ## 🔧 Contributing
 
