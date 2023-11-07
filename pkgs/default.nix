@@ -19,8 +19,10 @@
     };
 
     packages = let
+      inherit (pkgs) callPackage foot;
+
       pins = import ../npins;
-      mkPackage = path: {__functor = self: self.override;} // (pkgs.callPackage path {inherit pins;});
+      mkPackage = path: {__functor = self: self.override;} // (callPackage path {inherit pins;});
     in {
       # packages that follow npins entries
       # they can be updated via npins
@@ -32,11 +34,11 @@
 
       # static packages
       # need manual intervention with each update
-      cloneit = pkgs.callPackage ./cloneit {};
-      reposilite-bin = pkgs.callPackage ./reposilite-bin {};
+      cloneit = callPackage ./cloneit {};
+      reposilite-bin = callPackage ./reposilite-bin {};
 
       # patched packages
-      foot-transparent = pkgs.foot.overrideAttrs (prev: {
+      foot-transparent = foot.overrideAttrs (prev: {
         patches =
           (prev.patches or [])
           ++ [
