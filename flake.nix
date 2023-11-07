@@ -18,6 +18,7 @@
 
       perSystem = {pkgs, ...}: {
         formatter = pkgs.alejandra;
+        devShells.default = with pkgs; mkShell {buildInputs = [npins];};
       };
     };
 }
