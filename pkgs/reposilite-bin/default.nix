@@ -32,7 +32,7 @@ in
       description = "A lightweight repository manager for Maven artifacts";
       homepage = "https://reposilite.com";
       license = lib.licenses.asl20;
-      mainProgram = finalAttrs.pname;
+      mainProgram = "reposilite"; # we don't inherit pname here because it contains the -bin suffix, which the resulting binary won't have
       maintainers = with lib.maintainers; [NotAShelf];
     };
   })
