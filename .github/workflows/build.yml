@@ -19,6 +19,7 @@ jobs:
           - ani-cli
           - rofi-calc-wayland
           - rofi-emoji-wayland
+          - headscale-ui
 
     uses: ./.github/workflows/nix.yml
     with:
