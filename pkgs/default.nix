@@ -36,6 +36,7 @@
       # need manual intervention with each update
       cloneit = callPackage ./cloneit {};
       reposilite-bin = callPackage ./reposilite-bin {};
+      headscale-ui = callPackage ./headscale-ui {};
 
       # patched packages
       foot-transparent = foot.overrideAttrs (prev: {
