@@ -26,7 +26,7 @@ jobs:
           name: nyx
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
 
-      - Update flake
+      - name: Update flake
         run: nix flake update
 
       - uses: stefanzweifel/git-auto-commit-action@v5
