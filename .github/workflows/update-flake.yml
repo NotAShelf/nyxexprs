@@ -9,6 +9,7 @@ jobs:
   update:
     if: github.repository == 'notashelf/nyxpkgs'
     runs-on: ubuntu-latest
+
     permissions:
       contents: write
 
@@ -22,10 +23,11 @@ jobs:
 
       - uses: cachix/cachix-action@v12
         with:
-          name: nyxpkgs
+          name: nyx
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
 
-      - run: nix flake update
+      - Update flake
+        run: nix flake update
 
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
