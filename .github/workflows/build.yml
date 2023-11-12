@@ -20,6 +20,8 @@ jobs:
           - rofi-calc-wayland
           - rofi-emoji-wayland
           - headscale-ui
+          - mastodon-bird-ui
+          - mastodon-bird-ui
 
     uses: ./.github/workflows/nix.yml
     with:

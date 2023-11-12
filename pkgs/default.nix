@@ -35,8 +35,9 @@
       # static packages
       # need manual intervention with each update
       cloneit = callPackage ./cloneit {};
-      reposilite-bin = callPackage ./reposilite-bin {};
       headscale-ui = callPackage ./headscale-ui {};
+      mastodon-bird-ui = callPackage ./mastodon-bird-ui {};
+      reposilite-bin = callPackage ./reposilite-bin {};
 
       # patched packages
       foot-transparent = foot.overrideAttrs (prev: {

@@ -12,6 +12,7 @@ There are several packages exposed by this flake. Each directory in `pkgs` conta
 | cloneit            |                    A CLI tool to download specific GitHub directories or files                     |
 | foot-transparent   |    A patched version of the foot terminal emulator that brings back fullscreen transparency[^1]    |
 | headscale-ui       |             A web frontend for the headscale Tailscale-compatible coordination server              |
+| mastodon-bird-ui   |                         Mastodon web UI, but strongly inspired by Twitter.                         |
 | mov-cli            |                       A cli tool to browse and watch Movies/Shows/TV/Sports                        |
 | rat                | Linux shell port of the horizontally spinning rat meme, complete with soundtrack and spin counter. |
 | reposilite-bin     |                         A derivation for the reposilite maven repository.                          |
