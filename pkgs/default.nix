@@ -41,12 +41,9 @@
 
       # patched packages
       foot-transparent = foot.overrideAttrs (prev: {
-        patches =
-          (prev.patches or [])
-          ++ [
-            ../patches/0001-foot-transparent.patch
-          ];
         mesonFlags = prev.mesonFlags ++ ["-Dfullscreen_alpha=true"];
+        mainProgram = "foot";
+        patches = (prev.patches or []) ++ [../patches/0001-foot-transparent.patch];
       });
     };
   };
