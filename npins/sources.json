@@ -37,16 +37,16 @@
       },
       "pre_releases": false,
       "version_upper_bound": null,
-      "version": "1.5.4",
-      "revision": "5f0ec5a69d37b286966d39b6596b3b76d5302387",
-      "url": "https://api.github.com/repos/mov-cli/mov-cli/tarball/1.5.4",
-      "hash": "0n6k9vyq21r88x5zgidaafjlhia20dx0psdpys7dyfr8azh0y6js"
+      "version": "1.5.7",
+      "revision": "47c453d156914c373f3ece05564d04f1e12c41e5",
+      "url": "https://api.github.com/repos/mov-cli/mov-cli/tarball/1.5.7",
+      "hash": "08gc8x80df6d8nxraqh531q68s7kjhs921ndcg7virl1njv5k61q"
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-24.05pre552261.8b8c94078445/nixexprs.tar.xz",
-      "hash": "0p9z4sj3svk28agmk98bi24gnw81r5nwknxvrhyz4v6dp5wymn4i"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-24.05pre552437.0bd59c54ef06/nixexprs.tar.xz",
+      "hash": "0r0qahjjqg45fjs0b85ncb0fqznmmgvinpw22rrf6xiyrz8g10vr"
     },
     "rofi-calc": {
       "type": "GitRelease",
