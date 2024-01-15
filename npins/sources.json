@@ -45,8 +45,8 @@
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-24.05pre568310.eabe8d3eface/nixexprs.tar.xz",
-      "hash": "0jgzsy2gi0p5a91b4g4l3ihgym3n5zhardrqw1q7ax5gwmc9kk56"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-24.05pre571483.ea780f3de2d1/nixexprs.tar.xz",
+      "hash": "1sqpw6ag0b28akz7mlcxbs951zdg57qjyxk3ysnhp6ryvnk74kgd"
     },
     "rofi-calc": {
       "type": "GitRelease",
