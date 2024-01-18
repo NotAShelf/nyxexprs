@@ -1,7 +1,7 @@
 {
   pkgs,
   lib,
-  javaJdk ? pkgs.openjdk17_headless,
+  javaJdk,
   ...
 }: let
   inherit (pkgs) stdenv;
@@ -10,11 +10,11 @@
 in
   stdenv.mkDerivation (finalAttrs: {
     pname = "reposilite-bin";
-    version = "3.4.10";
+    version = "3.5.3";
 
     jar = builtins.fetchurl {
       url = "https://maven.reposilite.com/releases/com/reposilite/reposilite/${finalAttrs.version}/reposilite-${finalAttrs.version}-all.jar";
-      sha256 = "0ca6awmzsmap28l0f65h71i3kfl5jfqr4c19hadixlp5k0s8qppm";
+      sha256 = "1wc12pwwmyxj6fhb1s9ql0s6sk2y4nx7kj1vkfjdrqwvwn2b19v6";
     };
 
     dontUnpack = true;

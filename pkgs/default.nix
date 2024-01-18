@@ -37,7 +37,9 @@
       cloneit = callPackage ./cloneit {};
       headscale-ui = callPackage ./headscale-ui {};
       mastodon-bird-ui = callPackage ./mastodon-bird-ui {};
-      reposilite-bin = callPackage ./reposilite-bin {};
+      reposilite-bin = callPackage ./reposilite-bin {
+        javaJdk = pkgs.openjdk17_headless;
+      };
 
       # patched packages
       foot-transparent = foot.overrideAttrs (prev: {
