@@ -25,30 +25,30 @@ in
       six
       beautifulsoup4
       tldextract
-      (httpx.overrideAttrs (_old: {
+      (httpx.overrideAttrs (_: {
         src = fetchFromGitHub {
           owner = "encode";
           repo = "httpx";
-          rev = "refs/tags/0.24.0";
-          hash = "sha256-eLCqmYKfBZXCQvFFh5kGoO91rtsvjbydZhPNtjL3Zaw=";
+          rev = "refs/tags/0.26.0";
+          hash = "sha256-qMMx1CYu2/yH4NRvZFzJOflAPIbcvMYJqU4r+chuzl0=";
         };
       }))
-      (
-        buildPythonPackage rec {
-          pname = "krfzf_py";
-          version = "0.0.4";
-          src = fetchPypi {
-            inherit pname version;
-            sha256 = "sha256-W0wpR1/HRrtYC3vqEwh+Jwkgwnfa49LCFIArOXaSPCE=";
-          };
-        }
-      )
+      (buildPythonPackage (let
+        pname = "krfzf_py";
+        version = "0.0.4";
+      in {
+        inherit pname version;
+        src = fetchPypi {
+          inherit pname version;
+          sha256 = "sha256-W0wpR1/HRrtYC3vqEwh+Jwkgwnfa49LCFIArOXaSPCE=";
+        };
+      }))
     ];
 
-    meta = with lib; {
+    meta = {
       homepage = "https://github.com/mov-cli/mov-cli";
       description = "A cli tool to browse and watch movies";
-      license = licenses.gpl3Only;
+      license = lib.licenses.gpl3Only;
       mainProgram = "mov-cli";
     };
   }
