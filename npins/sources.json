@@ -9,10 +9,10 @@
       },
       "pre_releases": false,
       "version_upper_bound": null,
-      "version": "v4.7",
-      "revision": "4a77bca5d95ae755ab5ac129c2db2025feab217b",
-      "url": "https://api.github.com/repos/pystardust/ani-cli/tarball/v4.7",
-      "hash": "1q40vb1kh9vmgixhmsy24j115cza10iqmybx84lfjrn3m8f1npif"
+      "version": "v4.8",
+      "revision": "d0fb5454ec574a98eaa35cadfba3975139ab6575",
+      "url": "https://api.github.com/repos/pystardust/ani-cli/tarball/v4.8",
+      "hash": "1xfcn51yyzjc7gr2xzhz2i1i500ad1877dmdadipfdlfcs4l4yxy"
     },
     "cloneit": {
       "type": "GitRelease",
@@ -45,8 +45,8 @@
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-24.05pre580853.8cc79aa39bbc/nixexprs.tar.xz",
-      "hash": "1jk3aq6fc1w5gafk4y072j3kdbhf8xmhrx5parq35vdwrxj48qzs"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-24.05pre581229.f8e2ebd66d09/nixexprs.tar.xz",
+      "hash": "1vkp0vn8wf88h58i5hg1djks84fm3c63hxzwkxbvfnqvd5398ldk"
     },
     "rofi-calc": {
       "type": "GitRelease",
