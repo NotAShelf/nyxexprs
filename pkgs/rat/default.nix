@@ -1,12 +1,16 @@
 {
   stdenv,
+  lib,
+
+  bash,
   fetchurl,
   gnused,
   makeWrapper,
-  pkgs,
-  lib,
-  pins,
+  opusfile,
+  sharutils,
+  sox,
 }:
+
 stdenv.mkDerivation rec {
   pname = "rat";
   version = "1.1";
@@ -32,6 +36,6 @@ stdenv.mkDerivation rec {
 
   postInstall = ''
     wrapProgram $out/bin/rat \
-      --prefix PATH : ${lib.makeBinPath (with pkgs; [sharutils opusfile sox bash])}
+      --prefix PATH : ${lib.makeBinPath [sharutils opusfile sox bash]}
   '';
 }
