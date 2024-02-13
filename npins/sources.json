@@ -48,6 +48,20 @@
       "url": "https://releases.nixos.org/nixpkgs/nixpkgs-24.05pre583579.2d627a2a7047/nixexprs.tar.xz",
       "hash": "0w8nm2bfcdcbb5c6qmhkr33pxkh0f3gn2y4cds97kiy20bikg5nx"
     },
+    "rat": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "thinkingsand",
+        "repo": "rat"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "version": "2.0.1",
+      "revision": "03d2e16ea0ebe280d7dd472612ced8b4ee71960f",
+      "url": "https://api.github.com/repos/thinkingsand/rat/tarball/2.0.1",
+      "hash": "1lvqr06z2vs48a9hckim12268zfa2d0sckynpn4b0d7lv9hkn2hi"
+    },
     "rofi-calc": {
       "type": "GitRelease",
       "repository": {
