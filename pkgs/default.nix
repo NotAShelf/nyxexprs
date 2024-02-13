@@ -27,7 +27,6 @@
       # packages that follow npins entries
       # they can be updated via npins
       ani-cli = mkPackage ./ani-cli;
-      rat = mkPackage ./rat;
       mov-cli = mkPackage ./mov-cli;
       rofi-calc-wayland = mkPackage ./rofi-calc-wayland;
       rofi-emoji-wayland = mkPackage ./rofi-emoji-wayland;

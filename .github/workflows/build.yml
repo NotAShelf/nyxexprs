@@ -15,7 +15,6 @@ jobs:
           - foot-transparent
           - cloneit
           - mov-cli
-          - rat
           - ani-cli
           - rofi-calc-wayland
           - rofi-emoji-wayland
