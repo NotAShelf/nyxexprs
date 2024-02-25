@@ -19,7 +19,7 @@
     };
 
     packages = let
-      inherit (pkgs) callPackage foot;
+      inherit (pkgs) callPackage foot alejandra;
 
       pins = import ../npins;
       mkPackage = path: {__functor = self: self.override;} // (callPackage path {inherit pins;});
@@ -44,8 +44,12 @@
       # patched packages
       foot-transparent = foot.overrideAttrs (prev: {
         mesonFlags = prev.mesonFlags ++ ["-Dfullscreen_alpha=true"];
-        mainProgram = "foot";
         patches = (prev.patches or []) ++ [../patches/0001-foot-transparent.patch];
+        mainProgram = "foot";
+      });
+
+      alejandra-no-ads = alejandra.overrideAttrs (prev: {
+        patches = (prev.patches or []) ++ [../patches/0003-alejandra-remove-ads.patch];
       });
     };
   };

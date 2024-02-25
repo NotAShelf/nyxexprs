@@ -8,6 +8,7 @@ There are several packages exposed by this flake. Each directory in `pkgs` conta
 
 | Package            |                                            Description                                             |
 | :----------------- | :------------------------------------------------------------------------------------------------: |
+| alejandra-no-ads   |            A patched version of the **Alejandra** Nix formatter, without the pesky ads.            |
 | ani-cli            |                           An up-to-date, auto updated version of ani-cli                           |
 | cloneit            |                    A CLI tool to download specific GitHub directories or files                     |
 | foot-transparent   |    A patched version of the foot terminal emulator that brings back fullscreen transparency[^1]    |
