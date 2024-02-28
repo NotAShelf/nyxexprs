@@ -45,8 +45,8 @@
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-24.05pre588712.fcea2b6260dd/nixexprs.tar.xz",
-      "hash": "0nz48vn5kh6gfy0wyr0rk53s24iiy4396q25g5gyzvszkikfnx5h"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-24.05pre589136.8520c158aee7/nixexprs.tar.xz",
+      "hash": "1n8blaaplfrkzm0mcn7yasnh8mn0wycqbsnn8h22d685hvgx465y"
     },
     "rat": {
       "type": "GitRelease",
@@ -85,10 +85,10 @@
       },
       "pre_releases": false,
       "version_upper_bound": null,
-      "version": "v3.2.0",
-      "revision": "d07ba9ff3b1bd9daae043c297e65238be35b530f",
-      "url": "https://api.github.com/repos/Mange/rofi-emoji/tarball/v3.2.0",
-      "hash": "0pj44xx7lfysj2hsixcnv2zzzl4rg789f4cdwhiscw5218phgc1z"
+      "version": "v3.3.0",
+      "revision": "c1c37add92013b3f947b592d9e2d184b92e9fa10",
+      "url": "https://api.github.com/repos/Mange/rofi-emoji/tarball/v3.3.0",
+      "hash": "0qqlvypys30m9rrgdg9qdp6czhjlnp513mf2bim5n5cab16kkqb3"
     }
   },
   "version": 3
