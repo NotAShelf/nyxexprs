@@ -10,11 +10,11 @@
 in
   stdenv.mkDerivation (finalAttrs: {
     pname = "reposilite-bin";
-    version = "3.5.3";
+    version = "3.5.8";
 
     jar = builtins.fetchurl {
       url = "https://maven.reposilite.com/releases/com/reposilite/reposilite/${finalAttrs.version}/reposilite-${finalAttrs.version}-all.jar";
-      sha256 = "1wc12pwwmyxj6fhb1s9ql0s6sk2y4nx7kj1vkfjdrqwvwn2b19v6";
+      sha256 = "sha256:1skbbdfcbdhlhyrg1y1fimm87kq1ws6g5xy0sxaglgky9j218c0p";
     };
 
     dontUnpack = true;
