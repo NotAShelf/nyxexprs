@@ -12,6 +12,7 @@ There are several packages exposed by this flake. Each directory in `pkgs` conta
 | ani-cli            |                           An up-to-date, auto updated version of ani-cli                           |
 | cloneit            |                    A CLI tool to download specific GitHub directories or files                     |
 | foot-transparent   |    A patched version of the foot terminal emulator that brings back fullscreen transparency[^1]    |
+| gccn-wrapped       |    A package providing a wrapper for gnome control center, tricking into thinking we use Gnome     |
 | headscale-ui       |             A web frontend for the headscale Tailscale-compatible coordination server              |
 | mastodon-bird-ui   |                         Mastodon web UI, but strongly inspired by Twitter.                         |
 | mov-cli            |                       A cli tool to browse and watch Movies/Shows/TV/Sports                        |

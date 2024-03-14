@@ -19,7 +19,7 @@
     };
 
     packages = let
-      inherit (pkgs) callPackage foot alejandra;
+      inherit (pkgs) callPackage foot alejandra fetchFromGitea;
 
       pins = import ../npins;
       mkPackage = path: {__functor = self: self.override;} // (callPackage path {inherit pins;});
@@ -42,14 +42,42 @@
       };
 
       # patched packages
-      foot-transparent = foot.overrideAttrs (prev: {
-        mesonFlags = prev.mesonFlags ++ ["-Dfullscreen_alpha=true"];
+
+      foot-transparent = foot.overrideAttrs (prev: let
+        version = "2024-03-14-unstable";
+      in {
+        inherit version;
+
+        src = fetchFromGitea {
+          domain = "codeberg.org";
+          owner = "dnkl";
+          repo = "foot";
+          rev = "dd3bb13d97b405495465357f7b7b17c9f2bba3c2";
+          hash = "sha256-Pp3/cNELRYmTOQrJgHX6c+t0QkxEjoly0TLMKVj3H0E=";
+        };
+
+        mesonFlags = (prev.mesonFlags or []) ++ ["-Dfullscreen_alpha=true"];
         patches = (prev.patches or []) ++ [../patches/0001-foot-transparent.patch];
         mainProgram = "foot";
       });
 
       alejandra-no-ads = alejandra.overrideAttrs (prev: {
         patches = (prev.patches or []) ++ [../patches/0003-alejandra-remove-ads.patch];
+      });
+
+      # override gnome-control-center to trick it into thinking we're running gnome
+      # <https://github.com/NixOS/nixpkgs/issues/230493>
+      # <https://gitlab.gnome.org/GNOME/gnome-control-center/-/merge_requests/736>
+      # get overriden idiot
+      gccn-wrapped = pkgs.gnome.gnome-control-center.overrideAttrs (prev: {
+        # gnome-control-center does not start without XDG_CURRENT_DESKTOP=gnome
+        preFixup =
+          ''
+            gappsWrapperArgs+=(
+              --set XDG_CURRENT_DESKTOP "gnome"
+            );
+          ''
+          + prev.preFixup;
       });
     };
   };
