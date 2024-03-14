@@ -1,8 +1,4 @@
-{
-  inputs,
-  self,
-  ...
-}: {
+{inputs, ...}: {
   systems = ["x86_64-linux"];
 
   imports = [inputs.flake-parts.flakeModules.easyOverlay];
@@ -19,35 +15,40 @@
     };
 
     packages = let
-      inherit (pkgs) callPackage foot alejandra fetchFromGitea;
-
+      inherit (pkgs) callPackage fetchFromGitea foot alejandra;
       pins = import ../npins;
+
       mkPackage = path: {__functor = self: self.override;} // (callPackage path {inherit pins;});
     in {
-      # packages that follow npins entries
-      # they can be updated via npins
+      /*
+      packages that follow npins entries
+      they can be updated via npins
+      */
       ani-cli = mkPackage ./ani-cli;
       rat = mkPackage ./rat;
-      mov-cli = mkPackage ./mov-cli;
       rofi-calc-wayland = mkPackage ./rofi-calc-wayland;
       rofi-emoji-wayland = mkPackage ./rofi-emoji-wayland;
 
-      # static packages
-      # need manual intervention with each update
+      /*
+      static packages
+      need manual intervention with each update
+      */
+      mov-cli = callPackage ./mov-cli {};
       cloneit = callPackage ./cloneit {};
       headscale-ui = callPackage ./headscale-ui {};
       mastodon-bird-ui = callPackage ./mastodon-bird-ui {};
       reposilite-bin = callPackage ./reposilite-bin {
-        javaJdk = pkgs.openjdk17_headless;
+        javaJdk = pkgs.openjdk_headless;
       };
 
-      # patched packages
-
+      /*
+      patched packages
+      patches packages take a package from nixpkgs and patch it to suit my own needs
+      */
       foot-transparent = foot.overrideAttrs (prev: let
         version = "2024-03-14-unstable";
       in {
         inherit version;
-
         src = fetchFromGitea {
           domain = "codeberg.org";
           owner = "dnkl";
@@ -56,9 +57,10 @@
           hash = "sha256-Pp3/cNELRYmTOQrJgHX6c+t0QkxEjoly0TLMKVj3H0E=";
         };
 
-        mesonFlags = (prev.mesonFlags or []) ++ ["-Dfullscreen_alpha=true"];
         patches = (prev.patches or []) ++ [../patches/0001-foot-transparent.patch];
-        mainProgram = "foot";
+        mesonFlags = (prev.mesonFlags or []) ++ ["-Dfullscreen_alpha=true"];
+
+        meta.mainProgram = "foot";
       });
 
       alejandra-no-ads = alejandra.overrideAttrs (prev: {
@@ -66,9 +68,8 @@
       });
 
       # override gnome-control-center to trick it into thinking we're running gnome
-      # <https://github.com/NixOS/nixpkgs/issues/230493>
-      # <https://gitlab.gnome.org/GNOME/gnome-control-center/-/merge_requests/736>
-      # get overriden idiot
+      #  <https://github.com/NixOS/nixpkgs/issues/230493>
+      #  <https://gitlab.gnome.org/GNOME/gnome-control-center/-/merge_requests/736>
       gccn-wrapped = pkgs.gnome.gnome-control-center.overrideAttrs (prev: {
         # gnome-control-center does not start without XDG_CURRENT_DESKTOP=gnome
         preFixup =

@@ -32,15 +32,15 @@
       "type": "GitRelease",
       "repository": {
         "type": "GitHub",
-        "owner": "notashelf",
+        "owner": "mov-cli",
         "repo": "mov-cli"
       },
       "pre_releases": false,
       "version_upper_bound": null,
-      "version": "v1.5.9",
-      "revision": "e84e61f550cb83bd1d8f57414846a0dee8776243",
-      "url": "https://api.github.com/repos/notashelf/mov-cli/tarball/v1.5.9",
-      "hash": "1hyhy5xybn921rlmapd4xxqhl60kyyn9kqfhzml4l2k8b962f81y"
+      "version": "1.5.7",
+      "revision": "47c453d156914c373f3ece05564d04f1e12c41e5",
+      "url": "https://api.github.com/repos/mov-cli/mov-cli/tarball/1.5.7",
+      "hash": "08gc8x80df6d8nxraqh531q68s7kjhs921ndcg7virl1njv5k61q"
     },
     "nixpkgs": {
       "type": "Channel",
