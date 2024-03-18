@@ -1,4 +1,4 @@
 {alejandra, ...}:
 alejandra.overrideAttrs (prev: {
-  patches = (prev.patches or []) ++ [../patches/0003-alejandra-remove-ads.patch];
+  patches = (prev.patches or []) ++ [./0001-no-ads.patch];
 })

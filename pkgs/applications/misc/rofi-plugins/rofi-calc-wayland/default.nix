@@ -40,7 +40,7 @@ in
     ];
 
     patches = [
-      ../../patches/0002-patch-plugin-dir.patch
+      ../patches/0001-patch-plugin-dir.patch
     ];
 
     postPatch = ''
