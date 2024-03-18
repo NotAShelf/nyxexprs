@@ -1,0 +1,111 @@
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+index 9ceab4d5..146e7992 100644
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -334,7 +334,8 @@
+   instead of the one least recently.
+ * Starlight theme (the default theme) updated to [V4][starlight-v4]
+ * Background transparency (alpha) is now disabled in fullscreened
+-  windows ([#1416][1416]).
++  windows ([#1416][1416]) by default but can be enabled with
++  `fullscreen_alpha`.
+ * Foot server systemd units now use the standard
+   graphical-session.target ([#1281][1281]).
+ * If `$XDG_RUNTIME_DIR/foot-$WAYLAND_DISPLAY.sock` does not exist,
+diff --git a/meson.build b/meson.build
+index 719352bc..eb38c0f8 100644
+--- a/meson.build
++++ b/meson.build
+@@ -73,6 +73,9 @@ add_project_arguments(
+   (get_option('b_pgo') == 'use'
+     ? ['-DFOOT_PGO_ENABLED=1']
+     : []) +
++  (get_option('fullscreen_alpha')
++    ? ['-DFOOT_FULLSCREEN_ALPHA_ENABLED=1']
++    : []) +
+   cc.get_supported_arguments(
+     ['-pedantic',
+      '-fstrict-aliasing',
+@@ -374,6 +377,7 @@ summary(
+     'Documentation': scdoc.found(),
+     'Themes': get_option('themes'),
+     'IME': get_option('ime'),
++    'Fullscreen alpha': get_option('fullscreen_alpha'),
+     'Grapheme clustering': utf8proc.found(),
+     'utmp backend': utmp_backend,
+     'utmp helper default path': utmp_default_helper_path,
+diff --git a/meson_options.txt b/meson_options.txt
+index ab7a07be..7919431e 100644
+--- a/meson_options.txt
++++ b/meson_options.txt
+@@ -7,6 +7,9 @@ option('themes', type: 'boolean', value: true,
+ option('ime', type: 'boolean', value: true,
+        description: 'IME (Input Method Editor) support')
+
++option('fullscreen_alpha', type: 'boolean', value: false,
++    description: 'Enables transparency on fullscreen windows')
++
+ option('grapheme-clustering', type: 'feature',
+        description: 'Enables grapheme clustering using libutf8proc. Requires fcft with harfbuzz support to be useful.')
+
+diff --git a/render.c b/render.c
+index 91472027..847984a9 100644
+--- a/render.c
++++ b/render.c
+@@ -525,6 +525,13 @@ render_cell(struct terminal *term, pixman_image_t *pix, pixman_region32_t *damag
+         }
+
+         else if (cell->attrs.bg_src == COLOR_DEFAULT) {
++#if defined(FOOT_FULLSCREEN_ALPHA_ENABLED) && FOOT_FULLSCREEN_ALPHA_ENABLED
++            /*
++             * Note: I don't care about the stupid ass Wayland
++             * protocol I want transparent fullscreen windows.
++             */
++            alpha = term->colors.alpha;
++#else
+             if (term->window->is_fullscreen) {
+                 /*
+                  * Note: disable transparency when fullscreened.
+@@ -562,6 +569,7 @@ render_cell(struct terminal *term, pixman_image_t *pix, pixman_region32_t *damag
+             } else {
+                 alpha = term->colors.alpha;
+             }
++#endif
+         }
+     }
+
+@@ -900,6 +908,10 @@ render_margin(struct terminal *term, struct buffer *buf,
+     const int bmargin = term->height - term->margins.bottom;
+     const int line_count = end_line - start_line;
+
++#if defined(FOOT_FULLSCREEN_ALPHA_ENABLED) && FOOT_FULLSCREEN_ALPHA_ENABLED
++    uint32_t _bg = !term->reverse ? term->colors.bg : term->colors.fg;
++    pixman_color_t bg = color_hex_to_pixman_with_alpha(_bg, term->colors.alpha);
++#else
+     const uint32_t _bg = !term->reverse ? term->colors.bg : term->colors.fg;
+     uint16_t alpha = term->colors.alpha;
+
+@@ -909,6 +921,7 @@ render_margin(struct terminal *term, struct buffer *buf,
+     }
+
+     pixman_color_t bg = color_hex_to_pixman_with_alpha(_bg, alpha);
++#endif
+
+     pixman_image_fill_rectangles(
+         PIXMAN_OP_SRC, buf->pix[0], &bg, 4,
+@@ -2817,8 +2830,14 @@ grid_render(struct terminal *term)
+     xassert(term->height > 0);
+
+     struct buffer_chain *chain = term->render.chains.grid;
++
++#if defined(FOOT_FULLSCREEN_ALPHA_ENABLED) && FOOT_FULLSCREEN_ALPHA_ENABLED
++    bool use_alpha = term->colors.alpha != 0xffff;
++#else
+     bool use_alpha = !term->window->is_fullscreen &&
+                      term->colors.alpha != 0xffff;
++#endif
++
+     struct buffer *buf = shm_get_buffer(
+         chain, term->width, term->height, use_alpha);
+
+
