@@ -108,3 +108,4 @@ index 91472027..847984a9 100644
      struct buffer *buf = shm_get_buffer(
          chain, term->width, term->height, use_alpha);
 
+
