@@ -12,15 +12,15 @@ jobs:
     strategy:
       matrix:
         package:
-          - foot-transparent
+          - alejandra-no-ads
+          - ani-cli
           - cloneit
+          - foot-transparent
           - mov-cli
           - rat
-          - ani-cli
           - rofi-calc-wayland
           - rofi-emoji-wayland
           - headscale-ui
-          - mastodon-bird-ui
           - mastodon-bird-ui
 
     uses: ./.github/workflows/nix.yml
