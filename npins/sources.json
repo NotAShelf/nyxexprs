@@ -37,16 +37,16 @@
       },
       "pre_releases": false,
       "version_upper_bound": null,
-      "version": "4.0.4",
-      "revision": "94c46da8e708b47db809fc4afcfa6132800e7dd1",
-      "url": "https://api.github.com/repos/mov-cli/mov-cli/tarball/4.0.4",
-      "hash": "0vjf62dmgqxn7l268xv6hrw20k0igvq7hg7bpypsacd5148qlazl"
+      "version": "4.1.0",
+      "revision": "adf61ce3084c7c75a848e37c413f55731c5b8841",
+      "url": "https://api.github.com/repos/mov-cli/mov-cli/tarball/4.1.0",
+      "hash": "1ni0achwc4lnd0sfy66a7cymyrd5rj0kq6q3v3v8dax770l5ibmx"
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-24.05pre599009.5710127d9693/nixexprs.tar.xz",
-      "hash": "0lcqnkw15q0696sskcv9r8bm7h7cdn902c229hjj6r2yn65xcr54"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-24.05pre599295.7872526e9c53/nixexprs.tar.xz",
+      "hash": "0ix23iwagyyh815bq65gpz7a3xnqvx5r1p6kpzhlqcb7vs6qnwcq"
     },
     "rat": {
       "type": "GitRelease",
