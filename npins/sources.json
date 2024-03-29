@@ -45,8 +45,8 @@
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-24.05pre603083.07262b18b970/nixexprs.tar.xz",
-      "hash": "17jivgc2jarm9lnd7n11vp8aslkh7spyacbzqwa2m94jlln75y1a"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-24.05pre604116.72c6ed328aa4/nixexprs.tar.xz",
+      "hash": "1p8w6rg2knccqa8cxvizjj8h2p62c7747rkczbn0jps04cghfbnh"
     },
     "rat": {
       "type": "GitRelease",
@@ -71,10 +71,10 @@
       },
       "pre_releases": false,
       "version_upper_bound": null,
-      "version": "v2.2.0",
-      "revision": "6b9729f8cfba7f83cdf7f801509ed63bb9edd6f0",
-      "url": "https://api.github.com/repos/svenstaro/rofi-calc/tarball/v2.2.0",
-      "hash": "00qcl06birzh1kpva0vzvw7xkdv4i84krv4z9f7lx5pyfm2cwq28"
+      "version": "v2.2.1",
+      "revision": "b01d5457833c11791a759a3198402985fc2779d1",
+      "url": "https://api.github.com/repos/svenstaro/rofi-calc/tarball/v2.2.1",
+      "hash": "114j004l24pb3341r2vw96y7zp5g2yca4wbi5qydhihkvkqqhxmr"
     },
     "rofi-emoji": {
       "type": "GitRelease",
