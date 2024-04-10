@@ -24,11 +24,11 @@ in
       runHook preInstall
 
       # wrap the reposilite jar with the JAVA_HOME environment variable and memory flags
-      # maxMemory should be in megabytes. 40m is a reasonable defeat, but you may increase
+      # maxMemory, by default is 40m, which is a reasonable default, but you may increase
       # it if you experience a higher load
       makeWrapper ${jdk}/bin/java $out/bin/reposilite \
         --set JAVA_HOME ${jdk.home} \
-        --add-flags "-Xmx${maxMemory}m -jar $src/reposilite-${finalAttrs.version}-all.jar"
+        --add-flags "-Xmx${maxMemory} -jar $src"
 
       runHook postInstall
     '';
