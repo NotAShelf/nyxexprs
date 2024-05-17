@@ -37,10 +37,10 @@
       },
       "pre_releases": false,
       "version_upper_bound": null,
-      "version": "4.3.14",
-      "revision": "47b343721e7564eeb2f6253ba70bf8112c3c0302",
-      "url": "https://api.github.com/repos/mov-cli/mov-cli/tarball/4.3.14",
-      "hash": "0vhkcyckwyrr4zrhnfahsq9yhb9nmxpmg00379g0s6v3ynngmkm3"
+      "version": "4.3.15",
+      "revision": "504412d2a22f0adc6d8454bcbcab7ee8a0fed898",
+      "url": "https://api.github.com/repos/mov-cli/mov-cli/tarball/4.3.15",
+      "hash": "1ydly6ql5vj0x95mxbbrglljgzr0g05m61ig4hjp2x5lkfr77p1d"
     },
     "nixpkgs": {
       "type": "Channel",
