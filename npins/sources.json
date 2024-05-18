@@ -9,6 +9,7 @@
       },
       "pre_releases": false,
       "version_upper_bound": null,
+      "release_prefix": null,
       "version": "v4.8",
       "revision": "d0fb5454ec574a98eaa35cadfba3975139ab6575",
       "url": "https://api.github.com/repos/pystardust/ani-cli/tarball/v4.8",
@@ -23,6 +24,7 @@
       },
       "pre_releases": false,
       "version_upper_bound": null,
+      "release_prefix": null,
       "version": "0.1.0",
       "revision": "44402e101b18be0764ddb0b49bf0393e2e83c9c3",
       "url": "https://api.github.com/repos/alok8bb/cloneit/tarball/0.1.0",
@@ -37,6 +39,7 @@
       },
       "pre_releases": false,
       "version_upper_bound": null,
+      "release_prefix": null,
       "version": "4.3.15",
       "revision": "504412d2a22f0adc6d8454bcbcab7ee8a0fed898",
       "url": "https://api.github.com/repos/mov-cli/mov-cli/tarball/4.3.15",
@@ -45,8 +48,8 @@
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-24.05pre626723.b3fcfcfabd01/nixexprs.tar.xz",
-      "hash": "17sfp1vriw9s485fbdmq9ak7c20axp6qcmb45nr5yjsi77him3zs"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-24.05pre627584.ea77cefecb0a/nixexprs.tar.xz",
+      "hash": "1wfvjsp67bizg7ywarzp2h2mz54mrn7zyrghdgly087jynahidq2"
     },
     "rat": {
       "type": "GitRelease",
@@ -57,6 +60,7 @@
       },
       "pre_releases": false,
       "version_upper_bound": null,
+      "release_prefix": null,
       "version": "2.0.1",
       "revision": "03d2e16ea0ebe280d7dd472612ced8b4ee71960f",
       "url": "https://api.github.com/repos/thinkingsand/rat/tarball/2.0.1",
@@ -71,6 +75,7 @@
       },
       "pre_releases": false,
       "version_upper_bound": null,
+      "release_prefix": null,
       "version": "v2.2.1",
       "revision": "b01d5457833c11791a759a3198402985fc2779d1",
       "url": "https://api.github.com/repos/svenstaro/rofi-calc/tarball/v2.2.1",
@@ -85,6 +90,7 @@
       },
       "pre_releases": false,
       "version_upper_bound": null,
+      "release_prefix": null,
       "version": "v3.3.0",
       "revision": "c1c37add92013b3f947b592d9e2d184b92e9fa10",
       "url": "https://api.github.com/repos/Mange/rofi-emoji/tarball/v3.3.0",
