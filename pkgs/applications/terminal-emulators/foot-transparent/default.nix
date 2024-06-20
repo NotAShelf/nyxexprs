@@ -12,8 +12,8 @@ in {
     domain = "codeberg.org";
     owner = "dnkl";
     repo = "foot";
-    rev = "3a7ea1f44b5cac16c4d67cddb75c02638d59c55c";
-    hash = "sha256-1kDm5XSFz4Q4lAcPkK8h4eJWzx7VDKqEHKjBDbbYhO0=";
+    rev = "aea16ba5d2896ef22bf0bea45e5e8142c0ff1c2a";
+    hash = "sha256-CeDQriQIbyx3V1l719g3AuhnVVYYc63kA0BQpEFQ26A=";
   };
 
   patches = (prev.patches or []) ++ [./0001-fullscreen-transparency.patch];
