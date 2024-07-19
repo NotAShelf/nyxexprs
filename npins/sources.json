@@ -40,16 +40,16 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "4.4.7",
-      "revision": "e0a7adac6edc0ec31216adbd8cd94c94c79fbab2",
-      "url": "https://api.github.com/repos/mov-cli/mov-cli/tarball/4.4.7",
-      "hash": "16fcy3vyq76va1138hvs0gxn7g2fdxikiww2lib1y3scsi7f1g61"
+      "version": "4.4.8",
+      "revision": "7d30030a657e755902e7ba76308b8b2422745c55",
+      "url": "https://api.github.com/repos/mov-cli/mov-cli/tarball/4.4.8",
+      "hash": "156jb0ck73ah6pg6syx1sdly0ml39iqjdmz5f6xv3ch7id4v151j"
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-24.11pre653845.9355fa86e6f2/nixexprs.tar.xz",
-      "hash": "1gvnxs10qx98jb5xpv96v9q98l1jsaxpmxgqvdmzgaj0rss6lm4x"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-24.11pre654854.7e2fb8e0eb80/nixexprs.tar.xz",
+      "hash": "15g88lz7d33a4ggm72f8zm6aqzsk9lx1pbq2a6idgk9fw53m7hpz"
     },
     "rat": {
       "type": "GitRelease",
@@ -91,10 +91,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "v3.3.0",
-      "revision": "c1c37add92013b3f947b592d9e2d184b92e9fa10",
-      "url": "https://api.github.com/repos/Mange/rofi-emoji/tarball/v3.3.0",
-      "hash": "0qqlvypys30m9rrgdg9qdp6czhjlnp513mf2bim5n5cab16kkqb3"
+      "version": "v3.4.0",
+      "revision": "db2e33330e36573fdc6bb4b2195bc1e06df667a6",
+      "url": "https://api.github.com/repos/Mange/rofi-emoji/tarball/v3.4.0",
+      "hash": "0zg1wp7j53x5a2l0wkgpxlz3gbxy74cayfgfgyi1z2sllh0g4pdl"
     }
   },
   "version": 3
