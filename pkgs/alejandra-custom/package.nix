@@ -5,10 +5,7 @@ alejandra.overrideAttrs (prev: {
 
   patches =
     (prev.patches or [])
-    ++ [
-      ./0001-no-ads.patch
-      ./0002-spaced-elements.patch # Courtesy of @soupglasses
-    ];
+    ++ [./0001-no-ads.patch];
 
   meta.description = ''
     Patched version of Alejandra that removes ads and adds spaces in attrsets & lists
