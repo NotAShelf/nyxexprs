@@ -18,9 +18,6 @@
   mpv-history = callPackage ./applications/video/mpv/scripts/save-history {};
   mastodon-bird-ui = callPackage ./applications/social/mastodon-bird-ui {};
   headscale-ui = callPackage ./applications/networking/headscale-ui {};
-  reposilite-bin = callPackage ./applications/networking/reposilite-bin {
-    javaJdk = pkgs.openjdk_headless;
-  };
 
   # patched packages
   # those packages usually follow nixpkgs, so they need neither pinning
