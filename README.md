@@ -1,6 +1,6 @@
-# 🌙 nyxpkgs
+# 🌙 nyxexprs
 
-> My personal package overlay for sharing my most commonly used derivations.
+My personal package overlay for sharing my most commonly used derivations.
 
 ## 📦 Packages
 
@@ -53,7 +53,7 @@ It is as simple as adding a new entry to your inputs with the correct url.
 # flake.nix
 inputs = {
     # ...
-    nyxpkgs.url = "github:notashelf/nyxpkgs";
+    nyxexprs.url = "github:notashelf/nyxexprs";
     # ...
 };
 ```
@@ -68,8 +68,8 @@ your system configuration. An example `flake.nix` would be as follows:
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
 
-    # ↓ add nyxpkgs as a flake input
-    nyxpkgs.url = "github:notashelf/nyxpkgs";
+    # ↓ add nyxexprs as a flake input
+    nyxexprs.url = "github:notashelf/nyxexprs";
   };
 
   outputs = inputs @ {self, nixpkgs, ...}: {
@@ -107,7 +107,7 @@ or `home.packages`
 {pkgs, inputs, ...}: {
   # in case of home-manager, this will be home.packages
   environment.systemPackages = [
-    inputs.nyxpkgs.packages.${pkgs.system}.<packageName> # installs a package
+    inputs.nyxexprs.packages.${pkgs.system}.<packageName> # installs a package
   ];
 }
 ```
@@ -119,7 +119,7 @@ packages, or `nix profile install` to install them on your system profile. If
 using home-manager on non-NixOS, I recommend using `home.packages` instead.
 
 ```console
-nix profile install github:notashelf/nyxpkgs#<package>
+nix profile install github:notashelf/nyxexprs#<package>
 ```
 
 ### NixOS/Home-manager (no flakes)
@@ -130,12 +130,12 @@ follows:
 
 ```nix
 {pkgs, ...}: let
-  nyxpkgs = import (builtins.fetchTarball "https://github.com/notashelf/nyxpkgs/archive/main.tar.gz");
+  nyxexprs = import (builtins.fetchTarball "https://github.com/notashelf/nyxexprs/archive/main.tar.gz");
 in {
   # install packages
   # this can also be home.packages if you are using home-manager
   environment.systemPackages = [
-    nyxpkgs.packages.${pkgs.hostPlatform.system}.<packageName>
+    nyxexprs.packages.${pkgs.hostPlatform.system}.<packageName>
   ];
 }
 ```
