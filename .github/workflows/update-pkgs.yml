@@ -7,7 +7,7 @@ on:
 
 jobs:
   update:
-    if: github.repository == 'notashelf/nyxpkgs'
+    if: github.repository == 'notashelf/nyxexprs'
     runs-on: ubuntu-latest
 
     permissions:

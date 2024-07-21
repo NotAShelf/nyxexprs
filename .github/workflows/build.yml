@@ -8,18 +8,16 @@ on:
         required: false
 
 jobs:
+  if: github.repository == 'notashelf/nyxexprs'
+  runs-on: ubuntu-latest
   build:
     strategy:
       matrix:
         package:
-          - alejandra-no-ads
+          - alejandra-custom
           - ani-cli
           - cloneit
           - foot-transparent
-          - mov-cli
-          - rat
-          - rofi-calc-wayland
-          - rofi-emoji-wayland
           - headscale-ui
           - mastodon-bird-ui
 
