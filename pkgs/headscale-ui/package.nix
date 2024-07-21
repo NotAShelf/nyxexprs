@@ -1,21 +1,23 @@
 {
-  stdenv,
+  stdenvNoCC,
   fetchzip,
   lib,
 }: let
   pname = "headscale-ui";
   version = "0-unstable-2024-02-24";
 in
-  stdenv.mkDerivation {
+  stdenvNoCC.mkDerivation {
     inherit pname version;
     src = fetchzip {
-      url = "https://github.com/gurucomputing/headscale-ui/releases/download/2024.02.24-beta-1/headscale-ui.zip";
-      sha256 = "sha256-6SUgtSTFvJWNdsWz6AiOfUM9p33+8EhDwyqHX7O2+NQ=";
+      url = "https://github.com/gurucomputing/headscale-ui/releases/download/2024.02.24-beta1/headscale-ui.zip";
+      sha256 = "sha256-HHzxGlAtVXs0jfNJ/khbNA/aQsGKvii1Hm+8hlJQYYY=";
     };
 
     installPhase = ''
-      mkdir -p $out/share/
-      cp -r web/ $out/share/
+      runHook preInstall
+      mkdir -p $out/share
+      cp -r ./* $out/share
+      runHook postInstall
     '';
 
     meta = {
