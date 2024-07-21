@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
+    systems.url = "github:nix-systems/default-linux";
 
     flake-compat = {
       url = "github:edolstra/flake-compat";
@@ -12,15 +13,15 @@
   };
 
   outputs = {
+    self,
     nixpkgs,
     flake-parts,
-    self,
     ...
   } @ inputs: let
     pins = import ./npins;
   in
     flake-parts.lib.mkFlake {inherit inputs self;} {
-      systems = ["x86_64-linux" "aarch64-linux"];
+      systems = import inputs.systems;
       imports = [flake-parts.flakeModules.easyOverlay];
 
       perSystem = {
@@ -43,8 +44,13 @@
           directory = ./pkgs;
         };
 
-        formatter = pkgs.alejandra;
-        devShells.default = with pkgs; mkShell {buildInputs = [npins];};
+        formatter = config.packages.alejandra-custom;
+        devShells = {
+          default = self.devShells.${system}.npins;
+          npins = pkgs.mkShellNoCC {
+            packages = [pkgs.npins];
+          };
+        };
       };
     };
 }
