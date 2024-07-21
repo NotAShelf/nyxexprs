@@ -8,8 +8,6 @@ on:
         required: false
 
 jobs:
-  if: github.repository == 'notashelf/nyxexprs'
-  runs-on: ubuntu-latest
   build:
     strategy:
       matrix:
