@@ -1,0 +1,460 @@
+diff --git i/src/alejandra/src/rules/attr_set.rs w/src/alejandra/src/rules/attr_set.rs
+index 9459977..8b637a1 100644
+--- i/src/alejandra/src/rules/attr_set.rs
++++ w/src/alejandra/src/rules/attr_set.rs
+@@ -62,6 +62,8 @@ pub(crate) fn rule(
+     steps.push_back(crate::builder::Step::Format(child));
+     if vertical {
+         steps.push_back(crate::builder::Step::Indent);
++    } else if items_count >= 1 {
++        steps.push_back(crate::builder::Step::Whitespace);
+     }
+ 
+     let mut item_index: usize = 0;
+@@ -120,6 +122,8 @@ pub(crate) fn rule(
+         steps.push_back(crate::builder::Step::Dedent);
+         steps.push_back(crate::builder::Step::NewLine);
+         steps.push_back(crate::builder::Step::Pad);
++    } else if items_count >= 1 {
++        steps.push_back(crate::builder::Step::Whitespace);
+     }
+     steps.push_back(crate::builder::Step::Format(child));
+ 
+diff --git i/src/alejandra/src/rules/list.rs w/src/alejandra/src/rules/list.rs
+index 3e33e14..df9b9e6 100644
+--- i/src/alejandra/src/rules/list.rs
++++ w/src/alejandra/src/rules/list.rs
+@@ -23,7 +23,9 @@ pub(crate) fn rule(
+     steps.push_back(crate::builder::Step::Format(child));
+     if vertical {
+         steps.push_back(crate::builder::Step::Indent);
+-    }
++   } else if items_count >= 1 {
++        steps.push_back(crate::builder::Step::Whitespace);
++   }
+ 
+     let mut item_index: usize = 0;
+     let mut inline_next_comment = false;
+@@ -90,6 +92,8 @@ pub(crate) fn rule(
+         steps.push_back(crate::builder::Step::Dedent);
+         steps.push_back(crate::builder::Step::NewLine);
+         steps.push_back(crate::builder::Step::Pad);
++    } else if items_count >= 1 {
++        steps.push_back(crate::builder::Step::Whitespace);
+     }
+     steps.push_back(crate::builder::Step::Format(child));
+ 
+diff --git i/src/alejandra/tests/cases/apply/out.nix w/src/alejandra/tests/cases/apply/out.nix
+index 77a7d97..7a0bd11 100644
+--- i/src/alejandra/tests/cases/apply/out.nix
++++ w/src/alejandra/tests/cases/apply/out.nix
+@@ -41,19 +41,19 @@
+     name1 =
+       function
+       arg
+-      {asdf = 1;};
++      { asdf = 1; };
+ 
+     name2 =
+       function
+       arg
+-      {asdf = 1;}
++      { asdf = 1; }
+       argument;
+ 
+     name3 =
+       function
+       arg
+-      {asdf = 1;}
+-      {qwer = 12345;}
++      { asdf = 1; }
++      { qwer = 12345; }
+       argument;
+   }
+   {
+@@ -79,7 +79,7 @@
+     name4 =
+       function
+       arg
+-      {asdf = 1;}
++      { asdf = 1; }
+       {
+         qwer = 12345;
+         qwer2 = 54321;
+@@ -88,21 +88,21 @@
+   }
+   {
+     option1 =
+-      function arg {asdf = 1;} {
++      function arg { asdf = 1; } {
+         qwer = 12345;
+         qwer2 = 54321;
+       }
+       lastArg;
+ 
+     option2 =
+-      function arg {asdf = 1;} {
++      function arg { asdf = 1; } {
+         qwer = 12345;
+         qwer2 = 54321;
+       }
+       lastArg;
+ 
+     option3 =
+-      function arg {asdf = 1;}
++      function arg { asdf = 1; }
+       {
+         qwer = 12345;
+         qwer2 = 54321;
+diff --git i/src/alejandra/tests/cases/attr_set/out.nix w/src/alejandra/tests/cases/attr_set/out.nix
+index 18e6026..e5ac999 100644
+--- i/src/alejandra/tests/cases/attr_set/out.nix
++++ w/src/alejandra/tests/cases/attr_set/out.nix
+@@ -5,12 +5,12 @@
+     a
+     */
+   }
+-  {a = 1;}
++  { a = 1; }
+   {
+     a = 1;
+   }
+ 
+-  {b = 1;}
++  { b = 1; }
+   {
+     b = 1;
+     /*
+@@ -33,7 +33,7 @@
+     */
+   }
+ 
+-  rec {c = 1;}
++  rec { c = 1; }
+   rec {
+     c = 1;
+     /*
+@@ -101,7 +101,7 @@
+       a = {
+         a = rec {
+           a = {
+-            a = rec {a = {a = rec {a = {a = rec {a = {};};};};};};
++            a = rec { a = { a = rec { a = { a = rec { a = {}; }; }; }; }; };
+           };
+         };
+       };
+diff --git i/src/alejandra/tests/cases/idioms_lib_2/out.nix w/src/alejandra/tests/cases/idioms_lib_2/out.nix
+index 9911edf..2a3b2d8 100644
+--- i/src/alejandra/tests/cases/idioms_lib_2/out.nix
++++ w/src/alejandra/tests/cases/idioms_lib_2/out.nix
+@@ -387,7 +387,7 @@
+   Type: string -> a -> a
+   */
+   warn =
+-    if lib.elem (builtins.getEnv "NIX_ABORT_ON_WARN") ["1" "true" "yes"]
++    if lib.elem (builtins.getEnv "NIX_ABORT_ON_WARN") [ "1" "true" "yes" ]
+     then msg: builtins.trace "[1;31mwarning: ${msg}[0m" (abort "NIX_ABORT_ON_WARN=true; warnings are treated as unrecoverable errors.")
+     else msg: builtins.trace "[1;31mwarning: ${msg}[0m";
+ 
+@@ -526,12 +526,12 @@
+   toBaseDigits = base: i: let
+     go = i:
+       if i < base
+-      then [i]
++      then [ i ]
+       else let
+         r = i - ((i / base) * base);
+         q = (i - r) / base;
+       in
+-        [r] ++ go q;
++        [ r ] ++ go q;
+   in
+     assert (base >= 2);
+     assert (i >= 0);
+diff --git i/src/alejandra/tests/cases/idioms_nixos_1/out.nix w/src/alejandra/tests/cases/idioms_nixos_1/out.nix
+index ae087c2..27f0329 100644
+--- i/src/alejandra/tests/cases/idioms_nixos_1/out.nix
++++ w/src/alejandra/tests/cases/idioms_nixos_1/out.nix
+@@ -33,7 +33,7 @@ in {
+ 
+     boot.kernelPackages = mkOption {
+       default = pkgs.linuxPackages;
+-      type = types.unspecified // {merge = mergeEqualOption;};
++      type = types.unspecified // { merge = mergeEqualOption; };
+       apply = kernelPackages:
+         kernelPackages.extend (self: super: {
+           kernel = super.kernel.override (originalArgs: {
+@@ -134,7 +134,7 @@ in {
+     boot.initrd.availableKernelModules = mkOption {
+       type = types.listOf types.str;
+       default = [];
+-      example = ["sata_nv" "ext3"];
++      example = [ "sata_nv" "ext3" ];
+       description = ''
+         The set of kernel modules in the initial ramdisk used during the
+         boot process.  This set must include all modules necessary for
+@@ -263,22 +263,22 @@ in {
+       })
+ 
+       (mkIf (!config.boot.isContainer) {
+-        system.build = {inherit kernel;};
++        system.build = { inherit kernel; };
+ 
+-        system.modulesTree = [kernel] ++ config.boot.extraModulePackages;
++        system.modulesTree = [ kernel ] ++ config.boot.extraModulePackages;
+ 
+         # Implement consoleLogLevel both in early boot and using sysctl
+         # (so you don't need to reboot to have changes take effect).
+         boot.kernelParams =
+-          ["loglevel=${toString config.boot.consoleLogLevel}"]
+-          ++ optionals config.boot.vesa ["vga=0x317" "nomodeset"];
++          [ "loglevel=${toString config.boot.consoleLogLevel}" ]
++          ++ optionals config.boot.vesa [ "vga=0x317" "nomodeset" ];
+ 
+         boot.kernel.sysctl."kernel.printk" = mkDefault config.boot.consoleLogLevel;
+ 
+-        boot.kernelModules = ["loop" "atkbd"];
++        boot.kernelModules = [ "loop" "atkbd" ];
+ 
+         # The Linux kernel >= 2.6.27 provides firmware.
+-        hardware.firmware = [kernel];
++        hardware.firmware = [ kernel ];
+ 
+         # Create /etc/modules-load.d/nixos.conf, which is read by
+         # systemd-modules-load.service to load required kernel modules.
+@@ -287,8 +287,8 @@ in {
+         };
+ 
+         systemd.services.systemd-modules-load = {
+-          wantedBy = ["multi-user.target"];
+-          restartTriggers = [kernelModulesConf];
++          wantedBy = [ "multi-user.target" ];
++          restartTriggers = [ kernelModulesConf ];
+           serviceConfig = {
+             # Ignore failed module loads.  Typically some of the
+             # modules in ‘boot.kernelModules’ are "nice to have but
+diff --git i/src/alejandra/tests/cases/idioms_pkgs_1/out.nix w/src/alejandra/tests/cases/idioms_pkgs_1/out.nix
+index dbee48d..129d59d 100644
+--- i/src/alejandra/tests/cases/idioms_pkgs_1/out.nix
++++ w/src/alejandra/tests/cases/idioms_pkgs_1/out.nix
+@@ -11,7 +11,7 @@ stdenv.mkDerivation rec {
+     url = "example/${version}";
+   };
+   meta = with lib; {
+-    maintainers = with maintainers; [someone];
++    maintainers = with maintainers; [ someone ];
+     description = "something";
+   };
+ }
+diff --git i/src/alejandra/tests/cases/idioms_pkgs_2/out.nix w/src/alejandra/tests/cases/idioms_pkgs_2/out.nix
+index dd0a2b5..2448b6e 100644
+--- i/src/alejandra/tests/cases/idioms_pkgs_2/out.nix
++++ w/src/alejandra/tests/cases/idioms_pkgs_2/out.nix
+@@ -19,13 +19,13 @@ stdenv.mkDerivation rec {
+   doCheck = true;
+ 
+   passthru.tests = {
+-    version = testVersion {package = hello;};
++    version = testVersion { package = hello; };
+ 
+     invariant-under-noXlibs =
+       testEqualDerivation
+       "hello must not be rebuilt when environment.noXlibs is set."
+       hello
+-      (nixos {environment.noXlibs = true;}).pkgs.hello;
++      (nixos { environment.noXlibs = true; }).pkgs.hello;
+   };
+ 
+   meta = with lib; {
+@@ -37,7 +37,7 @@ stdenv.mkDerivation rec {
+     homepage = "https://www.gnu.org/software/hello/manual/";
+     changelog = "https://git.savannah.gnu.org/cgit/hello.git/plain/NEWS?h=v${version}";
+     license = licenses.gpl3Plus;
+-    maintainers = [maintainers.eelco];
++    maintainers = [ maintainers.eelco ];
+     platforms = platforms.all;
+   };
+ }
+diff --git i/src/alejandra/tests/cases/idioms_pkgs_3/out.nix w/src/alejandra/tests/cases/idioms_pkgs_3/out.nix
+index ae087c2..27f0329 100644
+--- i/src/alejandra/tests/cases/idioms_pkgs_3/out.nix
++++ w/src/alejandra/tests/cases/idioms_pkgs_3/out.nix
+@@ -33,7 +33,7 @@ in {
+ 
+     boot.kernelPackages = mkOption {
+       default = pkgs.linuxPackages;
+-      type = types.unspecified // {merge = mergeEqualOption;};
++      type = types.unspecified // { merge = mergeEqualOption; };
+       apply = kernelPackages:
+         kernelPackages.extend (self: super: {
+           kernel = super.kernel.override (originalArgs: {
+@@ -134,7 +134,7 @@ in {
+     boot.initrd.availableKernelModules = mkOption {
+       type = types.listOf types.str;
+       default = [];
+-      example = ["sata_nv" "ext3"];
++      example = [ "sata_nv" "ext3" ];
+       description = ''
+         The set of kernel modules in the initial ramdisk used during the
+         boot process.  This set must include all modules necessary for
+@@ -263,22 +263,22 @@ in {
+       })
+ 
+       (mkIf (!config.boot.isContainer) {
+-        system.build = {inherit kernel;};
++        system.build = { inherit kernel; };
+ 
+-        system.modulesTree = [kernel] ++ config.boot.extraModulePackages;
++        system.modulesTree = [ kernel ] ++ config.boot.extraModulePackages;
+ 
+         # Implement consoleLogLevel both in early boot and using sysctl
+         # (so you don't need to reboot to have changes take effect).
+         boot.kernelParams =
+-          ["loglevel=${toString config.boot.consoleLogLevel}"]
+-          ++ optionals config.boot.vesa ["vga=0x317" "nomodeset"];
++          [ "loglevel=${toString config.boot.consoleLogLevel}" ]
++          ++ optionals config.boot.vesa [ "vga=0x317" "nomodeset" ];
+ 
+         boot.kernel.sysctl."kernel.printk" = mkDefault config.boot.consoleLogLevel;
+ 
+-        boot.kernelModules = ["loop" "atkbd"];
++        boot.kernelModules = [ "loop" "atkbd" ];
+ 
+         # The Linux kernel >= 2.6.27 provides firmware.
+-        hardware.firmware = [kernel];
++        hardware.firmware = [ kernel ];
+ 
+         # Create /etc/modules-load.d/nixos.conf, which is read by
+         # systemd-modules-load.service to load required kernel modules.
+@@ -287,8 +287,8 @@ in {
+         };
+ 
+         systemd.services.systemd-modules-load = {
+-          wantedBy = ["multi-user.target"];
+-          restartTriggers = [kernelModulesConf];
++          wantedBy = [ "multi-user.target" ];
++          restartTriggers = [ kernelModulesConf ];
+           serviceConfig = {
+             # Ignore failed module loads.  Typically some of the
+             # modules in ‘boot.kernelModules’ are "nice to have but
+diff --git i/src/alejandra/tests/cases/inherit/out.nix w/src/alejandra/tests/cases/inherit/out.nix
+index c3b983d..65da28b 100644
+--- i/src/alejandra/tests/cases/inherit/out.nix
++++ w/src/alejandra/tests/cases/inherit/out.nix
+@@ -7,7 +7,7 @@
+       aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+       ;
+   }
+-  {inherit b d;}
++  { inherit b d; }
+   {
+     inherit
+       b
+diff --git i/src/alejandra/tests/cases/inherit_from/out.nix w/src/alejandra/tests/cases/inherit_from/out.nix
+index 0155df5..7252bc4 100644
+--- i/src/alejandra/tests/cases/inherit_from/out.nix
++++ w/src/alejandra/tests/cases/inherit_from/out.nix
+@@ -1,5 +1,5 @@
+ [
+-  {inherit (c) f h;}
++  { inherit (c) f h; }
+   {
+     inherit
+       (c)
+diff --git i/src/alejandra/tests/cases/key_value/out.nix w/src/alejandra/tests/cases/key_value/out.nix
+index af2f520..f817892 100644
+--- i/src/alejandra/tests/cases/key_value/out.nix
++++ w/src/alejandra/tests/cases/key_value/out.nix
+@@ -4,7 +4,7 @@ rec
+   a = 4;
+   a = a: b;
+ 
+-  a = {a = 1;};
++  a = { a = 1; };
+ 
+   b = {
+     a =
+@@ -79,7 +79,7 @@ rec
+       */
+       ;
+   };
+-  j = a: {b = 1;};
++  j = a: { b = 1; };
+   k = a: {
+     b = 1;
+     c = 2;
+@@ -88,7 +88,7 @@ rec
+   /*
+   b
+   */
+-  {b = 1;};
++  { b = 1; };
+   m = a:
+   /*
+   b
+diff --git i/src/alejandra/tests/cases/lists/out.nix w/src/alejandra/tests/cases/lists/out.nix
+index dedee64..43a9de3 100644
+--- i/src/alejandra/tests/cases/lists/out.nix
++++ w/src/alejandra/tests/cases/lists/out.nix
+@@ -1,11 +1,11 @@
+ [
+-  [1]
++  [ 1 ]
+ 
+   [
+     1
+   ]
+ 
+-  [b d]
++  [ b d ]
+   [
+     b
+     d
+diff --git i/src/alejandra/tests/cases/monsters_3/out.nix w/src/alejandra/tests/cases/monsters_3/out.nix
+index 25ff805..fd242fb 100644
+--- i/src/alejandra/tests/cases/monsters_3/out.nix
++++ w/src/alejandra/tests/cases/monsters_3/out.nix
+@@ -45,7 +45,7 @@ stdenv.mkDerivation rec {
+     wrapGAppsHook4
+     glib # for glib-compile-resources
+   ];
+-  buildInputs = [cairo glib gtk4 libadwaita pango];
++  buildInputs = [ cairo glib gtk4 libadwaita pango ];
+   postPatch = ''
+     patchShebangs build-aux/meson_post_install.py
+     # https://gitlab.gnome.org/World/design/contrast/-/merge_requests/23
+@@ -56,7 +56,7 @@ stdenv.mkDerivation rec {
+     description = "Checks whether the contrast between two colors meet the WCAG requirements";
+     homepage = "https://gitlab.gnome.org/World/design/contrast";
+     license = licenses.gpl3Plus;
+-    maintainers = with maintainers; [jtojnar];
++    maintainers = with maintainers; [ jtojnar ];
+     platforms = platforms.unix;
+   };
+ }
+diff --git i/src/alejandra/tests/cases/with/out.nix w/src/alejandra/tests/cases/with/out.nix
+index cd15509..b31b2f0 100644
+--- i/src/alejandra/tests/cases/with/out.nix
++++ w/src/alejandra/tests/cases/with/out.nix
+@@ -21,9 +21,9 @@
+       c)
+   (with b; cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc)
+   (with b; cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc)
+-  {a = with b; 1;}
+-  {a = with b; 1 + 1;}
+-  {a = with b; {c = 1;};}
++  { a = with b; 1; }
++  { a = with b; 1 + 1; }
++  { a = with b; { c = 1; }; }
+   {
+     a = with b; {
+       c = 1;
+@@ -40,7 +40,7 @@
+     a = with b; 1;
+     # comment
+   }
+-  (with a; with b; with c; {a = 1;})
++  (with a; with b; with c; { a = 1; })
+   (with a;
+     with b;
+     with c; {
