@@ -7,19 +7,15 @@ My personal package overlay for sharing my most commonly used derivations.
 There are several packages exposed by this flake. Each directory in `pkgs`
 contains a description of the package inside its README.
 
-| Package            |                                            Description                                             |
-| :----------------- | :------------------------------------------------------------------------------------------------: |
-| alejandra-no-ads   |            A patched version of the **Alejandra** Nix formatter, without the pesky ads.            |
-| ani-cli            |                           An up-to-date, auto updated version of ani-cli                           |
-| cloneit            |                    A CLI tool to download specific GitHub directories or files                     |
-| foot-transparent   |    A patched version of the foot terminal emulator that brings back fullscreen transparency[^1]    |
-| gccn-wrapped       |    A package providing a wrapper for gnome control center, tricking into thinking we use Gnome     |
-| headscale-ui       |             A web frontend for the headscale Tailscale-compatible coordination server              |
-| mastodon-bird-ui   |                         Mastodon web UI, but strongly inspired by Twitter.                         |
-| mov-cli            |                       A cli tool to browse and watch Movies/Shows/TV/Sports                        |
-| rat                | Linux shell port of the horizontally spinning rat meme, complete with soundtrack and spin counter. |
-| rofi-calc-wayland  |          A wayland patched version of [rofi-calc](https://github.com/svenstaro/rofi-calc)          |
-| rofi-emoji-wayland |           A wayland patched version of [rofi-emoji](https://github.com/Mange/rofi-emoji)           |
+| Package          |                                           Description                                           |
+| :--------------- | :---------------------------------------------------------------------------------------------: |
+| alejandra-no-ads | A patched version of the **Alejandra** Nix formatter, without the pesky ads and spacing patches |
+| ani-cli          |                         An up-to-date, auto updated version of ani-cli                          |
+| cloneit          |                   A CLI tool to download specific GitHub directories or files                   |
+| foot-transparent |  A patched version of the foot terminal emulator that brings back fullscreen transparency[^1]   |
+| headscale-ui     |            A web frontend for the headscale Tailscale-compatible coordination server            |
+| mastodon-bird-ui |                       Mastodon web UI, but strongly inspired by Twitter.                        |
+| mov-cli          |                      A cli tool to browse and watch Movies/Shows/TV/Sports                      |
 
 ## Usage
 
