@@ -30,6 +30,20 @@
       "url": "https://api.github.com/repos/alok8bb/cloneit/tarball/0.1.0",
       "hash": "18z4vxrfvyp20kig2s9k5y3034nw39wkj8zzk9qskiisv2ypy90b"
     },
+    "foot": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "Git",
+        "url": "https://codeberg.org/dnkl/foot.git"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "version": "1.17.2",
+      "revision": "ebbc1afc2eaea555698a61ef9e1e127e75d69845",
+      "url": null,
+      "hash": "1gi2c3zxyyf3l3wp702yfwxk512yz83rk06wljc7wlkbf1c9msm7"
+    },
     "mov-cli": {
       "type": "GitRelease",
       "repository": {

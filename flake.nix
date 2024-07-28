@@ -17,9 +17,7 @@
     nixpkgs,
     flake-parts,
     ...
-  } @ inputs: let
-    pins = import ./npins;
-  in
+  } @ inputs:
     flake-parts.lib.mkFlake {inherit inputs self;} {
       systems = import inputs.systems;
       imports = [flake-parts.flakeModules.easyOverlay];
@@ -31,7 +29,13 @@
         lib,
         ...
       }: let
+        inherit (builtins) concatStringsSep match;
+        inherit (lib.attrsets) recursiveUpdate;
         inherit (lib.filesystem) packagesFromDirectoryRecursive;
+        inherit (lib.customisation) callPackageWith;
+
+        pins = import ./npins;
+        date = concatStringsSep "-" (match "(.{4})(.{2})(.{2}).*" self.lastModifiedDate);
       in {
         _module.args.pkgs = import nixpkgs {
           inherit system;
@@ -40,7 +44,7 @@
 
         overlayAttrs = config.packages;
         packages = packagesFromDirectoryRecursive {
-          callPackage = lib.callPackageWith (pkgs // {inherit pins;});
+          callPackage = callPackageWith (recursiveUpdate pkgs {inherit pins date;});
           directory = ./pkgs;
         };
 

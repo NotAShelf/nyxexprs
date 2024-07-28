@@ -2,24 +2,28 @@
   lib,
   fetchFromGitea,
   foot,
+  pins,
+  date,
   ...
 }:
 foot.overrideAttrs (prev: let
-  version = "2024-03-14-unstable";
+  pin = pins.foot;
 in {
-  inherit version;
+  pname = "foot-transparent";
+  version = "0-${date}-unstable";
   src = fetchFromGitea {
     domain = "codeberg.org";
     owner = "dnkl";
     repo = "foot";
-    rev = "aea16ba5d2896ef22bf0bea45e5e8142c0ff1c2a";
-    hash = "sha256-CeDQriQIbyx3V1l719g3AuhnVVYYc63kA0BQpEFQ26A=";
+    rev = pin.revision;
+    sha256 = pin.hash;
   };
 
   patches = (prev.patches or []) ++ [./0001-fullscreen-transparency.patch];
   mesonFlags = (prev.mesonFlags or []) ++ ["-Dfullscreen_alpha=true"];
 
   meta = {
+    description = "Patched version of Foor terminal emulator that brings back fullscreen transparency";
     mainProgram = "foot";
     maintainers = with lib.maintainers; [NotAShelf];
   };
