@@ -39,10 +39,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "1.17.2",
-      "revision": "ebbc1afc2eaea555698a61ef9e1e127e75d69845",
+      "version": "1.18.0",
+      "revision": "0b8db009cd6701772c408a344d75579b9df7ff8b",
       "url": null,
-      "hash": "1gi2c3zxyyf3l3wp702yfwxk512yz83rk06wljc7wlkbf1c9msm7"
+      "hash": "1znfk64kimm0vr3alvj66i1yn5glig3bw60n2lv9cn4jzi1b7qhb"
     },
     "mov-cli": {
       "type": "GitRelease",
