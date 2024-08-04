@@ -18,6 +18,7 @@ jobs:
           - foot-transparent
           - headscale-ui
           - mastodon-bird-ui
+          - zsh-stripped
 
     uses: ./.github/workflows/nix.yml
     with:
