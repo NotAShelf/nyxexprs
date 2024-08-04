@@ -7,15 +7,15 @@ My personal package overlay for sharing my most commonly used derivations.
 There are several packages exposed by this flake. Each directory in `pkgs`
 contains a description of the package inside its README.
 
-| Package          |                                           Description                                           |
-| :--------------- | :---------------------------------------------------------------------------------------------: |
-| alejandra-no-ads | A patched version of the **Alejandra** Nix formatter, without the pesky ads and spacing patches |
-| ani-cli          |                         An up-to-date, auto updated version of ani-cli                          |
-| cloneit          |                   A CLI tool to download specific GitHub directories or files                   |
-| foot-transparent |  A patched version of the foot terminal emulator that brings back fullscreen transparency[^1]   |
-| headscale-ui     |            A web frontend for the headscale Tailscale-compatible coordination server            |
-| mastodon-bird-ui |                       Mastodon web UI, but strongly inspired by Twitter.                        |
-| mov-cli          |                      A cli tool to browse and watch Movies/Shows/TV/Sports                      |
+| Package          |                                           Description                                            |
+| :--------------- | :----------------------------------------------------------------------------------------------: |
+| alejandra-custom | A patched version of the **Alejandra** Nix formatter, without the pesky ads and spacing patches  |
+| ani-cli          |            An up-to-date, auto updated version of ani-cli following auto-updated pins            |
+| cloneit          |                   A CLI tool to download specific GitHub directories or files                    |
+| foot-transparent |   A patched version of the foot terminal emulator that brings back fullscreen transparency[^1]   |
+| headscale-ui     |            A web frontend for the headscale Tailscale-compatible coordination server             |
+| mastodon-bird-ui |                        Mastodon web UI, but strongly inspired by Twitter.                        |
+| zsh-stripped     | ZSH with newinstall scripts removed, and patches to handle special characters such as `^` or `#` |
 
 ## Usage
 
