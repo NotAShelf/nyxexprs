@@ -6,21 +6,20 @@
   openssl,
   ...
 }:
-rustPlatform.buildRustPackage rec {
+rustPlatform.buildRustPackage {
   pname = "cloneit";
-  version = "0.1.0";
+  version = "0-unstable-2024-06-28";
 
   src = fetchFromGitHub {
     owner = "alok8bb";
     repo = "cloneit";
-    rev = version;
-    sha256 = "CyR/vdg6xqlxmv8jOXka3JIBhi8zafHiBOL67XLf5KM=";
+    rev = "6198556e810d964cc5938c446ef42fc21b55fe0b";
+    sha256 = "sha256-RP0/kquAlSwRMeB6cjvS5JB9qfdkT8IKLVxaxrmzJ+0=";
   };
 
-  cargoSha256 = "zhsFIU7gmP4gR5NhrFslFSvYIXH1fxJLZU8nV67PluQ=";
+  cargoHash = "sha256-XXcqmDPEQUm4YBqY5+06X55ym3o3RqE7fNSiR4n+iyc=";
 
   nativeBuildInputs = [pkg-config];
-
   buildInputs = [openssl];
 
   meta = {
@@ -28,5 +27,6 @@ rustPlatform.buildRustPackage rec {
     homepage = "https://github.com/alok8bb/cloneit";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [NotAShelf];
+    platforms = lib.platforms.linux;
   };
 }
