@@ -44,6 +44,17 @@
       "url": null,
       "hash": "1znfk64kimm0vr3alvj66i1yn5glig3bw60n2lv9cn4jzi1b7qhb"
     },
+    "fuzzel": {
+      "type": "Git",
+      "repository": {
+        "type": "Git",
+        "url": "https://codeberg.org/dnkl/fuzzel.git"
+      },
+      "branch": "master",
+      "revision": "f1a5412151358b37dcdcf820e625371f0b5ceec9",
+      "url": null,
+      "hash": "1hb2kk2jl9g38fq2895kshki9wsvncsjk3xb15b7pzwnm2gg3j8h"
+    },
     "mov-cli": {
       "type": "GitRelease",
       "repository": {

@@ -16,6 +16,7 @@ jobs:
           - ani-cli
           - cloneit
           - foot-transparent
+          - fuzzel-git
           - headscale-ui
           - mastodon-bird-ui
           - zsh-stripped
