@@ -10,10 +10,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "v4.8",
-      "revision": "d0fb5454ec574a98eaa35cadfba3975139ab6575",
-      "url": "https://api.github.com/repos/pystardust/ani-cli/tarball/v4.8",
-      "hash": "1xfcn51yyzjc7gr2xzhz2i1i500ad1877dmdadipfdlfcs4l4yxy"
+      "version": "v4.9",
+      "revision": "2f40d6aec815de1a6b985705dbee37c729b8e6a8",
+      "url": "https://api.github.com/repos/pystardust/ani-cli/tarball/v4.9",
+      "hash": "0ihiiwxgimf9q6hd4g9xxmxps8ngrwl4vwvd8mymmb7dcjjrwfzg"
     },
     "cloneit": {
       "type": "GitRelease",
@@ -51,9 +51,9 @@
         "url": "https://codeberg.org/dnkl/fuzzel.git"
       },
       "branch": "master",
-      "revision": "0a68a8cd7fc24b35f2abe4bfbe37ff67f5a6a044",
+      "revision": "a4659d7334f277649054fb867299f8e08207db03",
       "url": null,
-      "hash": "07wlr2gd2jgzpmgvldy76afiaf9kmg2lrb8yi4pims9rjf0jdqgk"
+      "hash": "1lqh96v87l0p7jql9s024qf2f5xwh7ywawljvwq57kzshp8middp"
     },
     "mov-cli": {
       "type": "GitRelease",
