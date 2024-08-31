@@ -51,9 +51,9 @@
         "url": "https://codeberg.org/dnkl/fuzzel.git"
       },
       "branch": "master",
-      "revision": "a4659d7334f277649054fb867299f8e08207db03",
+      "revision": "2a81010cd5ebcca755e9d288d5ac7763020077c9",
       "url": null,
-      "hash": "1lqh96v87l0p7jql9s024qf2f5xwh7ywawljvwq57kzshp8middp"
+      "hash": "0ch8f7hscm3ryxw9bpsvbvz6l8plwp9rrh6dj2am8i8zziacz178"
     },
     "mov-cli": {
       "type": "GitRelease",
@@ -65,16 +65,16 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "4.4.8",
-      "revision": "7d30030a657e755902e7ba76308b8b2422745c55",
-      "url": "https://api.github.com/repos/mov-cli/mov-cli/tarball/4.4.8",
-      "hash": "156jb0ck73ah6pg6syx1sdly0ml39iqjdmz5f6xv3ch7id4v151j"
+      "version": "4.4.11",
+      "revision": "fd45d66f728772f40fa0b8e437c3de2347e0e298",
+      "url": "https://api.github.com/repos/mov-cli/mov-cli/tarball/4.4.11",
+      "hash": "1np5zhisfaamx64m4283sjbxcz720r4kvyr3nlhxiyfjhk4rqlwp"
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-24.11pre672536.4f9cb71da3ec/nixexprs.tar.xz",
-      "hash": "0h0v2km5k8g1rm2fmjr3y17s0b3nwncdw1yy2fgmqpk3qra77jmv"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-24.11pre673449.dac9db29e0e7/nixexprs.tar.xz",
+      "hash": "0bjpzwm0bkcpmjdjw22c6c1nvxr38591y4dhvrw8zrxfafawhc0d"
     },
     "rat": {
       "type": "GitRelease",
