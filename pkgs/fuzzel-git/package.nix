@@ -10,7 +10,7 @@ fuzzel.overrideAttrs (let
   pin = pins.fuzzel;
 in {
   pname = "foot-transparent";
-  version = "0-${date}-unstable";
+  version = "0-unstable-${date}";
   src = fetchFromGitea {
     domain = "codeberg.org";
     owner = "dnkl";
