@@ -73,8 +73,8 @@
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-24.11pre687416.b5b22b42c0d1/nixexprs.tar.xz",
-      "hash": "14y17l8gg0nz6iw16djnzc0pdh0hni3kldkv0wgmlkilyvfh4knn"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-24.11pre687680.d78d09350ac7/nixexprs.tar.xz",
+      "hash": "0pghdg20y1p73qlnm0bm0c9jdg4v5wag2407zjvbvjwnfyhm8v1d"
     },
     "rat": {
       "type": "GitRelease",
