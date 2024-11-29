@@ -25,10 +25,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "0.1.0",
-      "revision": "44402e101b18be0764ddb0b49bf0393e2e83c9c3",
-      "url": "https://api.github.com/repos/alok8bb/cloneit/tarball/0.1.0",
-      "hash": "18z4vxrfvyp20kig2s9k5y3034nw39wkj8zzk9qskiisv2ypy90b"
+      "version": "1.0.0",
+      "revision": "6198556e810d964cc5938c446ef42fc21b55fe0b",
+      "url": "https://api.github.com/repos/alok8bb/cloneit/tarball/1.0.0",
+      "hash": "1v97nfwwcnjw5l5c4kv4yylpv474s8xp4yp0648jr5c0mf93zza4"
     },
     "foot": {
       "type": "GitRelease",
