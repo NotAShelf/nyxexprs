@@ -51,9 +51,9 @@
         "url": "https://codeberg.org/dnkl/fuzzel.git"
       },
       "branch": "master",
-      "revision": "65a037a5078db8f06bdd79f72c74b843e742d3eb",
+      "revision": "fe2a08d03d2d0fb102b0baa3570e57e7af8592a0",
       "url": null,
-      "hash": "0bizrv4y6dm55bp4d7vgcfpkxzhb1yf8srbvyq6jiq545h6hxi6q"
+      "hash": "03zs7mj92mf206m5m84p9p8n63xm7g8m36ckkianycmj6glas0sl"
     },
     "mov-cli": {
       "type": "GitRelease",
