@@ -39,10 +39,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "1.20.0",
-      "revision": "47d13931d84e058e7d5dae10ce6a86b631c663f6",
+      "version": "1.20.1",
+      "revision": "334b0bca09e2f7338ba4caa8b8c0fd84aeea00d0",
       "url": null,
-      "hash": "1px5zym0ghcgr7v5sbn2nk4mfix7f2g52havh3m49x5zdh1krxbf"
+      "hash": "18xqvkfy35c5n03x4j4nqwy1g497wmswb3vq8cjl04cry3lw3nfj"
     },
     "fuzzel": {
       "type": "Git",
@@ -73,8 +73,8 @@
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.05pre731244.81934660d6e9/nixexprs.tar.xz",
-      "hash": "1a83rvx08ip3z1xdsimqs97j5x1zf0v590lz1llcksa2m6hfj0im"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.05pre732187.d6973081434f/nixexprs.tar.xz",
+      "hash": "168bv1x4dvk52g9kc577wjym2inny7glp8vm5m99f77xa7x9gdsz"
     },
     "rat": {
       "type": "GitRelease",
