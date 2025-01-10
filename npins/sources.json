@@ -101,10 +101,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "v2.2.1",
-      "revision": "b01d5457833c11791a759a3198402985fc2779d1",
-      "url": "https://api.github.com/repos/svenstaro/rofi-calc/tarball/v2.2.1",
-      "hash": "114j004l24pb3341r2vw96y7zp5g2yca4wbi5qydhihkvkqqhxmr"
+      "version": "v2.3.0",
+      "revision": "68d79346e60d264c298201e219867593e8e2f90a",
+      "url": "https://api.github.com/repos/svenstaro/rofi-calc/tarball/v2.3.0",
+      "hash": "041i50rbk7cdbrmn43hz4kx4ijdzff4pw1jv2symwfn07z9a6f30"
     },
     "rofi-emoji": {
       "type": "GitRelease",
