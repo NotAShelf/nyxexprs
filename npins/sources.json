@@ -39,10 +39,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "1.20.1",
-      "revision": "334b0bca09e2f7338ba4caa8b8c0fd84aeea00d0",
+      "version": "1.20.2",
+      "revision": "f1f5fe9057b6118ad2f8d299ce9e01c415f4918e",
       "url": null,
-      "hash": "18xqvkfy35c5n03x4j4nqwy1g497wmswb3vq8cjl04cry3lw3nfj"
+      "hash": "0m6i361wg86zxah28lp9kdxawifrzgz2gbvs9b0ynwl7292nhw5n"
     },
     "fuzzel": {
       "type": "Git",
@@ -65,10 +65,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "4.4.15",
-      "revision": "1750d54b905730ca3caf5fefa36be4d08aa0b327",
-      "url": "https://api.github.com/repos/mov-cli/mov-cli/tarball/4.4.15",
-      "hash": "1pz5jrf5rscjxmja8wrc906bz023k6qd4031v0fqq7g1s914lywq"
+      "version": "4.4.16",
+      "revision": "be2838788774752dabafbfbc8675a11e680e0e63",
+      "url": "https://api.github.com/repos/mov-cli/mov-cli/tarball/4.4.16",
+      "hash": "1qybgskw4klszazd1w44pasgvqqvvmd5s7a7m0ljvxg0gh2xpsc4"
     },
     "nixpkgs": {
       "type": "Channel",
