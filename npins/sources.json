@@ -51,9 +51,9 @@
         "url": "https://codeberg.org/dnkl/fuzzel.git"
       },
       "branch": "master",
-      "revision": "289c1ffc9692cc184a8ca2701fd8969f61790081",
+      "revision": "225cdf2f1f93ec0a4379c532713dc3813f25a3cd",
       "url": null,
-      "hash": "0565mf5klym35cirxb05gf3nmjcpggwr8lmy0xjwxjvlfkh16pxf"
+      "hash": "0kbinl42d0sf29p7s8rxkrmhigishxwavkv59zxizbkshldpn1f0"
     },
     "mov-cli": {
       "type": "GitRelease",
@@ -65,10 +65,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "4.4.16",
-      "revision": "be2838788774752dabafbfbc8675a11e680e0e63",
-      "url": "https://api.github.com/repos/mov-cli/mov-cli/tarball/4.4.16",
-      "hash": "1qybgskw4klszazd1w44pasgvqqvvmd5s7a7m0ljvxg0gh2xpsc4"
+      "version": "4.4.18",
+      "revision": "5371cd86a79a246817ea977b1b59de3e12c4b4c8",
+      "url": "https://api.github.com/repos/mov-cli/mov-cli/tarball/4.4.18",
+      "hash": "1qrcl1k43izjd718962llhaylmlm3w8g5f2dddjmknjb223h7n70"
     },
     "nixpkgs": {
       "type": "Channel",
