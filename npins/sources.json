@@ -51,9 +51,9 @@
         "url": "https://codeberg.org/dnkl/fuzzel.git"
       },
       "branch": "master",
-      "revision": "71cbf9747a825966d01a463238f649df04f65d64",
+      "revision": "36471ffa94114f17496af668fb062b385b3dffe9",
       "url": null,
-      "hash": "13xgl5k0gdgha7acdq641phl6lccr010da69ddnz53nn30vlrfh3"
+      "hash": "0lskx6rfq76idgmdbgqdby0z59dylm3j44v8pb59nnjb8wr9wpcn"
     },
     "mov-cli": {
       "type": "GitRelease",
@@ -73,8 +73,8 @@
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.05pre754113.1dcdd535fef8/nixexprs.tar.xz",
-      "hash": "0nmkc8i0rg1mcc285lkbbnc8javn1av6ycs4cl1ksy04rmwirgv7"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.05pre754508.f0204ef4baa3/nixexprs.tar.xz",
+      "hash": "1mjx5xiim16mg7xlnp749f24j6zw42rx11xqysl622ssnb6zs9ss"
     },
     "rat": {
       "type": "GitRelease",
