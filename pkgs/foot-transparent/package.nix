@@ -1,6 +1,7 @@
 {
   lib,
   fetchFromGitea,
+  fcft,
   foot,
   pins,
   date,
@@ -21,7 +22,20 @@ in {
   };
 
   patches = (prev.patches or []) ++ [./0001-fullscreen-transparency.patch];
-  mesonFlags = (prev.mesonFlags or []) ++ ["-Dfullscreen_alpha=true"];
+  mesonFlags = (prev.mesonFlags or []) ++ ["-Dfullscreen-alpha=true"];
+  nativeBuildInputs =
+    (prev.nativeBuildInputs or [])
+    ++ [
+      (fcft.overrideAttrs {
+        src = fetchFromGitea {
+          domain = "codeberg.org";
+          owner = "dnkl";
+          repo = "fcft";
+          tag = "3.3.1";
+          hash = "sha256-qgNNowWQhiu6pr9bmWbBo3mHgdkmNpDHDBeTidk32SE=";
+        };
+      })
+    ];
 
   meta = {
     description = "Patched version of Foor terminal emulator that brings back fullscreen transparency";
