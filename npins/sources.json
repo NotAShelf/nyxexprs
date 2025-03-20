@@ -39,10 +39,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "1.20.2",
-      "revision": "f1f5fe9057b6118ad2f8d299ce9e01c415f4918e",
+      "version": "1.21.0",
+      "revision": "a87c45b101f16c1bd27b01aff86710a4873385ab",
       "url": null,
-      "hash": "0m6i361wg86zxah28lp9kdxawifrzgz2gbvs9b0ynwl7292nhw5n"
+      "hash": "19hkw4g2l00wasmk5dn34rf3bhqh6zbwwhvz98bdcv90p761jws4"
     },
     "fuzzel": {
       "type": "Git",
@@ -51,9 +51,9 @@
         "url": "https://codeberg.org/dnkl/fuzzel.git"
       },
       "branch": "master",
-      "revision": "5396fa1dc8bfe218041c53cb5c76d7658d136a9f",
+      "revision": "9a0a38de3703747c183bdd441e5d694c3ef895aa",
       "url": null,
-      "hash": "1n1pc0l8vf2ld2f58h1lbscpas5iyqrwpj3bpimkicrnw2rs0qfj"
+      "hash": "01dgzzxm88j62mvjyjlnpp3jqcylihwifrgi7s6dxf69akr5c0p0"
     },
     "mov-cli": {
       "type": "GitRelease",
@@ -65,16 +65,16 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "4.4.18",
-      "revision": "5371cd86a79a246817ea977b1b59de3e12c4b4c8",
-      "url": "https://api.github.com/repos/mov-cli/mov-cli/tarball/4.4.18",
-      "hash": "1qrcl1k43izjd718962llhaylmlm3w8g5f2dddjmknjb223h7n70"
+      "version": "4.4.19",
+      "revision": "19943349e68b3a8d2f927d4f215dbd90b2dcbd18",
+      "url": "https://api.github.com/repos/mov-cli/mov-cli/tarball/4.4.19",
+      "hash": "1djyi8n1b9cpqx72v0j1wzp2fi7p8id10kmypq01wqchg5q95mxh"
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.05pre751383.b2243f41e860/nixexprs.tar.xz",
-      "hash": "1j7j5dg1hwy7r8c61ghxshiq0k5cq0852b5730h0w5knmhlfj2a4"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.05pre769919.354953266373/nixexprs.tar.xz",
+      "hash": "1bms3m4awb09ziis0mhhmrn7kyd66hbiyxndlh9bkgaycmswy77q"
     },
     "rat": {
       "type": "GitRelease",
