@@ -21,7 +21,7 @@ jobs:
 
       - uses: DeterminateSystems/nix-installer-action@main
 
-      - uses: cachix/cachix-action@v15
+      - uses: cachix/cachix-action@v16
         with:
           name: nyx
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
