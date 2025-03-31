@@ -10,6 +10,7 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
+      "submodules": false,
       "version": "v4.9",
       "revision": "2f40d6aec815de1a6b985705dbee37c729b8e6a8",
       "url": "https://api.github.com/repos/pystardust/ani-cli/tarball/v4.9",
@@ -25,6 +26,7 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
+      "submodules": false,
       "version": "1.0.0",
       "revision": "6198556e810d964cc5938c446ef42fc21b55fe0b",
       "url": "https://api.github.com/repos/alok8bb/cloneit/tarball/1.0.0",
@@ -39,6 +41,7 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
+      "submodules": false,
       "version": "1.21.0",
       "revision": "a87c45b101f16c1bd27b01aff86710a4873385ab",
       "url": null,
@@ -51,6 +54,7 @@
         "url": "https://codeberg.org/dnkl/fuzzel.git"
       },
       "branch": "master",
+      "submodules": false,
       "revision": "9a0a38de3703747c183bdd441e5d694c3ef895aa",
       "url": null,
       "hash": "01dgzzxm88j62mvjyjlnpp3jqcylihwifrgi7s6dxf69akr5c0p0"
@@ -65,6 +69,7 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
+      "submodules": false,
       "version": "4.4.19",
       "revision": "19943349e68b3a8d2f927d4f215dbd90b2dcbd18",
       "url": "https://api.github.com/repos/mov-cli/mov-cli/tarball/4.4.19",
@@ -86,6 +91,7 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
+      "submodules": false,
       "version": "2.0.1",
       "revision": "03d2e16ea0ebe280d7dd472612ced8b4ee71960f",
       "url": "https://api.github.com/repos/thinkingsand/rat/tarball/2.0.1",
@@ -101,6 +107,7 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
+      "submodules": false,
       "version": "v2.3.0",
       "revision": "68d79346e60d264c298201e219867593e8e2f90a",
       "url": "https://api.github.com/repos/svenstaro/rofi-calc/tarball/v2.3.0",
@@ -116,11 +123,12 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
+      "submodules": false,
       "version": "v4.0.0",
       "revision": "bd5a04fdccf1727f81d184783e17d605d79a15c5",
       "url": "https://api.github.com/repos/Mange/rofi-emoji/tarball/v4.0.0",
       "hash": "0nl8jcp4xg5z3wzl818q7zqj0by7kzc4ib8jhhf72wsz3ji0rbpk"
     }
   },
-  "version": 3
+  "version": 5
 }
