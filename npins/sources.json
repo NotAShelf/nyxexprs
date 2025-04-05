@@ -124,10 +124,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v4.0.0",
-      "revision": "bd5a04fdccf1727f81d184783e17d605d79a15c5",
-      "url": "https://api.github.com/repos/Mange/rofi-emoji/tarball/v4.0.0",
-      "hash": "0nl8jcp4xg5z3wzl818q7zqj0by7kzc4ib8jhhf72wsz3ji0rbpk"
+      "version": "v4.1.0",
+      "revision": "685ff771805f7d80e4f9b79bdddfb73ec3aaf4f6",
+      "url": "https://api.github.com/repos/Mange/rofi-emoji/tarball/v4.1.0",
+      "hash": "1bv8vbmfkzd7jf4zjqik0zjnwb4897xapncqzaggnj76rpxv6rh2"
     }
   },
   "version": 5
