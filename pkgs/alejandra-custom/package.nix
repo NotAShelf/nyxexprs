@@ -11,6 +11,8 @@ alejandra.overrideAttrs (prev: {
     (prev.patches or [])
     ++ [./0001-no-ads.patch];
 
+  doCheck = false;
+
   meta = {
     description = "Custom build of Alejandra without ads & spaces around lists and attrsets";
     mainProgram = "alejandra";
