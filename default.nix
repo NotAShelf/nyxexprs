@@ -7,7 +7,9 @@
     in
       fetchTarball {
         url =
-          lock.nodes.${nodeName}.locked.url
+          lock.nodes.${
+            nodeName
+          }.locked.url
           or "https://github.com/edolstra/flake-compat/archive/${
             lock.nodes.${nodeName}.locked.rev
           }.tar.gz";
