@@ -1,5 +1,21 @@
 {
   "pins": {
+    "ai-robots-txt": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "ai-robots-txt",
+        "repo": "ai.robots.txt"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v1.28",
+      "revision": "e0cdb278fbd243f554579fe5050850f124b286a8",
+      "url": "https://api.github.com/repos/ai-robots-txt/ai.robots.txt/tarball/v1.28",
+      "hash": "1lv5alddyk2wcqnsnb2x7i0n9m127mjmaa083im14a4hygw7d7r7"
+    },
     "ani-cli": {
       "type": "GitRelease",
       "repository": {
@@ -58,6 +74,22 @@
       "revision": "b78999869367fe72970cd563d84841d0ff2b23ff",
       "url": null,
       "hash": "037psx1j608hkl8d3d84ybyvh8fky82i1ihkpa0xnavqagnjc0fr"
+    },
+    "headscale-ui": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "gurucomputing",
+        "repo": "headscale-ui"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "2025.03.21",
+      "revision": "84aec5f45a64d5537237f2fccdf86581df42726b",
+      "url": "https://api.github.com/repos/gurucomputing/headscale-ui/tarball/2025.03.21",
+      "hash": "1zs6f5da9d0a8vin98alfsdyip1av624yyl43kjyw88dicw78y3n"
     },
     "mov-cli": {
       "type": "GitRelease",

@@ -2,36 +2,37 @@
   lib,
   stdenvNoCC,
   fetchurl,
-}:
-stdenvNoCC.mkDerivation (finalAttrs: {
-  pname = "ai-robots-txt";
-  version = "1.28";
+  pins,
+}: let
+  pin = pins.ai-robots-txt;
+in
+  stdenvNoCC.mkDerivation (finalAttrs: {
+    pname = "ai-robots-txt";
+    inherit (pin) version;
 
-  src = fetchurl {
-    url = "https://github.com/ai-robots-txt/ai.robots.txt/releases/download/v${finalAttrs.version}/robots.txt";
-    hash = "sha256-Cx01MI5Rss08lLgzwoppou0nqD0HxvfUbsa1NRVp8eQ=";
-  };
+    src = fetchurl {
+      url = "https://github.com/ai-robots-txt/ai.robots.txt/releases/download/${finalAttrs.version}/robots.txt";
+      hash = "sha256-Cx01MI5Rss08lLgzwoppou0nqD0HxvfUbsa1NRVp8eQ=";
+    };
 
-  dontUnpack = true;
-  dontConfigure = true;
-  dontBuild = true;
+    dontUnpack = true;
+    dontConfigure = true;
+    dontBuild = true;
 
-  installPhase = ''
-    runHook preInstall
+    installPhase = ''
+      runHook preInstall
 
-    mkdir -p $out/share
+      mkdir -p $out/share
+      cp $src $out/share/robots.txt
 
-    # Only copy relevant files
-    cp .htaccess nginx-block-ai-bots.conf nginx-block-ai-bots.conf able-of-bot-metrics.md $out/share
+      runHook postInstall
+    '';
 
-    runHook postInstall
-  '';
-
-  meta = {
-    description = "List of AI agents and robots to block";
-    homepage = "https://github.com/ai-robots-txt/ai.robots.txt";
-    license = lib.licenses.mit;
-    maintainers = with lib.maintainers; [NotAShelf];
-    platforms = lib.platforms.all;
-  };
-})
+    meta = {
+      description = "List of AI agents and robots to block";
+      homepage = "https://github.com/ai-robots-txt/ai.robots.txt";
+      license = lib.licenses.mit;
+      maintainers = with lib.maintainers; [NotAShelf];
+      platforms = lib.platforms.all;
+    };
+  })

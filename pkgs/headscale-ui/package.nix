@@ -1,15 +1,17 @@
 {
+  lib,
   stdenvNoCC,
   fetchzip,
-  lib,
+  pins,
 }: let
-  pname = "headscale-ui";
-  version = "2025.03.21";
+  pin = pins.headscale-ui;
 in
-  stdenvNoCC.mkDerivation {
-    inherit pname version;
+  stdenvNoCC.mkDerivation (finalAttrs: {
+    pname = "headscale-ui";
+    inherit (pin) version;
+
     src = fetchzip {
-      url = "https://github.com/gurucomputing/headscale-ui/releases/download/${version}/headscale-ui.zip";
+      url = "https://github.com/gurucomputing/headscale-ui/releases/download/${finalAttrs.version}/headscale-ui.zip";
       sha256 = "sha256-Autk8D9G1Ott2ahbgJ7mGZKDChsSDgfrOhnurNiIdsQ=";
     };
 
@@ -29,4 +31,4 @@ in
       license = [lib.licenses.bsd3];
       maintainers = with lib.maintainers; [NotAShelf];
     };
-  }
+  })
