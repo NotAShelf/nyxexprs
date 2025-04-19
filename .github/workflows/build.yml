@@ -12,10 +12,10 @@ jobs:
     strategy:
       matrix:
         package:
+          - ai-robots-txt
           - alejandra-custom
-          - ani-cli
-          - cloneit
-          - foot-transparent
+          - ani-cli-git
+          - foot-git
           - fuzzel-git
           - headscale-ui
           - mastodon-bird-ui
