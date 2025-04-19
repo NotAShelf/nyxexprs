@@ -5,11 +5,11 @@
 }:
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "ai-robots-txt";
-  version = "1.25";
+  version = "1.28";
 
   src = fetchurl {
     url = "https://github.com/ai-robots-txt/ai.robots.txt/releases/download/v${finalAttrs.version}/robots.txt";
-    hash = "sha256-r4C+RDNpzfokBkvTG1v1D9gbu5zpC91+onQFYw05lZE=";
+    hash = "sha256-Cx01MI5Rss08lLgzwoppou0nqD0HxvfUbsa1NRVp8eQ=";
   };
 
   dontUnpack = true;
@@ -18,7 +18,11 @@ stdenvNoCC.mkDerivation (finalAttrs: {
 
   installPhase = ''
     runHook preInstall
-    cp $src $out
+
+    mkdir -p $out/share
+
+    # Only copy relevant files
+    cp .htaccess nginx-block-ai-bots.conf nginx-block-ai-bots.conf able-of-bot-metrics.md $out/share
 
     runHook postInstall
   '';
@@ -26,7 +30,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   meta = {
     description = "List of AI agents and robots to block";
     homepage = "https://github.com/ai-robots-txt/ai.robots.txt";
-    license = lib.licenses.bsd3;
+    license = lib.licenses.mit;
     maintainers = with lib.maintainers; [NotAShelf];
     platforms = lib.platforms.all;
   };
