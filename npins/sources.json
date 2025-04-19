@@ -55,9 +55,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "a843274206e63e882601f4160c3bf2444a7e648f",
+      "revision": "b78999869367fe72970cd563d84841d0ff2b23ff",
       "url": null,
-      "hash": "14fr5vnk6sfn4vx9qp45va6n37kbpk98s3fcpl7672p30ynq48n9"
+      "hash": "037psx1j608hkl8d3d84ybyvh8fky82i1ihkpa0xnavqagnjc0fr"
     },
     "mov-cli": {
       "type": "GitRelease",
