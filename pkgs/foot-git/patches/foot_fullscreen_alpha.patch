@@ -1,0 +1,80 @@
+From bebc6f0ffd0d767f560ee50825a0b0fba197c90f Mon Sep 17 00:00:00 2001
+From: Fazzi <faaris.ansari@proton.me>
+Date: Fri, 18 Apr 2025 21:15:19 +0100
+Subject: [PATCH] config: add transparent_fullscreen option
+
+---
+ config.c | 5 +++++
+ config.h | 2 ++
+ render.c | 8 +++++---
+ 3 files changed, 12 insertions(+), 3 deletions(-)
+
+diff --git a/config.c b/config.c
+index 347cc1ec..fa081ce7 100644
+--- a/config.c
++++ b/config.c
+@@ -1095,6 +1095,10 @@ parse_section_main(struct context *ctx)
+         return true;
+     }
+ 
++    else if (streq(key, "transparent-fullscreen")) {
++        return value_to_bool(ctx, &conf->transparent_fullscreen);
++    }
++
+     else {
+         LOG_CONTEXTUAL_ERR("not a valid option: %s", key);
+         return false;
+@@ -3347,6 +3351,7 @@ config_load(struct config *conf, const char *conf_path,
+             },
+             .multiplier = 3.,
+         },
++        .transparent_fullscreen = false,
+         .colors = {
+             .fg = default_foreground,
+             .bg = default_background,
+diff --git a/config.h b/config.h
+index 2dec82c1..542e22e6 100644
+--- a/config.h
++++ b/config.h
+@@ -167,6 +167,8 @@ struct config {
+ 
+     enum { STARTUP_WINDOWED, STARTUP_MAXIMIZED, STARTUP_FULLSCREEN } startup_mode;
+ 
++    bool transparent_fullscreen;
++
+     bool dpi_aware;
+     enum {GAMMA_CORRECT_DISABLED,
+           GAMMA_CORRECT_ENABLED,
+diff --git a/render.c b/render.c
+index 0e403949..2040d5be 100644
+--- a/render.c
++++ b/render.c
+@@ -744,7 +744,8 @@ render_cell(struct terminal *term, pixman_image_t *pix,
+             _bg = swap;
+         }
+ 
+-        if (!term->window->is_fullscreen && term->colors.alpha != 0xffff) {
++        if ((!term->window->is_fullscreen || term->conf->transparent_fullscreen)
++            && term->colors.alpha != 0xffff) {
+             switch (term->conf->colors.alpha_mode) {
+             case ALPHA_MODE_DEFAULT: {
+                 if (cell->attrs.bg_src == COLOR_DEFAULT) {
+@@ -1215,7 +1216,7 @@ render_margin(struct terminal *term, struct buffer *buf,
+     const uint32_t _bg = !term->reverse ? term->colors.bg : term->colors.fg;
+     uint16_t alpha = term->colors.alpha;
+ 
+-    if (term->window->is_fullscreen) {
++    if (term->window->is_fullscreen && !term->conf->transparent_fullscreen) {
+         /* Disable alpha in fullscreen - see render_cell() for details */
+         alpha = 0xffff;
+     }
+@@ -3244,7 +3245,8 @@ grid_render(struct terminal *term)
+     xassert(term->height > 0);
+ 
+     struct buffer_chain *chain = term->render.chains.grid;
+-    bool use_alpha = !term->window->is_fullscreen &&
++    bool use_alpha = (!term->window->is_fullscreen ||
++                     term->conf->transparent_fullscreen) &&
+                      term->colors.alpha != 0xffff;
+     struct buffer *buf = shm_get_buffer(
+         chain, term->width, term->height, use_alpha);
