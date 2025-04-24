@@ -27,10 +27,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v4.9",
-      "revision": "2f40d6aec815de1a6b985705dbee37c729b8e6a8",
-      "url": "https://api.github.com/repos/pystardust/ani-cli/tarball/v4.9",
-      "hash": "0ihiiwxgimf9q6hd4g9xxmxps8ngrwl4vwvd8mymmb7dcjjrwfzg"
+      "version": "v4.10",
+      "revision": "a67e23f82e08e6f17b970dcec92794663211ad4f",
+      "url": "https://api.github.com/repos/pystardust/ani-cli/tarball/v4.10",
+      "hash": "17yjddnky3dkdl0v6gm2rmdmhb8yh9b5lwmmrq2c0k9dcz9i1xj7"
     },
     "cloneit": {
       "type": "GitRelease",
