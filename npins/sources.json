@@ -58,10 +58,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "1.22.0",
-      "revision": "135731bac54653f3e163315bbb8f331867283d91",
+      "version": "1.22.1",
+      "revision": "c97ce5aa0e87a264190e33c81d981c9c0d9fc714",
       "url": null,
-      "hash": "1s9hyjryylbgnrrjvm4chqv6nzawrwkw2b1bhamw04rjw5yca81q"
+      "hash": "0d51idak0gxbzbc84cjp8igjg52m23pffc9xqni02llcn6z8h8y9"
     },
     "fuzzel": {
       "type": "Git",
