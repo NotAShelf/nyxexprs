@@ -1,10 +1,11 @@
 {
-  withAlphaPatch ? true,
   lib,
   fetchFromGitea,
   foot,
   pins,
   date,
+  # Settings
+  withAlphaPatch ? true,
   ...
 }:
 foot.overrideAttrs (oldAttrs: let
@@ -23,14 +24,15 @@ in {
 
   patches =
     (oldAttrs.patches or [])
+    # Bring back fullscreen transparency (i.e., fullscreen alpha)
     ++ (lib.optionals withAlphaPatch [
-      # Thank you fazzi :)
-      # <https://codeberg.org/fazzi/foot/commit/bebc6f0ffd0d767f560ee50825a0b0fba197c90f.patch>
+      # Taken with the explicit permission of Fazzi, thank you :)
+      # <https://codeberg.org/fazzi/foot>
       ./patches/foot_fullscreen_alpha.patch
     ]);
 
   meta = {
-    description = "An auto-upgrading version of FOot to ensure we are always up to dates";
+    description = "An auto-upgrading version of Foot to ensure we are always up to dates";
     mainProgram = "foot";
     maintainers = with lib.maintainers; [NotAShelf];
   };

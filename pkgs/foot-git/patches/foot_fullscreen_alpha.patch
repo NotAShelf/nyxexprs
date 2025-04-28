@@ -1,4 +1,4 @@
-From bebc6f0ffd0d767f560ee50825a0b0fba197c90f Mon Sep 17 00:00:00 2001
+From 977ea280367b796961676aa5f1387ab3afd77536 Mon Sep 17 00:00:00 2001
 From: Fazzi <faaris.ansari@proton.me>
 Date: Fri, 18 Apr 2025 21:15:19 +0100
 Subject: [PATCH] config: add transparent_fullscreen option
@@ -10,11 +10,11 @@ Subject: [PATCH] config: add transparent_fullscreen option
  3 files changed, 12 insertions(+), 3 deletions(-)
 
 diff --git a/config.c b/config.c
-index 347cc1ec..fa081ce7 100644
+index 04a9c9d4..d5dca25d 100644
 --- a/config.c
 +++ b/config.c
-@@ -1095,6 +1095,10 @@ parse_section_main(struct context *ctx)
-         return true;
+@@ -1107,6 +1107,10 @@ parse_section_main(struct context *ctx)
+                              (int *)&conf->initial_color_theme);
      }
  
 +    else if (streq(key, "transparent-fullscreen")) {
@@ -24,7 +24,7 @@ index 347cc1ec..fa081ce7 100644
      else {
          LOG_CONTEXTUAL_ERR("not a valid option: %s", key);
          return false;
-@@ -3347,6 +3351,7 @@ config_load(struct config *conf, const char *conf_path,
+@@ -3391,6 +3395,7 @@ config_load(struct config *conf, const char *conf_path,
              },
              .multiplier = 3.,
          },
@@ -33,10 +33,10 @@ index 347cc1ec..fa081ce7 100644
              .fg = default_foreground,
              .bg = default_background,
 diff --git a/config.h b/config.h
-index 2dec82c1..542e22e6 100644
+index cbdf11b1..e92545e2 100644
 --- a/config.h
 +++ b/config.h
-@@ -167,6 +167,8 @@ struct config {
+@@ -231,6 +231,8 @@ struct config {
  
      enum { STARTUP_WINDOWED, STARTUP_MAXIMIZED, STARTUP_FULLSCREEN } startup_mode;
  
@@ -46,15 +46,15 @@ index 2dec82c1..542e22e6 100644
      enum {GAMMA_CORRECT_DISABLED,
            GAMMA_CORRECT_ENABLED,
 diff --git a/render.c b/render.c
-index 0e403949..2040d5be 100644
+index b0d21d18..709b5e4b 100644
 --- a/render.c
 +++ b/render.c
 @@ -744,7 +744,8 @@ render_cell(struct terminal *term, pixman_image_t *pix,
              _bg = swap;
          }
  
--        if (!term->window->is_fullscreen && term->colors.alpha != 0xffff) {
-+        if ((!term->window->is_fullscreen || term->conf->transparent_fullscreen)
+-        else if (!term->window->is_fullscreen && term->colors.alpha != 0xffff) {
++        else if ((!term->window->is_fullscreen || term->conf->transparent_fullscreen)
 +            && term->colors.alpha != 0xffff) {
              switch (term->conf->colors.alpha_mode) {
              case ALPHA_MODE_DEFAULT: {
