@@ -12,7 +12,7 @@ in
 
     src = fetchurl {
       url = "https://github.com/ai-robots-txt/ai.robots.txt/releases/download/${finalAttrs.version}/robots.txt";
-      hash = "sha256-Cx01MI5Rss08lLgzwoppou0nqD0HxvfUbsa1NRVp8eQ=";
+      hash = "sha256-i1ZD9aN7qzwUDMx9qhMxxi/HFwGsSONjpYe4twy1r5s=";
     };
 
     dontUnpack = true;
