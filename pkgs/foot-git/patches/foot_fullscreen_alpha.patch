@@ -1,4 +1,4 @@
-From 977ea280367b796961676aa5f1387ab3afd77536 Mon Sep 17 00:00:00 2001
+From 3b71f546c7a33207382d31db12c61750ce0431c4 Mon Sep 17 00:00:00 2001
 From: Fazzi <faaris.ansari@proton.me>
 Date: Fri, 18 Apr 2025 21:15:19 +0100
 Subject: [PATCH] config: add transparent_fullscreen option
@@ -10,10 +10,10 @@ Subject: [PATCH] config: add transparent_fullscreen option
  3 files changed, 12 insertions(+), 3 deletions(-)
 
 diff --git a/config.c b/config.c
-index 04a9c9d4..d5dca25d 100644
+index 64e45135..2b645ca5 100644
 --- a/config.c
 +++ b/config.c
-@@ -1107,6 +1107,10 @@ parse_section_main(struct context *ctx)
+@@ -1098,6 +1098,10 @@ parse_section_main(struct context *ctx)
                               (int *)&conf->initial_color_theme);
      }
  
@@ -24,7 +24,7 @@ index 04a9c9d4..d5dca25d 100644
      else {
          LOG_CONTEXTUAL_ERR("not a valid option: %s", key);
          return false;
-@@ -3391,6 +3395,7 @@ config_load(struct config *conf, const char *conf_path,
+@@ -3382,6 +3386,7 @@ config_load(struct config *conf, const char *conf_path,
              },
              .multiplier = 3.,
          },
@@ -33,20 +33,20 @@ index 04a9c9d4..d5dca25d 100644
              .fg = default_foreground,
              .bg = default_background,
 diff --git a/config.h b/config.h
-index cbdf11b1..e92545e2 100644
+index 80081906..0e90eda0 100644
 --- a/config.h
 +++ b/config.h
-@@ -231,6 +231,8 @@ struct config {
+@@ -237,6 +237,8 @@ struct config {
  
      enum { STARTUP_WINDOWED, STARTUP_MAXIMIZED, STARTUP_FULLSCREEN } startup_mode;
  
 +    bool transparent_fullscreen;
 +
      bool dpi_aware;
-     enum {GAMMA_CORRECT_DISABLED,
-           GAMMA_CORRECT_ENABLED,
+     bool gamma_correct;
+     struct config_font_list fonts[4];
 diff --git a/render.c b/render.c
-index b0d21d18..709b5e4b 100644
+index 55c2ec4d..d4e2daff 100644
 --- a/render.c
 +++ b/render.c
 @@ -744,7 +744,8 @@ render_cell(struct terminal *term, pixman_image_t *pix,
@@ -59,7 +59,7 @@ index b0d21d18..709b5e4b 100644
              switch (term->conf->colors.alpha_mode) {
              case ALPHA_MODE_DEFAULT: {
                  if (cell->attrs.bg_src == COLOR_DEFAULT) {
-@@ -1215,7 +1216,7 @@ render_margin(struct terminal *term, struct buffer *buf,
+@@ -1216,7 +1217,7 @@ render_margin(struct terminal *term, struct buffer *buf,
      const uint32_t _bg = !term->reverse ? term->colors.bg : term->colors.fg;
      uint16_t alpha = term->colors.alpha;
  
@@ -68,7 +68,7 @@ index b0d21d18..709b5e4b 100644
          /* Disable alpha in fullscreen - see render_cell() for details */
          alpha = 0xffff;
      }
-@@ -3244,7 +3245,8 @@ grid_render(struct terminal *term)
+@@ -3246,7 +3247,8 @@ grid_render(struct terminal *term)
      xassert(term->height > 0);
  
      struct buffer_chain *chain = term->render.chains.grid;
