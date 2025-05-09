@@ -1,4 +1,4 @@
-From 3b71f546c7a33207382d31db12c61750ce0431c4 Mon Sep 17 00:00:00 2001
+From cd75128c89dc083524667d2fb1d4ca50874ace9b Mon Sep 17 00:00:00 2001
 From: Fazzi <faaris.ansari@proton.me>
 Date: Fri, 18 Apr 2025 21:15:19 +0100
 Subject: [PATCH] config: add transparent_fullscreen option
@@ -10,7 +10,7 @@ Subject: [PATCH] config: add transparent_fullscreen option
  3 files changed, 12 insertions(+), 3 deletions(-)
 
 diff --git a/config.c b/config.c
-index 64e45135..2b645ca5 100644
+index 07f781d6..8304729a 100644
 --- a/config.c
 +++ b/config.c
 @@ -1098,6 +1098,10 @@ parse_section_main(struct context *ctx)
@@ -24,7 +24,7 @@ index 64e45135..2b645ca5 100644
      else {
          LOG_CONTEXTUAL_ERR("not a valid option: %s", key);
          return false;
-@@ -3382,6 +3386,7 @@ config_load(struct config *conf, const char *conf_path,
+@@ -3389,6 +3393,7 @@ config_load(struct config *conf, const char *conf_path,
              },
              .multiplier = 3.,
          },
@@ -33,7 +33,7 @@ index 64e45135..2b645ca5 100644
              .fg = default_foreground,
              .bg = default_background,
 diff --git a/config.h b/config.h
-index 80081906..0e90eda0 100644
+index 7cf6f6f5..2ab21716 100644
 --- a/config.h
 +++ b/config.h
 @@ -237,6 +237,8 @@ struct config {
@@ -46,10 +46,10 @@ index 80081906..0e90eda0 100644
      bool gamma_correct;
      struct config_font_list fonts[4];
 diff --git a/render.c b/render.c
-index 55c2ec4d..d4e2daff 100644
+index 83a160bc..ba0f6097 100644
 --- a/render.c
 +++ b/render.c
-@@ -744,7 +744,8 @@ render_cell(struct terminal *term, pixman_image_t *pix,
+@@ -768,7 +768,8 @@ render_cell(struct terminal *term, pixman_image_t *pix,
              _bg = swap;
          }
  
@@ -59,7 +59,7 @@ index 55c2ec4d..d4e2daff 100644
              switch (term->conf->colors.alpha_mode) {
              case ALPHA_MODE_DEFAULT: {
                  if (cell->attrs.bg_src == COLOR_DEFAULT) {
-@@ -1216,7 +1217,7 @@ render_margin(struct terminal *term, struct buffer *buf,
+@@ -1234,7 +1235,7 @@ render_margin(struct terminal *term, struct buffer *buf,
      const uint32_t _bg = !term->reverse ? term->colors.bg : term->colors.fg;
      uint16_t alpha = term->colors.alpha;
  
@@ -68,7 +68,7 @@ index 55c2ec4d..d4e2daff 100644
          /* Disable alpha in fullscreen - see render_cell() for details */
          alpha = 0xffff;
      }
-@@ -3246,7 +3247,8 @@ grid_render(struct terminal *term)
+@@ -3264,7 +3265,8 @@ grid_render(struct terminal *term)
      xassert(term->height > 0);
  
      struct buffer_chain *chain = term->render.chains.grid;
