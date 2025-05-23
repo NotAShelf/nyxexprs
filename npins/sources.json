@@ -11,10 +11,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v1.30",
-      "revision": "73f6f67adfe592af1fc3dd168f95018db6e98edf",
-      "url": "https://api.github.com/repos/ai-robots-txt/ai.robots.txt/tarball/v1.30",
-      "hash": "1sf6l03imz1qvcyqhgyf7vknl3g0aasbxams501zzx17szbphgwj"
+      "version": "v1.31",
+      "revision": "7bf7f9164d55a58e0d6080dff52eea3ed5d3584e",
+      "url": "https://api.github.com/repos/ai-robots-txt/ai.robots.txt/tarball/v1.31",
+      "hash": "1bvq24w8pq56knhdacjkq93v6l719jcj3jf4fsknlmp9m6izm3zj"
     },
     "ani-cli": {
       "type": "GitRelease",
@@ -56,9 +56,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "d26659988113662d1500f600f5c10899920a5e6b",
+      "revision": "664cdcc65cf42ab269ea4a2c4962c3ee65d7e92f",
       "url": null,
-      "hash": "1klpfry258z31p17drdzrzlycqhaw2x2a4kql8f6raq8zsykhacr"
+      "hash": "1q2ngdlfz7z20knf5iliahphzg0yhm0kb0v4gcxskivc3nw1jyn9"
     },
     "fuzzel": {
       "type": "Git",
@@ -68,9 +68,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "6d36913d17d596a6ddb04e591f12b5154155e2a9",
+      "revision": "aa29ae8977cf14ac03c35ce4965c7cc1bc94d0ad",
       "url": null,
-      "hash": "0vkxmldw741y7m7xm5njvaf3nw8ij0ibij7vbzj6mpj6rgvs1ss3"
+      "hash": "0can78dndjff91119w8n5jc80xxhcd0yrn47s4qzx2xlvrp46njr"
     },
     "headscale-ui": {
       "type": "GitRelease",
@@ -83,10 +83,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "2025.03.21",
-      "revision": "84aec5f45a64d5537237f2fccdf86581df42726b",
-      "url": "https://api.github.com/repos/gurucomputing/headscale-ui/tarball/2025.03.21",
-      "hash": "1zs6f5da9d0a8vin98alfsdyip1av624yyl43kjyw88dicw78y3n"
+      "version": "2025.05.22",
+      "revision": "5e97c523036e07e14a5cf96618c6bf2349c1f9aa",
+      "url": "https://api.github.com/repos/gurucomputing/headscale-ui/tarball/2025.05.22",
+      "hash": "1mhb40f5wd717p78c5w9bfcqvgx1v1fvf6j11kghfjjr8gyf807z"
     },
     "mov-cli": {
       "type": "GitRelease",
@@ -107,8 +107,8 @@
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre804181.8c441601c432/nixexprs.tar.xz",
-      "hash": "1hkrkl4zq3kf8cvzziqhpilhdhzz9p52g4gbl1mbs9qpnq6ayz7k"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre804427.e314d5c6d3b3/nixexprs.tar.xz",
+      "hash": "1iqsppm554zzydqb5adnbv5i38paysvc8q6hyib58cp6z0ighnsi"
     },
     "rat": {
       "type": "GitRelease",
