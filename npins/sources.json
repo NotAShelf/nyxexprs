@@ -11,10 +11,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v1.31",
-      "revision": "7bf7f9164d55a58e0d6080dff52eea3ed5d3584e",
-      "url": "https://api.github.com/repos/ai-robots-txt/ai.robots.txt/tarball/v1.31",
-      "hash": "1bvq24w8pq56knhdacjkq93v6l719jcj3jf4fsknlmp9m6izm3zj"
+      "version": "v1.33",
+      "revision": "3efabc603dcae235cc04d1e2f2e9113c70e6197c",
+      "url": "https://api.github.com/repos/ai-robots-txt/ai.robots.txt/tarball/v1.33",
+      "hash": "1v92qpl25ark7cra1gqa0fcbxagmpbbpw2pl8ln6h1m5ba3xairi"
     },
     "ani-cli": {
       "type": "GitRelease",
@@ -107,8 +107,8 @@
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre809520.5929de975bcf/nixexprs.tar.xz",
-      "hash": "1fg1ab448wdbrs6yjbjc5ijcvqa38xq4wai0i5qp844saflag4fd"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre809757.e4b09e47ace7/nixexprs.tar.xz",
+      "hash": "0y6cwwb65ca1pnqng8fi1d6lr96vmp7gdb7gyxg0vl6qfykc8m41"
     },
     "rat": {
       "type": "GitRelease",
