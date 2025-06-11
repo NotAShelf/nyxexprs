@@ -2,57 +2,11 @@
   # «https://github.com/notashelf/nyxexprs»
   description = "Personal package overlay for commonly used derivations";
 
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    systems.url = "github:nix-systems/default-linux";
-    flake-parts = {
-      url = "github:hercules-ci/flake-parts";
-      inputs.nixpkgs-lib.follows = "nixpkgs";
-    };
-
-    flake-compat = {
-      url = "github:edolstra/flake-compat";
-      flake = false;
-    };
-
-    # Rest of my packages will be constructed from previous flakes
-    watt = {
-      url = "github:NotAShelf/watt";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    flint = {
-      url = "github:NotAShelf/flint";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    inquisitor = {
-      url = "github:NotAShelf/inquisitor";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    ndg = {
-      url = "github:feel-co/ndg";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    licenseit = {
-      url = "github:notashelf/licenseit";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    mrc = {
-      url = "github:notashelf/mrc";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    wiremix = {
-      url = "github:tsowell/wiremix";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        systems.follows = "systems";
-      };
-    };
+  # This is so that you don't have to compile Alejandra unless you already
+  # have it in the Nix store, which is unlikely.
+  nixConfig = {
+    extra-substituters = ["https://nyx.cachix.org"];
+    extra-trusted-public-keys = ["nyx.cachix.org-1:xH6G0MO9PrpeGe7mHBtj1WbNzmnXr7jId2mCiq6hipE"];
   };
 
   outputs = {
@@ -101,6 +55,10 @@
             "flint"
             "inquisitor"
             "ndg"
+            "licenseit"
+            "mrc"
+            "color"
+            "tailray"
 
             # 3rd party packages
             "wiremix"
@@ -108,7 +66,7 @@
 
           mappedPkgs = listToAttrs (map (input: {
               name = input;
-              value = inputs'.${input}.packages.default;
+              value = inputs'.${input}.packages.default or builtins.throw "Input ${input} does not provide a default package";
             })
             fromInputs);
         in
@@ -124,9 +82,67 @@
       };
     };
 
-  # This is so that you don't have to compile Alejandra.
-  nixConfig = {
-    extra-substituters = ["https://nyx.cachix.org"];
-    extra-trusted-public-keys = ["nyx.cachix.org-1:xH6G0MO9PrpeGe7mHBtj1WbNzmnXr7jId2mCiq6hipE"];
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    systems.url = "github:nix-systems/default-linux";
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
+
+    flake-compat = {
+      url = "github:edolstra/flake-compat";
+      flake = false;
+    };
+
+    # Rest of my packages will be constructed from previous flakes
+    watt = {
+      url = "github:NotAShelf/watt";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    flint = {
+      url = "github:NotAShelf/flint";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    inquisitor = {
+      url = "github:NotAShelf/inquisitor";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    ndg = {
+      url = "github:feel-co/ndg";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    licenseit = {
+      url = "github:notashelf/licenseit";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    mrc = {
+      url = "github:notashelf/mrc";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    gcolor = {
+      url = "github:notashelf/gcolor";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    tailray = {
+      url = "github:notashelf/tailray";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # 3rd party flakes that I want to extract packages from
+    wiremix = {
+      url = "github:tsowell/wiremix";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        systems.follows = "systems";
+      };
+    };
   };
 }
