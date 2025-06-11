@@ -9,7 +9,7 @@
 fuzzel.overrideAttrs (let
   pin = pins.fuzzel;
 in {
-  pname = "foot-transparent";
+  pname = "fuzzel-git";
   version = "0-unstable-${date}";
   src = fetchFromGitea {
     domain = "codeberg.org";
@@ -20,7 +20,7 @@ in {
   };
 
   meta = {
-    description = "Patched version of Fuzzel app launcher that tracks latest git revision";
+    description = "Fuzzel app launcher, tracks latest git revision";
     mainProgram = "fuzzel";
     maintainers = with lib.maintainers; [NotAShelf];
   };
