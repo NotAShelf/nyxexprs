@@ -57,7 +57,7 @@
             "ndg"
             "licenseit"
             "mrc"
-            "color"
+            "gcolor"
             "tailray"
 
             # 3rd party packages
@@ -66,7 +66,7 @@
 
           mappedPkgs = listToAttrs (map (input: {
               name = input;
-              value = inputs'.${input}.packages.default or builtins.throw "Input ${input} does not provide a default package";
+              value = inputs'.${input}.packages.default or (builtins.throw "Input ${input} does not provide a default package");
             })
             fromInputs);
         in
