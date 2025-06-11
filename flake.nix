@@ -31,6 +31,21 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    ndg = {
+      url = "github:feel-co/ndg";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    licenseit = {
+      url = "github:notashelf/licenseit";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    mrc = {
+      url = "github:notashelf/mrc";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     wiremix = {
       url = "github:tsowell/wiremix";
       inputs = {
@@ -85,6 +100,7 @@
             "watt"
             "flint"
             "inquisitor"
+            "ndg"
 
             # 3rd party packages
             "wiremix"
