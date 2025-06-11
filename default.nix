@@ -1,21 +1,11 @@
-(
-  import
-  (
-    let
-      lock = builtins.fromJSON (builtins.readFile ./flake.lock);
-      nodeName = lock.nodes.root.inputs.flake-compat;
-    in
-      fetchTarball {
-        url =
-          lock.nodes.${
-            nodeName
-          }.locked.url
-          or "https://github.com/edolstra/flake-compat/archive/${
-            lock.nodes.${nodeName}.locked.rev
-          }.tar.gz";
-        sha256 = lock.nodes.${nodeName}.locked.narHash;
-      }
-  )
-  {src = ./.;}
-)
+(import (
+  let
+    lock = builtins.fromJSON (builtins.readFile ../flake.lock);
+    flakeCompatNode = lock.nodes.${lock.nodes.root.inputs.flake-compat}.locked;
+  in
+    fetchTarball {
+      url = "https://github.com/${flakeCompatNode.owner}/${flakeCompatNode.repo}/archive/${flakeCompatNode.rev}.tar.gz";
+      sha256 = flakeCompatNode.narHash;
+    }
+) {src = ./.;})
 .defaultNix
