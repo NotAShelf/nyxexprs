@@ -18,7 +18,9 @@
     },
     "flake-parts": {
       "inputs": {
-        "nixpkgs-lib": "nixpkgs-lib"
+        "nixpkgs-lib": [
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1748821116,
@@ -31,6 +33,46 @@
       "original": {
         "owner": "hercules-ci",
         "repo": "flake-parts",
+        "type": "github"
+      }
+    },
+    "flint": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1749629940,
+        "narHash": "sha256-CG/6eW7hjLVCDROklY06xSJQhyWJAKTsRIEv9jr+/Fg=",
+        "owner": "NotAShelf",
+        "repo": "flint",
+        "rev": "71bb19ad90ab13e773d0ad3eb2606cdf7aa7a8cb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NotAShelf",
+        "repo": "flint",
+        "type": "github"
+      }
+    },
+    "inquisitor": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1749631407,
+        "narHash": "sha256-GscgJygL3szqlYMXc0Ntsr1vbT8KndIl1b7Aj2PgkFE=",
+        "owner": "NotAShelf",
+        "repo": "inquisitor",
+        "rev": "d277e693c8b320458843918de9b9322186579842",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NotAShelf",
+        "repo": "inquisitor",
         "type": "github"
       }
     },
@@ -50,27 +92,16 @@
         "type": "github"
       }
     },
-    "nixpkgs-lib": {
-      "locked": {
-        "lastModified": 1748740939,
-        "narHash": "sha256-rQaysilft1aVMwF14xIdGS3sj1yHlI6oKQNBRTF40cc=",
-        "owner": "nix-community",
-        "repo": "nixpkgs.lib",
-        "rev": "656a64127e9d791a334452c6b6606d17539476e2",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "nixpkgs.lib",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "flake-compat": "flake-compat",
         "flake-parts": "flake-parts",
+        "flint": "flint",
+        "inquisitor": "inquisitor",
         "nixpkgs": "nixpkgs",
-        "systems": "systems"
+        "systems": "systems",
+        "watt": "watt",
+        "wiremix": "wiremix"
       }
     },
     "systems": {
@@ -85,6 +116,49 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default-linux",
+        "type": "github"
+      }
+    },
+    "watt": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1749377316,
+        "narHash": "sha256-hw3rL4rlIlYJMTeE7DlQ3lRhQDJURAhE+PC/NT4VAAQ=",
+        "owner": "NotAShelf",
+        "repo": "watt",
+        "rev": "154724c7b1bd49654ea55df719e1eb3219ec2000",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NotAShelf",
+        "repo": "watt",
+        "type": "github"
+      }
+    },
+    "wiremix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "systems": [
+          "systems"
+        ]
+      },
+      "locked": {
+        "lastModified": 1749616676,
+        "narHash": "sha256-SVT9Cp2DxsvdTeK/zjKA18hIULtuCNz1SXBJhj3dyrg=",
+        "owner": "tsowell",
+        "repo": "wiremix",
+        "rev": "d2bfc3870f67d47cef013990b012bd00b32679cb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tsowell",
+        "repo": "wiremix",
         "type": "github"
       }
     }
