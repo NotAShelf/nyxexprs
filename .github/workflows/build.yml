@@ -7,6 +7,10 @@ on:
       CACHIX_AUTH_TOKEN:
         required: false
 
+permissions:
+  contents: read
+  id-token: write
+
 jobs:
   find-uncached:
     runs-on: ubuntu-latest
