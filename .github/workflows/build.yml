@@ -13,6 +13,8 @@ permissions:
 
 jobs:
   find-uncached:
+    name: "Find uncached packages"
+    if: github.repository == 'notashelf/nyxexprs'
     runs-on: ubuntu-latest
     outputs:
       uncached: ${{ steps.get-packages.outputs.packages }}
@@ -36,10 +38,10 @@ jobs:
 
           echo -n "packages=$packages" >> "$GITHUB_OUTPUT"
   build-uncached:
-    needs: packages
+    needs: find-uncached
     strategy:
       matrix:
-        package: ${{ fromJSON(needs.find_uncached.outputs.uncached) }}
+        package: ${{ fromJSON(needs.find-uncached.outputs.uncached) }}
     uses: ./.github/workflows/nix.yml
     with:
       command: nix build "github:notashelf/nyxexprs/${{ github.ref }}#${{ matrix.package }}"

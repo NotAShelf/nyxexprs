@@ -1,6 +1,10 @@
-name: Checks
+name: Run Checks
 
 on: [push, pull_request, workflow_dispatch]
+
+permissions:
+  contents: read
+  id-token: write
 
 jobs:
   check:
@@ -9,7 +13,6 @@ jobs:
         command:
           - NIXPKGS_ALLOW_INSECURE=1 nix flake check --accept-flake-config --impure
           - nix run .#alejandra-custom -- -c . -e ./npins
-
     uses: ./.github/workflows/nix.yml
     with:
       command: ${{ matrix.command }}
