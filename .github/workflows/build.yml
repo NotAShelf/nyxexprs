@@ -8,20 +8,35 @@ on:
         required: false
 
 jobs:
-  build:
+  find-uncached:
+    runs-on: ubuntu-latest
+    outputs:
+      uncached: ${{ steps.get-packages.outputs.packages }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DeterminateSystems/nix-installer-action@main
+
+      - name: Find packages missing in the cache
+        id: get-packages
+        run: |
+          set -euo pipefail
+
+          packages='[]'
+          while read -r package; do
+            path="$(nix eval --raw ".#$package" 2>/dev/null)"
+            if ! nix path-info --store https://nyx.cachix.org "$path" &>/dev/null; then
+              echo "Building $package"
+              packages="$(echo -n "$packages" | jq --arg package "$package" --compact-output '. + [$package]')"
+            fi
+          done < <(nix flake show --json 2>/dev/null | jq --raw-output '.packages."x86_64-linux" | keys_unsorted | map("packages.x86_64-linux.\(.)") | .[]')
+
+          echo -n "packages=$packages" >> "$GITHUB_OUTPUT"
+  build-uncached:
+    needs: packages
     strategy:
       matrix:
-        package:
-          - ai-robots-txt
-          - alejandra-custom
-          - ani-cli-git
-          - foot-git
-          - fuzzel-git
-          - headscale-ui
-          - mastodon-bird-ui
-          - zsh-stripped
-
+        package: ${{ fromJSON(needs.find_uncached.outputs.uncached) }}
     uses: ./.github/workflows/nix.yml
     with:
-      command: nix build -L .#${{ matrix.package }} -v
+      command: nix build "github:notashelf/nyxexprs/${{ github.ref }}#${{ matrix.package }}"
     secrets: inherit
