@@ -1,64 +1,58 @@
 {
   mastodon,
-  yq-go,
-  fetchurl,
+  applyPatches,
+  fetchFromGitHub,
   ...
 }:
-mastodon.overrideAttrs (_: {
-  mastodonModules = mastodon.mastodonModules.overrideAttrs (oldAttrs: let
-    # https://github.com/ronilaukkarinen/mastodon-bird-ui
-    birdui-version = "1.8.5";
-
-    birdui-single-column = fetchurl {
-      url = "https://raw.githubusercontent.com/ronilaukkarinen/mastodon-bird-ui/${birdui-version}/layout-single-column.css";
-      sha256 = "sha256-h3cb0ZiXIUEbx+8CDXPHqKe4u3ZquE90wUr/cmKkhK8=";
+(mastodon.override {
+  patches = [
+    # Redone based on:
+    # <https://codeberg.org/rheinneckar.social/nixos-config/src/branch/main/patches/mastodon-bird-ui.patch>
+    ./patches/mastodon-bird-ui.patch
+  ];
+}).overrideAttrs (oldAttrs: let
+  src = applyPatches {
+    src = fetchFromGitHub {
+      owner = "ronilaukkarinen";
+      repo = "mastodon-bird-ui";
+      tag = "2.1.1";
+      hash = "sha256-WEw9wE+iBCLDDTZjFoDJ3EwKTY92+LyJyDqCIoVXhzk=";
     };
 
-    birdui-multi-column = fetchurl {
-      url = "https://raw.githubusercontent.com/ronilaukkarinen/mastodon-bird-ui/${birdui-version}/layout-multiple-columns.css";
-      sha256 = "sha256-NMiBkJUR+HEf+ooJwoBIMiMOKna3odZYF6h4QLIdS84=";
-    };
-  in {
-    pname = "${oldAttrs.pname}+themes";
-
+    # based on:
+    # https://github.com/ronilaukkarinen/mastodon-bird-ui#make-mastodon-bird-ui-as-optional-by-integrating-it-as-site-theme-in-settings-for-all-users
     postPatch = ''
-      # Import theme
-      local styleDir=$PWD/app/javascript/styles
-      local birduiDir=$styleDir/mastodon-bird-ui
+      substituteInPlace layout-single-column.css layout-multiple-columns.css \
+        --replace-fail theme-contrast theme-mastodon-bird-ui-contrast \
+        --replace-fail theme-mastodon-light theme-mastodon-bird-ui-light
 
-      mkdir -p $birduiDir
-      cat ${birdui-single-column} > $birduiDir/layout-single-column.scss
-      cat ${birdui-multi-column} > $birduiDir/layout-multiple-columns.scss
+      mkdir mastodon-bird-ui
+      mv layout-single-column.css mastodon-bird-ui/layout-single-column.scss
+      mv layout-multiple-columns.css mastodon-bird-ui/layout-multiple-columns.scss
 
-      sed -i 's/theme-contrast/theme-mastodon-bird-ui-contrast/g' $birduiDir/layout-single-column.scss
-      sed -i 's/theme-mastodon-light/theme-mastodon-bird-ui-light/g' $birduiDir/layout-single-column.scss
-
-      sed -i 's/theme-contrast/theme-mastodon-bird-ui-contrast/g' $birduiDir/layout-multiple-columns.scss
-      sed -i 's/theme-mastodon-light/theme-mastodon-bird-ui-light/g' $birduiDir/layout-multiple-columns.scss
-
-      echo -e "@import 'contrast/variables';\n@import 'application';\n@import 'contrast/diff';\n@import 'mastodon-bird-ui/layout-single-column.scss';\n@import 'mastodon-bird-ui/layout-multiple-columns.scss';" >$styleDir/mastodon-bird-ui-contrast.scss
-
-      echo -e "@import 'mastodon-light/variables';\n@import 'application';\n@import 'mastodon-light/diff';\n@import 'mastodon-bird-ui/layout-single-column.scss';\n@import 'mastodon-bird-ui/layout-multiple-columns.scss';" >$styleDir/mastodon-bird-ui-light.scss
-
-      echo -e "@import 'application';\n@import 'mastodon-bird-ui/layout-single-column.scss';\n@import 'mastodon-bird-ui/layout-multiple-columns.scss';" >$styleDir/mastodon-bird-ui-dark.scss
-
-      # Build theme
-      echo "mastodon-bird-ui-dark: styles/mastodon-bird-ui-dark.scss" >> $PWD/config/themes.yml
-      echo "mastodon-bird-ui-light: styles/mastodon-bird-ui-light.scss" >> $PWD/config/themes.yml
-      echo "mastodon-bird-ui-contrast: styles/mastodon-bird-ui-contrast.scss" >> $PWD/config/themes.yml
+      echo -e "@import 'contrast/variables';
+      @import 'application';
+      @import 'contrast/diff';
+      @import 'mastodon-bird-ui/layout-single-column.scss';
+      @import 'mastodon-bird-ui/layout-multiple-columns.scss';" > mastodon-bird-ui-contrast.scss
+      echo -e "@import 'mastodon-light/variables';
+      @import 'application';
+      @import 'mastodon-light/diff';
+      @import 'mastodon-bird-ui/layout-single-column.scss';
+      @import 'mastodon-bird-ui/layout-multiple-columns.scss';" > mastodon-bird-ui-light.scss
+      echo -e "@import 'application';
+      @import 'mastodon-bird-ui/layout-single-column.scss';
+      @import 'mastodon-bird-ui/layout-multiple-columns.scss';" > mastodon-bird-ui-dark.scss
     '';
+  };
+in {
+  mastodonModules = oldAttrs.mastodonModules.overrideAttrs (oldAttrs: {
+    pname = "mastodon-birdui-theme";
+
+    postPatch =
+      oldAttrs.postPatch or ""
+      + ''
+        cp -r ${src}/*.scss ${src}/mastodon-bird-ui/ app/javascript/styles/
+      '';
   });
-
-  nativeBuildInputs = [yq-go];
-
-  postBuild = ''
-    # Make theme available
-    echo "mastodon-bird-ui-dark: styles/mastodon-bird-ui-dark.scss" >> $PWD/config/themes.yml
-    echo "mastodon-bird-ui-light: styles/mastodon-bird-ui-light.scss" >> $PWD/config/themes.yml
-    echo "mastodon-bird-ui-contrast: styles/mastodon-bird-ui-contrast.scss" >> $PWD/config/themes.yml
-
-    yq -i '.en.themes.mastodon-bird-ui-dark = "Mastodon Bird UI (Dark)"' $PWD/config/locales/en.yml
-    yq -i '.en.themes.mastodon-bird-ui-light = "Mastodon Bird UI (Light)"' $PWD/config/locales/en.yml
-    yq -i '.en.themes.mastodon-bird-ui-contrast = "Mastodon Bird UI (High contrast)"' $PWD/config/locales/en.yml
-  '';
 })
