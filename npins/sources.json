@@ -11,10 +11,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v1.36",
-      "revision": "cf598b6b71e0e3c6b59a699c74218a62d43c5e16",
-      "url": "https://api.github.com/repos/ai-robots-txt/ai.robots.txt/tarball/v1.36",
-      "hash": "1b3yc4abd6ni43dqp352lf8bmb328y1yhq8din7hscfg694i3i2d"
+      "version": "v1.37",
+      "revision": "eb05f2f5276ff963f786cf8fd57d8ea909e82fd9",
+      "url": "https://api.github.com/repos/ai-robots-txt/ai.robots.txt/tarball/v1.37",
+      "hash": "13l43bvr80bfy19dijl9x66ldl5zcxadvwcsdaajwnvykj3my5sq"
     },
     "ani-cli": {
       "type": "GitRelease",
@@ -56,9 +56,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "d9675a714016553264ae3b77fee785c6c49d2b6d",
+      "revision": "968bc05c32a2e68282fd28e840b06ac63556d82e",
       "url": null,
-      "hash": "1nlyxixalyz879d9wi0xqigg4f50mb16aqgl3pvk7cb3f4v5dqyh"
+      "hash": "1wzxm5hyfapw2hfjawgf743fcx9ki5g4jsfhdp7qk3v5klacklx7"
     },
     "fuzzel": {
       "type": "Git",
@@ -68,9 +68,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "35ce4b595e75ca28e4772df968d1e8dea3b32aa8",
+      "revision": "db3385dbbfd6498a45e991f3271c23828719e058",
       "url": null,
-      "hash": "1x0qyrp9qzna54d2hlhzxjn703gd2347czsvqbcl0b0gz53vwwj5"
+      "hash": "1vb1sh7xq7xjaija6076ami0zl9aginzaf8dr6ahssldfxwb10f8"
     },
     "headscale-ui": {
       "type": "GitRelease",
@@ -107,8 +107,8 @@
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre814228.6e7721e37bf0/nixexprs.tar.xz",
-      "hash": "0l6lrw75fg3bhfx2abmr3wvxdhfy921pg7qyr09kwyndxhjja7sr"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre814704.6afe187897be/nixexprs.tar.xz",
+      "hash": "0hxmwqdhjqqga9w23hjc5bj0w1jf9s148m5kfpdp8sydbnldfdq7"
     },
     "rat": {
       "type": "GitRelease",
