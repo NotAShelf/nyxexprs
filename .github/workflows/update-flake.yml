@@ -33,7 +33,7 @@ jobs:
       - name: Update flake
         run: nix flake update
 
-      - uses: stefanzweifel/git-auto-commit-action@v5
+      - uses: stefanzweifel/git-auto-commit-action@v6
         with:
           commit_message: "[CI]: update flake inputs"
           push_options: "--force"
