@@ -62,6 +62,7 @@
 
             # 3rd party packages
             "wiremix"
+            "nil"
           ];
 
           mappedPkgs = listToAttrs (map (input: {
@@ -143,6 +144,11 @@
         nixpkgs.follows = "nixpkgs";
         systems.follows = "systems";
       };
+    };
+
+    nil = {
+      url = "github:oxalica/nil";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 }

@@ -191,6 +191,26 @@
         "type": "github"
       }
     },
+    "nil": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1750558251,
+        "narHash": "sha256-wmb+kcqG05jQA2RPq+KZhOeCxSEOAgumgp/remOsczs=",
+        "owner": "oxalica",
+        "repo": "nil",
+        "rev": "4e5ac6ec65c775fbc6adba1c6022b29c7eccde0f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "nil",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1750365781,
@@ -232,6 +252,7 @@
         "licenseit": "licenseit",
         "mrc": "mrc",
         "ndg": "ndg",
+        "nil": "nil",
         "nixpkgs": "nixpkgs",
         "systems": "systems",
         "tailray": "tailray",
