@@ -68,9 +68,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "0baffbdfe9f5361b865343bf4a5817b943f24768",
+      "revision": "08ef4de679b1c5cef18528fbf33c6ede5dcd6b62",
       "url": null,
-      "hash": "08bx8jivj97g0drxzcyddfd3qixcxqvf2rk7fk5hvnw9nqfrz6j4"
+      "hash": "111xnqwlkyh7lpqg8a6745pyynwib8r8z6vr9dkvhidss1n4jnkp"
     },
     "headscale-ui": {
       "type": "GitRelease",
@@ -107,8 +107,8 @@
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre821221.d7bb1922f0bb/nixexprs.tar.xz",
-      "hash": "0bnwh6742hrjnk51s0x0m9fbpcarh3sgxzin95jynwdmxcx07jwz"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre821324.61c0f5139114/nixexprs.tar.xz",
+      "hash": "0iqqnyrnrf1avr92b8v2npdd7ckm67qqqabdd825rvfhh7wcxv4g"
     },
     "rat": {
       "type": "GitRelease",
@@ -137,10 +137,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v2.3.2",
-      "revision": "919e1159b074797c79ce61bd021268882b7b9a8f",
-      "url": "https://api.github.com/repos/svenstaro/rofi-calc/tarball/v2.3.2",
-      "hash": "0ba7yav0ww3gfv2iw0gdf6i2ls7ms6z6n3aj08cfcs1iqlhns9h1"
+      "version": "v2.3.3",
+      "revision": "3120739820b74ff063c8c718e4ae67a90d19241a",
+      "url": "https://api.github.com/repos/svenstaro/rofi-calc/tarball/v2.3.3",
+      "hash": "0f9kc0wxaxfizi5jm9s3sqf0szkx2f9y59iy6z3xnr59c1v5i6ax"
     },
     "rofi-emoji": {
       "type": "GitRelease",
