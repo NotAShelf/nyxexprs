@@ -68,9 +68,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "8aa4cc3151376f2a1792d2d04291f7518af41fa5",
+      "revision": "1ea028317f1a89c517d17ce15eca9d66f6fd827e",
       "url": null,
-      "hash": "0irc9ki9jakwmbryq4gw1jg7g88xlylc6ym16ccvxhwfny9walah"
+      "hash": "0y4am61nn7iq7w5nb10k1jh7sakj8z7xvpaak116h5mvlw2zfhp0"
     },
     "headscale-ui": {
       "type": "GitRelease",
@@ -107,8 +107,8 @@
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre823548.b9c03fbbaf84/nixexprs.tar.xz",
-      "hash": "1jr6ddhqrm5nrmdn24ynw96cb92vd7c5g4n0jxyi2z7yw4g2dpan"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre823951.d31a91c9b3be/nixexprs.tar.xz",
+      "hash": "1fq1g5ijadil6rj97g54186bddp27kjh24gnn7v29hr5vbi9fnqv"
     },
     "rat": {
       "type": "GitRelease",
