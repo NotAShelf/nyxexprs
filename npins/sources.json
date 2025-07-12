@@ -56,9 +56,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "968bc05c32a2e68282fd28e840b06ac63556d82e",
+      "revision": "693aefa96a74b0e4b9117a0c4ffe8c95b35b0c8b",
       "url": null,
-      "hash": "1wzxm5hyfapw2hfjawgf743fcx9ki5g4jsfhdp7qk3v5klacklx7"
+      "hash": "0y7z268z39pbx5v8j1am3bgz7y1f0rb6l7x41zqjxk65425jv3x1"
     },
     "fuzzel": {
       "type": "Git",
@@ -68,9 +68,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "544c59a5403bc64b44e2261e043127cc5b4ac6c6",
+      "revision": "5751a657a623b0878625ae22419624db3f325e37",
       "url": null,
-      "hash": "0krvmz5rxnv77crkf21xjxm9f1bcqv027pdw16gvqzhmii9agdmp"
+      "hash": "0pzch324llsi3i4mhr1jmlqknr5la7mm4n8fbwv4al0rp0b56rlx"
     },
     "headscale-ui": {
       "type": "GitRelease",
@@ -83,10 +83,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "2025.05.22",
-      "revision": "5e97c523036e07e14a5cf96618c6bf2349c1f9aa",
-      "url": "https://api.github.com/repos/gurucomputing/headscale-ui/tarball/2025.05.22",
-      "hash": "1mhb40f5wd717p78c5w9bfcqvgx1v1fvf6j11kghfjjr8gyf807z"
+      "version": "2025.07.12",
+      "revision": "fbb8b2b968cac04389eb7e836f351adc277451dd",
+      "url": "https://api.github.com/repos/gurucomputing/headscale-ui/tarball/2025.07.12",
+      "hash": "0mxgzczrzr3xx8h0chzsa4910ars8hdghsnvkw3l5ykhfwbzn6gj"
     },
     "mov-cli": {
       "type": "GitRelease",
