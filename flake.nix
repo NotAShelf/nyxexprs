@@ -59,6 +59,7 @@
             "mrc"
             "gcolor"
             "tailray"
+            "nh"
 
             # 3rd party packages
             "wiremix"
@@ -134,6 +135,11 @@
 
     tailray = {
       url = "github:notashelf/tailray";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nh = {
+      url = "github:nix-community/nh";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

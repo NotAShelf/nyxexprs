@@ -191,6 +191,26 @@
         "type": "github"
       }
     },
+    "nh": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1752848036,
+        "narHash": "sha256-bR0rFmcaejkPDApDth38IW18gyMnNtx2RfCiswvAZfw=",
+        "owner": "nix-community",
+        "repo": "nh",
+        "rev": "b1c176d6c3807f7ed78fc7e87860694a41fadbb1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nh",
+        "type": "github"
+      }
+    },
     "nil": {
       "inputs": {
         "nixpkgs": [
@@ -252,6 +272,7 @@
         "licenseit": "licenseit",
         "mrc": "mrc",
         "ndg": "ndg",
+        "nh": "nh",
         "nil": "nil",
         "nixpkgs": "nixpkgs",
         "systems": "systems",
