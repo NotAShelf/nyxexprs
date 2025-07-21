@@ -109,6 +109,26 @@
         "type": "github"
       }
     },
+    "gh-notify": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1753094735,
+        "narHash": "sha256-7RNzCdQC0NyjvNw+zVR0gigUPNd9pmXzYz1g8F0CIzw=",
+        "owner": "notashelf",
+        "repo": "gh-notify",
+        "rev": "18dc3b0560c28d396770217e84d268e62edad2cb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "notashelf",
+        "repo": "gh-notify",
+        "type": "github"
+      }
+    },
     "inquisitor": {
       "inputs": {
         "nixpkgs": [
@@ -268,6 +288,7 @@
         "flake-parts": "flake-parts",
         "flint": "flint",
         "gcolor": "gcolor",
+        "gh-notify": "gh-notify",
         "inquisitor": "inquisitor",
         "licenseit": "licenseit",
         "mrc": "mrc",

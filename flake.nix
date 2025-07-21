@@ -60,6 +60,7 @@
             "gcolor"
             "tailray"
             "nh"
+            "gh-notify"
 
             # 3rd party packages
             "wiremix"
@@ -74,13 +75,29 @@
         in
           base // mappedPkgs;
 
-        formatter = config.packages.alejandra-custom;
+        # Formatter that traverses the entire tree and formats Nix files
+        formatter = pkgs.writeShellApplication {
+          name = "nix3-fmt-wrapper";
+
+          runtimeInputs = [
+            config.packages.alejandra-custom
+            pkgs.fd
+          ];
+
+          text = ''
+            fd "$@" -t f -e nix -x alejandra -q '{}'
+          '';
+        };
+
         devShells = {
           default = pkgs.mkShellNoCC {
             name = "nyxexprs";
             packages = [pkgs.npins];
           };
         };
+
+        # In case I ever decide to use Hydra.
+        hydraJobs = self.packages;
       };
     };
 
@@ -140,6 +157,11 @@
 
     nh = {
       url = "github:nix-community/nh";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    gh-notify = {
+      url = "github:notashelf/gh-notify";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
