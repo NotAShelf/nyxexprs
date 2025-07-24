@@ -95,7 +95,9 @@
             packages = [pkgs.npins];
           };
         };
+      };
 
+      flake = {
         # In case I ever decide to use Hydra.
         hydraJobs = self.packages;
       };
