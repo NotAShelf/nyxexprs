@@ -11,10 +11,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v1.38",
-      "revision": "47769c8429177874ed1b0ff7d37c2f007e4573d8",
-      "url": "https://api.github.com/repos/ai-robots-txt/ai.robots.txt/tarball/v1.38",
-      "hash": "1f7ahibhmghdm9hh05730c8fm6xk67qq7xx0w5ql573yi0yi0gqc"
+      "version": "v1.39",
+      "revision": "6d3f3e17120b36dba6b959bc646d1deaefa680ea",
+      "url": "https://api.github.com/repos/ai-robots-txt/ai.robots.txt/tarball/v1.39",
+      "hash": "10x5rvqz1l4gqhhnf12pjqmv4azah9k4970ik0vjrj6z70dpdpk3"
     },
     "ani-cli": {
       "type": "GitRelease",
@@ -68,9 +68,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "099ea2af11bf23e620a1a8a3fb574f277cc1abf7",
+      "revision": "b53721161925f58011d7dd63ba24eef6a036159c",
       "url": null,
-      "hash": "1x7av31d2b1xi5qh818ibhlgyd6xfkckl04fyw0dipjaqnzqdgxd"
+      "hash": "0i27hqiiy8zzd32z0lax99fk140isylra9b0f4nsd1szn1yvpazk"
     },
     "headscale-ui": {
       "type": "GitRelease",
@@ -107,8 +107,8 @@
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre843752.d74de548348c/nixexprs.tar.xz",
-      "hash": "13a5m4lwnlijlhyn5k9i8jzp07n11hqiivcdb92gr0rlfnhd6ag2"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre844295.a595dde4d0d3/nixexprs.tar.xz",
+      "hash": "05jnq5m5lpjpmnysnv2n2vqv0b77grw9r5kncqr67am0dfswk0nq"
     },
     "rat": {
       "type": "GitRelease",
