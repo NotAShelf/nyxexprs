@@ -68,9 +68,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "c09c9a6f8004695f556a10f9bdf10e06310d3028",
+      "revision": "8d3fcd18e950ed6aedaabe00437b831783b65886",
       "url": null,
-      "hash": "1zldiz6w81zkjiqhg4h297jm6kzf3il6fa82bx2i0z08g889y36a"
+      "hash": "0mafdhg87d3xp6y5sif0na9kgzqn0zpswh8v07rg89cj9b1n2xpk"
     },
     "headscale-ui": {
       "type": "GitRelease",
@@ -83,10 +83,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "2025.07.12",
-      "revision": "fbb8b2b968cac04389eb7e836f351adc277451dd",
-      "url": "https://api.github.com/repos/gurucomputing/headscale-ui/tarball/2025.07.12",
-      "hash": "0mxgzczrzr3xx8h0chzsa4910ars8hdghsnvkw3l5ykhfwbzn6gj"
+      "version": "2025.08.23",
+      "revision": "3c22ed935dd55299e7e332134fd8f918afd33bae",
+      "url": "https://api.github.com/repos/gurucomputing/headscale-ui/tarball/2025.08.23",
+      "hash": "1z6a3g17r3l7spayxpf1g2357h6lvyj4bwnd66xwjhk4vbhsxcn3"
     },
     "mov-cli": {
       "type": "GitRelease",
@@ -107,8 +107,8 @@
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre847334.596312aae914/nixexprs.tar.xz",
-      "hash": "1cnkxqyx3p6zn2wcrc0j9r9qi41k5ppnzniwsag70hap7kdynmpk"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre847877.f937f8ecd1c7/nixexprs.tar.xz",
+      "hash": "0fybwkg3spmsjcp32m0ka3nmy875qdh8nxl7i8jwsqmk6vxca37q"
     },
     "rat": {
       "type": "GitRelease",
