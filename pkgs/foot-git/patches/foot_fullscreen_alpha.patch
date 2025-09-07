@@ -1,4 +1,4 @@
-From cd75128c89dc083524667d2fb1d4ca50874ace9b Mon Sep 17 00:00:00 2001
+From bf7175511a05e7110a57cce96540aa75f9cdca76 Mon Sep 17 00:00:00 2001
 From: Fazzi <faaris.ansari@proton.me>
 Date: Fri, 18 Apr 2025 21:15:19 +0100
 Subject: [PATCH] config: add transparent_fullscreen option
@@ -10,12 +10,12 @@ Subject: [PATCH] config: add transparent_fullscreen option
  3 files changed, 12 insertions(+), 3 deletions(-)
 
 diff --git a/config.c b/config.c
-index 07f781d6..8304729a 100644
+index 0de1a1be..935f4500 100644
 --- a/config.c
 +++ b/config.c
-@@ -1098,6 +1098,10 @@ parse_section_main(struct context *ctx)
-                              (int *)&conf->initial_color_theme);
-     }
+@@ -1122,6 +1122,10 @@ parse_section_main(struct context *ctx)
+     else if (streq(key, "uppercase-regex-insert"))
+         return value_to_bool(ctx, &conf->uppercase_regex_insert);
  
 +    else if (streq(key, "transparent-fullscreen")) {
 +        return value_to_bool(ctx, &conf->transparent_fullscreen);
@@ -24,7 +24,7 @@ index 07f781d6..8304729a 100644
      else {
          LOG_CONTEXTUAL_ERR("not a valid option: %s", key);
          return false;
-@@ -3389,6 +3393,7 @@ config_load(struct config *conf, const char *conf_path,
+@@ -3415,6 +3419,7 @@ config_load(struct config *conf, const char *conf_path,
              },
              .multiplier = 3.,
          },
@@ -33,10 +33,10 @@ index 07f781d6..8304729a 100644
              .fg = default_foreground,
              .bg = default_background,
 diff --git a/config.h b/config.h
-index 7cf6f6f5..2ab21716 100644
+index 86fb2a8f..58aedbba 100644
 --- a/config.h
 +++ b/config.h
-@@ -237,6 +237,8 @@ struct config {
+@@ -245,6 +245,8 @@ struct config {
  
      enum { STARTUP_WINDOWED, STARTUP_MAXIMIZED, STARTUP_FULLSCREEN } startup_mode;
  
@@ -44,9 +44,9 @@ index 7cf6f6f5..2ab21716 100644
 +
      bool dpi_aware;
      bool gamma_correct;
-     struct config_font_list fonts[4];
+     bool uppercase_regex_insert;
 diff --git a/render.c b/render.c
-index 83a160bc..ba0f6097 100644
+index 1c24bafa..0d7df4b7 100644
 --- a/render.c
 +++ b/render.c
 @@ -768,7 +768,8 @@ render_cell(struct terminal *term, pixman_image_t *pix,
@@ -68,7 +68,7 @@ index 83a160bc..ba0f6097 100644
          /* Disable alpha in fullscreen - see render_cell() for details */
          alpha = 0xffff;
      }
-@@ -3264,7 +3265,8 @@ grid_render(struct terminal *term)
+@@ -3260,7 +3261,8 @@ grid_render(struct terminal *term)
      xassert(term->height > 0);
  
      struct buffer_chain *chain = term->render.chains.grid;
