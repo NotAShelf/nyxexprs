@@ -5,11 +5,12 @@
 }:
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "headscale-ui";
-  version = "2025.05.22";
+  version = "2025.08.23";
 
   src = fetchzip {
-    url = "https://github.com/gurucomputing/headscale-ui/releases/download/${finalAttrs.version}/headscale-${finalAttrs.version}.tar.gz";
-    hash = "sha256-qLX8YW5jjy4K4et7dkS0Bvug+k3NVw0m2d2Q0wLE1J4=";
+    # https://github.com/gurucomputing/headscale-ui/releases/download/2025.08.23/headscale-ui.zip
+    url = "https://github.com/gurucomputing/headscale-ui/releases/download/${finalAttrs.version}/headscale-ui.zip";
+    hash = "sha256-66c4KC6tJath/A79idp4ypwd3y0VI80mG8/Gj/WwmnY=";
     stripRoot = false;
   };
 
