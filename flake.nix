@@ -95,6 +95,25 @@
             packages = [pkgs.npins];
           };
         };
+
+        apps = {
+          update-pkgs = {
+            type = "app";
+            program = lib.getExe (
+              pkgs.writeShellApplication {
+                name = "update";
+                text = ''
+                  nix-shell --show-trace "${nixpkgs.outPath}/maintainers/scripts/update.nix" \
+                    --argstr skip-prompt true \
+                    --arg predicate '(
+                      let prefix = builtins.toPath ./pkgs; prefixLen = builtins.stringLength prefix;
+                      in (_: p: p.meta ? position && (builtins.substring 0 prefixLen p.meta.position) == prefix)
+                    )'
+                '';
+              }
+            );
+          };
+        };
       };
 
       flake = {
