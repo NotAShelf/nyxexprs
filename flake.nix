@@ -61,6 +61,8 @@
             "tailray"
             "nh"
             "gh-notify"
+            "stash"
+            "slight"
 
             # 3rd party packages
             "wiremix"
@@ -183,6 +185,16 @@
 
     gh-notify = {
       url = "github:notashelf/gh-notify";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    stash = {
+      url = "github:notashelf/stash";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    slight = {
+      url = "github:notashelf/slight";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
