@@ -56,9 +56,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "558760446932f0f22c794084285cf998462dd706",
+      "revision": "5ae4955e834831b5680baaad7c4f974e407ffb7a",
       "url": null,
-      "hash": "1wcxzjww42rc478zjb89i0mi6q32y796kjshdj4h5xk4w5qadim7"
+      "hash": "1vcck69ph3pw5zzbmlpbw804x9dxccy6f74pr14m3x5ckkr73hki"
     },
     "fuzzel": {
       "type": "Git",
