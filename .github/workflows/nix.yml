@@ -19,11 +19,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - name: Install Lix
-        uses: DeterminateSystems/nix-installer-action@main
-        with:
-          source-url: https://install.lix.systems/lix/lix-installer-x86_64-linux
-          logger: pretty
+
+      - name: "Install Nix"
+        uses: cachix/install-nix-action@v31.8.2
+
       - uses: cachix/cachix-action@v16
         with:
           name: nyx
