@@ -11,10 +11,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v1.42",
-      "revision": "2fa0e9119cd8489ae2b140bf6e67aeb22c84b210",
-      "url": "https://api.github.com/repos/ai-robots-txt/ai.robots.txt/tarball/v1.42",
-      "hash": "05nnc0r4zz8sq8mhp299d9d6hpd8qcm81wkn30i4bzq0a220si07"
+      "version": "v1.43",
+      "revision": "e2726ac160467687f4d56943f36a639c6758ec38",
+      "url": "https://api.github.com/repos/ai-robots-txt/ai.robots.txt/tarball/v1.43",
+      "hash": "0knjmgbqisrn7ny7l2srl6zqvkglii530n6p5fmzy5brxplaxb60"
     },
     "ani-cli": {
       "type": "GitRelease",
