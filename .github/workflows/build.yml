@@ -19,7 +19,7 @@ jobs:
     outputs:
       uncached: ${{ steps.get-packages.outputs.packages }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: "Install Nix"
         uses: cachix/install-nix-action@v31.8.2
 
