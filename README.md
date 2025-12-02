@@ -1,12 +1,17 @@
 # 🌙 nyxexprs
 
-Welcome to nyxexprs! This is my personal package overlay, for derivations I use
-from time to time when they do not fit my "monorepo" use case. This repository
-holds things I've packages, as well as derivations and a binary cache for most
-of my personal projects. It also contains packages and modules I've refactored
-out of my personal NixOS configuration, Nyx (hence the name "nyxexprs.")
+[Nyx]: https://github.com/notashelf/nyx
 
-Kept up to date with Github workflows and npins. Contributions welcome.
+Welcome to Nyxexprs! This is my personal package collection and overlay, for
+derivations I use from time to time when they do not fit my "monorepo" use case
+in [Nyx]. This repository holds things I've packaged, which is primarily
+packages not available in Nixpkgs or Git versions of packages with the added
+convenience of a binary cache. It also contains packages and modules I've
+refactored out of my personal NixOS configuration, [Nyx] (hence the name
+"nyxexprs.")
+
+Kept up to date with Github workflows and npins. Contributions, in the form of
+Pull Requests or patches welcome.
 
 ## Usage
 
@@ -22,8 +27,7 @@ overlay is also provided through [flake-parts](https://flake.parts)'
 {
   inputs = {
     # Your Nixpkgs input
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-
+    nixpkgs.url = "github:NixOS/nixpkgs?ref=nixos-unstable";
 
     # Add an input as such. Do NOT add the "follows" line (a typical flakes
     # pattern) if you intend to use the binary cache.
@@ -43,12 +47,10 @@ Then get the package you need directly from inputs
   ...
 }: {
   # For this to be valid, you need `inputs` in the argset above and nyxexprs
-  # to be in your `inputs`, as demonstrated in the flake.nix example
+  # to be in your `inputs`, as demonstrated in the flake.nix example. You 
+  # will also need `inputs` to be in your `nixosSystem` call's `specialArgs`
+  # or else you will not be able to access `inputs` in your modules.
   environment.systemPackages = [
-    # `pkgs.stdenv.hostPlatform.system` is an explicit way of replacing
-    # `pkgs.system`. It is especially important on systems with aliases
-    # disabled in their nixpkgs config. Nixpkgs also likes enjoying changing
-    # things around every once in a while, so being explicit is good.
     inputs.nyxexprs.packages.${pkgs.stdenv.hostPlatform.system}.tempus # example
   ];
 }
@@ -124,5 +126,5 @@ packages missing in Cachix.
 
 ## 📜 License
 
-This repository (Nix codee, patches, etc.) is released under EUPL v1.2. Please
-see the [license file](./LICENSE) for more details.
+This repository (Nix derivations, patches, etc.) is released under EUPL v1.2.
+Please see the [license file](./LICENSE) for more details.
