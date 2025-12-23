@@ -1,43 +1,51 @@
-From c22ecce826b4123e453249303e2b4f5b6aacf722 Mon Sep 17 00:00:00 2001
+From 8b27eb66ae53f429ed44c091af139aeac8ab6371 Mon Sep 17 00:00:00 2001
 From: Fazzi <faaris.ansari@proton.me>
 Date: Fri, 18 Apr 2025 21:15:19 +0100
 Subject: [PATCH] config: add transparent_fullscreen option
 
 ---
- config.c  | 5 +++++
+ config.c  | 6 ++++++
  config.h  | 2 ++
  render.c  | 8 +++++---
  wayland.c | 2 +-
- 4 files changed, 13 insertions(+), 4 deletions(-)
+ 4 files changed, 14 insertions(+), 4 deletions(-)
 
 diff --git a/config.c b/config.c
-index 4449d9c2..51221eb1 100644
+index 14e836c1..0da52e04 100644
 --- a/config.c
 +++ b/config.c
-@@ -1122,6 +1122,10 @@ parse_section_main(struct context *ctx)
-     else if (streq(key, "uppercase-regex-insert"))
-         return value_to_bool(ctx, &conf->uppercase_regex_insert);
+@@ -1115,6 +1115,10 @@ parse_section_main(struct context *ctx)
+     else if (streq(key, "gamma-correct-blending"))
+         return value_to_bool(ctx, &conf->gamma_correct);
  
 +    else if (streq(key, "transparent-fullscreen")) {
 +        return value_to_bool(ctx, &conf->transparent_fullscreen);
 +    }
 +
-     else {
-         LOG_CONTEXTUAL_ERR("not a valid option: %s", key);
-         return false;
-@@ -3431,6 +3435,7 @@ config_load(struct config *conf, const char *conf_path,
+     else if (streq(key, "initial-color-theme")) {
+         _Static_assert(
+             sizeof(conf->initial_color_theme) == sizeof(int),
+@@ -3478,6 +3482,7 @@ config_load(struct config *conf, const char *conf_path,
+         .strikeout_thickness = {.pt = 0., .px = -1},
+         .dpi_aware = false,
+         .gamma_correct = false,
++        .transparent_fullscreen = false,
+         .uppercase_regex_insert = true,
+         .security = {
+             .osc52 = OSC52_ENABLED,
+@@ -3507,6 +3512,7 @@ config_load(struct config *conf, const char *conf_path,
              },
              .multiplier = 3.,
          },
-+        .transparent_fullscreen = false,
-         .colors = {
++
+         .colors_dark = {
              .fg = default_foreground,
              .bg = default_background,
 diff --git a/config.h b/config.h
-index 37b3259f..69db3ec6 100644
+index 9ca47753..aaf9404b 100644
 --- a/config.h
 +++ b/config.h
-@@ -250,6 +250,8 @@ struct config {
+@@ -253,6 +253,8 @@ struct config {
  
      enum { STARTUP_WINDOWED, STARTUP_MAXIMIZED, STARTUP_FULLSCREEN } startup_mode;
  
@@ -47,7 +55,7 @@ index 37b3259f..69db3ec6 100644
      bool gamma_correct;
      bool uppercase_regex_insert;
 diff --git a/render.c b/render.c
-index 1d0f08af..f3bc8d34 100644
+index ac8ece37..2282105a 100644
 --- a/render.c
 +++ b/render.c
 @@ -775,7 +775,8 @@ render_cell(struct terminal *term, pixman_image_t *pix,
@@ -57,7 +65,7 @@ index 1d0f08af..f3bc8d34 100644
 -        else if (!term->window->is_fullscreen && term->colors.alpha != 0xffff) {
 +        else if ((!term->window->is_fullscreen || term->conf->transparent_fullscreen)
 +            && term->colors.alpha != 0xffff) {
-             switch (term->conf->colors.alpha_mode) {
+             switch (term->conf->colors_dark.alpha_mode) {
              case ALPHA_MODE_DEFAULT: {
                  if (cell->attrs.bg_src == COLOR_DEFAULT) {
 @@ -1241,7 +1242,7 @@ render_margin(struct terminal *term, struct buffer *buf,
@@ -80,10 +88,10 @@ index 1d0f08af..f3bc8d34 100644
      struct buffer *buf = shm_get_buffer(
          chain, term->width, term->height, use_alpha);
 diff --git a/wayland.c b/wayland.c
-index bac087fb..c425819d 100644
+index 6785c52d..e9318200 100644
 --- a/wayland.c
 +++ b/wayland.c
-@@ -2421,7 +2421,7 @@ wayl_win_alpha_changed(struct wl_window *win)
+@@ -2452,7 +2452,7 @@ wayl_win_alpha_changed(struct wl_window *win)
       * When fullscreened, transparency is disabled (see render.c).
       * Update the opaque region to match.
       */
