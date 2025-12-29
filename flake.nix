@@ -210,10 +210,7 @@
     # 3rd party flakes that I want to extract packages from
     wiremix = {
       url = "github:tsowell/wiremix";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        systems.follows = "systems";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nil = {

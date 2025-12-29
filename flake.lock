@@ -263,8 +263,8 @@
         "nixpkgs": "nixpkgs",
         "slight": "slight",
         "stash": "stash",
-        "systems": "systems",
         "tailray": "tailray",
+        "tuigreet": "tuigreet",
         "watt": "watt",
         "wiremix": "wiremix"
       }
@@ -345,6 +345,26 @@
         "type": "github"
       }
     },
+    "tuigreet": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1766875109,
+        "narHash": "sha256-NOQ5jpQ+hLsU8mdEcdftrhV5yhQEIeW52Go+dSIDJII=",
+        "owner": "notashelf",
+        "repo": "tuigreet",
+        "rev": "416bbe8f7249b39148776358e7d2bd54566f6019",
+        "type": "github"
+      },
+      "original": {
+        "owner": "notashelf",
+        "repo": "tuigreet",
+        "type": "github"
+      }
+    },
     "watt": {
       "inputs": {
         "nixpkgs": [
@@ -370,9 +390,7 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "systems": [
-          "systems"
-        ]
+        "systems": "systems"
       },
       "locked": {
         "lastModified": 1763004074,
