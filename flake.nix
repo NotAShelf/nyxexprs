@@ -16,7 +16,7 @@
     ...
   } @ inputs:
     flake-parts.lib.mkFlake {inherit inputs self;} {
-      systems = import inputs.systems;
+      systems = ["x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin"];
       imports = [flake-parts.flakeModules.easyOverlay];
 
       perSystem = {
@@ -94,7 +94,12 @@
         devShells = {
           default = pkgs.mkShellNoCC {
             name = "nyxexprs";
-            packages = [pkgs.npins];
+            packages = [
+              pkgs.npins
+
+              # Also put the default formatter in the devshell
+              config.formatter
+            ];
           };
         };
 
@@ -125,8 +130,7 @@
     };
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    systems.url = "github:nix-systems/default-linux";
+    nixpkgs.url = "github:NixOS/nixpkgs?ref=nixos-unstable";
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
@@ -138,6 +142,16 @@
     };
 
     # Rest of my packages will be constructed from previous flakes
+    ndg = {
+      url = "github:feel-co/ndg";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nh = {
+      url = "github:nix-community/nh";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     watt = {
       url = "github:NotAShelf/watt";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -150,11 +164,6 @@
 
     inquisitor = {
       url = "github:NotAShelf/inquisitor";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    ndg = {
-      url = "github:feel-co/ndg";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -178,11 +187,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nh = {
-      url = "github:nix-community/nh";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     gh-notify = {
       url = "github:notashelf/gh-notify";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -198,13 +202,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    tuigreet = {
+      url = "github:notashelf/tuigreet";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # 3rd party flakes that I want to extract packages from
     wiremix = {
       url = "github:tsowell/wiremix";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        systems.follows = "systems";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nil = {
