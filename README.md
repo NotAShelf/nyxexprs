@@ -1,17 +1,21 @@
 # 🌙 nyxexprs
 
 [Nyx]: https://github.com/notashelf/nyx
+[Flint]: https://github.com/notashelf/flint
 
-Welcome to Nyxexprs! This is my personal package collection and overlay, for
-derivations I use from time to time when they do not fit my "monorepo" use case
-in [Nyx]. This repository holds things I've packaged, which is primarily
-packages not available in Nixpkgs or Git versions of packages with the added
-convenience of a binary cache. It also contains packages and modules I've
-refactored out of my personal NixOS configuration, [Nyx] (hence the name
-"nyxexprs.")
+Welcome to Nyxexprs! This is my personal package collection and overlay
+containing things that I cannot exactly upstream to Nixpkgs, or sometimes the
+things I just don't feel like contributing. This has been extracted from my
+personal monorepo, which is my NixOS configuration, for the sake providing a
+public cache for my software and a centralized packaging solution to things I
+have created or felt like packaging. It also contains packages I've refactored
+out of my personal NixOS configuration, [Nyx] (hence the name "nyxexprs.")
 
-Kept up to date with Github workflows and npins. Contributions, in the form of
-Pull Requests or patches welcome.
+> [!NOTE]
+> This repository is kept up to date with GitHub workflows, and npins for
+> tracking most dependencies. Flakes are used to "re-export" other flakes with a
+> unified Nixpkgs. Duplicates are detected via [Flint], which is packaged here
+> :)
 
 ## Usage
 
@@ -126,5 +130,15 @@ packages missing in Cachix.
 
 ## 📜 License
 
-This repository (Nix derivations, patches, etc.) is released under EUPL v1.2.
-Please see the [license file](./LICENSE) for more details.
+<!-- markdownlint-disable MD059 -->
+
+[here]: https://interoperable-europe.ec.europa.eu/sites/default/files/custom-page/attachment/eupl_v1.2_en.pdf
+
+This project is made available under European Union Public Licence (EUPL)
+version 1.2. See [LICENSE](LICENSE) for more details on the exact conditions. An
+online copy is provided [here].
+
+Everything in this repository, including derivations and patches, are licensed
+under the EUPL v1.2 license **only**.
+
+<!-- markdownlint-enable MD059 -->
