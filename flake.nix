@@ -207,6 +207,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    microfetch = {
+      url = "github:notashelf/microfetch";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # 3rd party flakes that I want to extract packages from
     wiremix = {
       url = "github:tsowell/wiremix";

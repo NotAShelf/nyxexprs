@@ -151,6 +151,26 @@
         "type": "github"
       }
     },
+    "microfetch": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1767970691,
+        "narHash": "sha256-aJ2QuMbUM/beMD8b62AqzTNljQ8RtBNOSvj9nJfRXbA=",
+        "owner": "notashelf",
+        "repo": "microfetch",
+        "rev": "014c1a35f5ff40ca7ced5dc6e2c71bffcab0948b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "notashelf",
+        "repo": "microfetch",
+        "type": "github"
+      }
+    },
     "mrc": {
       "inputs": {
         "nixpkgs": [
@@ -256,6 +276,7 @@
         "gh-notify": "gh-notify",
         "inquisitor": "inquisitor",
         "licenseit": "licenseit",
+        "microfetch": "microfetch",
         "mrc": "mrc",
         "ndg": "ndg",
         "nh": "nh",
