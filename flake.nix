@@ -63,6 +63,7 @@
             "gh-notify"
             "stash"
             "slight"
+            "tuigreet"
 
             # 3rd party packages
             "wiremix"
