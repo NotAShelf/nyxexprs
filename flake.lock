@@ -373,11 +373,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1773481469,
-        "narHash": "sha256-TPs0tJGgQCviJoE1APejpt3Ac1C3jSY/yY4ZO4EAaYM=",
+        "lastModified": 1773521003,
+        "narHash": "sha256-x9CcJXH3D1ACebxNSAeNqI0F5gnFl+PrfKdCpjCxyV8=",
         "owner": "notashelf",
         "repo": "tuigreet",
-        "rev": "f8150350727c49bae3b506c0abcd9800b6fcd27f",
+        "rev": "f215b7b15d6ebac8565627545e37616e6f90c4f7",
         "type": "github"
       },
       "original": {
