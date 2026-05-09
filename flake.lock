@@ -30,6 +30,26 @@
         "type": "github"
       }
     },
+    "eh": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1778347160,
+        "narHash": "sha256-MXPFNtgOZZKd0l5UvQUJVTiShH/qtL+ykERnCPDLhVw=",
+        "owner": "notashelf",
+        "repo": "eh",
+        "rev": "63a81bb9d20d4579f9a1a5254b2dee6bd8017ff7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "notashelf",
+        "repo": "eh",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -285,6 +305,7 @@
     },
     "root": {
       "inputs": {
+        "eh": "eh",
         "flake-compat": "flake-compat",
         "flake-parts": "flake-parts",
         "flint": "flint",

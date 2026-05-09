@@ -64,6 +64,8 @@
             "stash"
             "slight"
             "tuigreet"
+            "eh"
+            "microfetch"
 
             # 3rd party packages
             "wiremix"
@@ -210,6 +212,11 @@
 
     microfetch = {
       url = "github:notashelf/microfetch";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    eh = {
+      url = "github:notashelf/eh";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
