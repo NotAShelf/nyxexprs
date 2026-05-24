@@ -14,7 +14,7 @@
       "version": "v1.44",
       "revision": "a29102f0fcc61fe3c1b2dd76b5713ff6305958b0",
       "url": "https://api.github.com/repos/ai-robots-txt/ai.robots.txt/tarball/v1.44",
-      "hash": "14jfkymkrs51xkgf48rin01kcfmk043zkdyzfhb459fv3brxms50"
+      "hash": "sha256-oOja8xrbpUIWdN+3+QcBszo2A7AxI+Le7KHoPKufTpI="
     },
     "ani-cli": {
       "type": "GitRelease",
@@ -30,7 +30,7 @@
       "version": "v4.10",
       "revision": "a67e23f82e08e6f17b970dcec92794663211ad4f",
       "url": "https://api.github.com/repos/pystardust/ani-cli/tarball/v4.10",
-      "hash": "17yjddnky3dkdl0v6gm2rmdmhb8yh9b5lwmmrq2c0k9dcz9i1xj7"
+      "hash": "sha256-R/YQ02ctTcAEzrVyWlaCHi1YW82iPrMBbbMNP21r0p8="
     },
     "cloneit": {
       "type": "GitRelease",
@@ -46,7 +46,7 @@
       "version": "1.0.0",
       "revision": "6198556e810d964cc5938c446ef42fc21b55fe0b",
       "url": "https://api.github.com/repos/alok8bb/cloneit/tarball/1.0.0",
-      "hash": "1v97nfwwcnjw5l5c4kv4yylpv474s8xp4yp0648jr5c0mf93zza4"
+      "hash": "sha256-RP0/kquAlSwRMeB6cjvS5JB9qfdkT8IKLVxaxrmzJ+0="
     },
     "foot": {
       "type": "Git",
@@ -58,7 +58,7 @@
       "submodules": false,
       "revision": "aa26676c43edf2cfcc3543a443a25e881e34473e",
       "url": null,
-      "hash": "19l74glbgbvcbgdli03nd86jyp8aix1lh5l7hfll2nzfmmp31cza"
+      "hash": "sha256-6rMwbq3uW0Gpg4cWSEOPCl0vDWp2gEjbW2yvt+gjh6Y="
     },
     "fuzzel": {
       "type": "Git",
@@ -70,7 +70,7 @@
       "submodules": false,
       "revision": "9fb7e6c9604d069b8b0c16871a8d8dc8d6e09973",
       "url": null,
-      "hash": "0f8m14ycpxwi57yjlllk8jjfikkij7arfa9p18j364i4ddhfjsjz"
+      "hash": "sha256-X2rpYGskEjMkCjcpl9WRcc7opESTUir9KZH3yzwJFTk="
     },
     "headscale-ui": {
       "type": "GitRelease",
@@ -86,7 +86,7 @@
       "version": "2025.08.23",
       "revision": "3c22ed935dd55299e7e332134fd8f918afd33bae",
       "url": "https://api.github.com/repos/gurucomputing/headscale-ui/tarball/2025.08.23",
-      "hash": "1z6a3g17r3l7spayxpf1g2357h6lvyj4bwnd66xwjhk4vbhsxcn3"
+      "hash": "sha256-w7Ku4dpkQsm7Mc3yRaTf1MBThnjB3e7V1YeOfMIbyvw="
     },
     "mov-cli": {
       "type": "GitRelease",
@@ -102,13 +102,13 @@
       "version": "4.4.19",
       "revision": "19943349e68b3a8d2f927d4f215dbd90b2dcbd18",
       "url": "https://api.github.com/repos/mov-cli/mov-cli/tarball/4.4.19",
-      "hash": "1djyi8n1b9cpqx72v0j1wzp2fi7p8id10kmypq01wqchg5q95mxh"
+      "hash": "sha256-sNeScHmQYR4Avr5OEFpE90Qn7udBgi1Ox5elFSyKXrY="
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
       "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.05pre914780.306ea70f9eb0/nixexprs.tar.xz",
-      "hash": "1xx42m8amnda6z8nbm2ksv0plpzcdqxzymb1qqnp0xnf0k2bz2d1"
+      "hash": "sha256-oYm/xATOdnAtxmFV/ztu7F96wdZT1GXRN6rZqlAVpPc="
     },
     "rat": {
       "type": "GitRelease",
@@ -124,7 +124,7 @@
       "version": "2.0.1",
       "revision": "03d2e16ea0ebe280d7dd472612ced8b4ee71960f",
       "url": "https://api.github.com/repos/thinkingsand/rat/tarball/2.0.1",
-      "hash": "1lvqr06z2vs48a9hckim12268zfa2d0sckynpn4b0d7lv9hkn2hi"
+      "hash": "sha256-EQo7Ydr0NLCIvdZPpkETyn1khAg1TgaTQkRv8Q3IeNM="
     },
     "rofi-calc": {
       "type": "GitRelease",
@@ -140,7 +140,7 @@
       "version": "v2.5.0",
       "revision": "c37d071a4b97a968d28d4d89d2b72af4e6310733",
       "url": "https://api.github.com/repos/svenstaro/rofi-calc/tarball/v2.5.0",
-      "hash": "1wngqr1j24b4i690b5fmr3c49xxccrv79rwhj7z5zcf2jz48whpx"
+      "hash": "sha256-/UKOyJfCsV/+kZDndHZmrPdE2MjVlQWSiWQRIUPGz/I="
     },
     "rofi-emoji": {
       "type": "GitRelease",
@@ -156,8 +156,8 @@
       "version": "v4.1.0",
       "revision": "685ff771805f7d80e4f9b79bdddfb73ec3aaf4f6",
       "url": "https://api.github.com/repos/Mange/rofi-emoji/tarball/v4.1.0",
-      "hash": "1bv8vbmfkzd7jf4zjqik0zjnwb4897xapncqzaggnj76rpxv6rh2"
+      "hash": "sha256-Amaz+83mSPue+pjZq/pJiCxu5QczYvmJk6f96eraaK8="
     }
   },
-  "version": 5
+  "version": 7
 }
