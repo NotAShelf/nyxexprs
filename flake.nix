@@ -21,7 +21,6 @@
 
       perSystem = {
         system,
-        inputs',
         config,
         pkgs,
         lib,
@@ -72,11 +71,14 @@
             "nil"
           ];
 
-          mappedPkgs = listToAttrs (map (input: {
+          mappedPkgs = listToAttrs (builtins.concatMap (input: let
+            pkg = ((inputs.${input}.packages or {}).${system} or {}).default or null;
+          in
+            lib.optional (pkg != null) {
               name = input;
-              value = inputs'.${input}.packages.default or (builtins.throw "Input ${input} does not provide a default package");
+              value = pkg;
             })
-            fromInputs);
+          fromInputs);
         in
           base // mappedPkgs;
 
@@ -87,10 +89,12 @@
           runtimeInputs = [
             config.packages.alejandra-custom
             pkgs.fd
+            pkgs.deno
           ];
 
           text = ''
             fd "$@" -t f -e nix -x alejandra -q '{}'
+            fd "$@" -t f -e md -x deno fmt '{}'
           '';
         };
 
