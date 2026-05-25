@@ -11,10 +11,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v1.44",
-      "revision": "a29102f0fcc61fe3c1b2dd76b5713ff6305958b0",
-      "url": "https://api.github.com/repos/ai-robots-txt/ai.robots.txt/tarball/v1.44",
-      "hash": "sha256-oOja8xrbpUIWdN+3+QcBszo2A7AxI+Le7KHoPKufTpI="
+      "version": "v1.46",
+      "revision": "1fbf7a06ac5944182af00c135bdbdc7506334916",
+      "url": "https://api.github.com/repos/ai-robots-txt/ai.robots.txt/tarball/refs/tags/v1.46",
+      "hash": "sha256-HWjRYFqihnqvhr2urz7Na2LuTWYB2b+lekZVS1Msf4A="
     },
     "ani-cli": {
       "type": "GitRelease",
@@ -27,10 +27,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v4.10",
-      "revision": "a67e23f82e08e6f17b970dcec92794663211ad4f",
-      "url": "https://api.github.com/repos/pystardust/ani-cli/tarball/v4.10",
-      "hash": "sha256-R/YQ02ctTcAEzrVyWlaCHi1YW82iPrMBbbMNP21r0p8="
+      "version": "v4.14.0",
+      "revision": "3620be56144a9de1a544cc3773392d71ef9c5130",
+      "url": "https://api.github.com/repos/pystardust/ani-cli/tarball/refs/tags/v4.14.0",
+      "hash": "sha256-RhShKU7ZdUzz0yfrdsTQO8j7pDDbxK6LduGOa5B2mBA="
     },
     "cloneit": {
       "type": "GitRelease",
@@ -56,9 +56,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "aa26676c43edf2cfcc3543a443a25e881e34473e",
+      "revision": "4bf60d0fbcad533c5131288617caae67342c1065",
       "url": null,
-      "hash": "sha256-6rMwbq3uW0Gpg4cWSEOPCl0vDWp2gEjbW2yvt+gjh6Y="
+      "hash": "sha256-Olm2zBGKeQYUud1AuDbmgeSMl2CMpIt4TQPXT0qJUgE="
     },
     "fuzzel": {
       "type": "Git",
@@ -68,9 +68,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "9fb7e6c9604d069b8b0c16871a8d8dc8d6e09973",
+      "revision": "28c5a05fad710f732c8421251796b2cb59a73be2",
       "url": null,
-      "hash": "sha256-X2rpYGskEjMkCjcpl9WRcc7opESTUir9KZH3yzwJFTk="
+      "hash": "sha256-H8ZEgstuwTJjJGhALFZvhBlbI7rJ2xyoxjZExlt6NF4="
     },
     "headscale-ui": {
       "type": "GitRelease",
@@ -83,10 +83,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "2025.08.23",
-      "revision": "3c22ed935dd55299e7e332134fd8f918afd33bae",
-      "url": "https://api.github.com/repos/gurucomputing/headscale-ui/tarball/2025.08.23",
-      "hash": "sha256-w7Ku4dpkQsm7Mc3yRaTf1MBThnjB3e7V1YeOfMIbyvw="
+      "version": "2026.03.17",
+      "revision": "ce7569c8473b70f6f8359385f2dbd6af66f21e55",
+      "url": "https://api.github.com/repos/gurucomputing/headscale-ui/tarball/refs/tags/2026.03.17",
+      "hash": "sha256-JR+VLwXqMKACWB+4AIgWLIpZh0xtU9uCsiskra71BHQ="
     },
     "mov-cli": {
       "type": "GitRelease",
@@ -107,8 +107,8 @@
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.05pre914780.306ea70f9eb0/nixexprs.tar.xz",
-      "hash": "sha256-oYm/xATOdnAtxmFV/ztu7F96wdZT1GXRN6rZqlAVpPc="
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.05pre1003764.3d8f0f3f72a6/nixexprs.tar.xz",
+      "hash": "sha256-Zc5W2GRfLZtIDsEn0A5kzoN0+yNWq/3MzzoXGu0ytMU="
     },
     "rat": {
       "type": "GitRelease",
@@ -137,10 +137,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v2.5.0",
-      "revision": "c37d071a4b97a968d28d4d89d2b72af4e6310733",
-      "url": "https://api.github.com/repos/svenstaro/rofi-calc/tarball/v2.5.0",
-      "hash": "sha256-/UKOyJfCsV/+kZDndHZmrPdE2MjVlQWSiWQRIUPGz/I="
+      "version": "v2.5.1",
+      "revision": "0d58ff0dbbc7a91cceb565adeaf64f692f7cfba2",
+      "url": "https://api.github.com/repos/svenstaro/rofi-calc/tarball/refs/tags/v2.5.1",
+      "hash": "sha256-adDHONoLQeZP4Oi7yx/tSAaMHAaipj2UrG+xZz7EiQ4="
     },
     "rofi-emoji": {
       "type": "GitRelease",
