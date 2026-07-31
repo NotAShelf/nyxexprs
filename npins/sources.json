@@ -11,10 +11,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v1.47",
-      "revision": "f030cbe956d4231f889b632d422992c08f867d9f",
-      "url": "https://api.github.com/repos/ai-robots-txt/ai.robots.txt/tarball/refs/tags/v1.47",
-      "hash": "sha256-xQQbMCShCi/Sk1Mr6VcrVrJo7HhIwhiL1MW91M6N+Js="
+      "version": "v1.48",
+      "revision": "3db35be22d95e5502009abd6fa0530a457efc0fc",
+      "url": "https://api.github.com/repos/ai-robots-txt/ai.robots.txt/tarball/refs/tags/v1.48",
+      "hash": "sha256-uPir0oc0+dH2kBflBUVjnwMonDcPwkhDEYDISQZI+0o="
     },
     "ani-cli": {
       "type": "GitRelease",
@@ -56,9 +56,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "e5916a027c1037c8aa2e3fdfd728d3d41115b2b5",
+      "revision": "8db88cceb758b5be23e7db1fe74a48102ab07dc0",
       "url": null,
-      "hash": "sha256-6v08Zl6CB2yT78mMKStMq94D+CkXzQr1sSQ6wjTHa9w="
+      "hash": "sha256-qtH5kL6u8ZxQa9ltDT+03+Q7bv5v3QCv9dx8m5SlVYE="
     },
     "fuzzel": {
       "type": "Git",
