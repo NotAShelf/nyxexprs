@@ -62,7 +62,6 @@
             "gh-notify"
             "stash"
             "slight"
-            "tuigreet"
             "eh"
             "microfetch"
 
@@ -206,11 +205,6 @@
 
     slight = {
       url = "github:notashelf/slight";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    tuigreet = {
-      url = "github:notashelf/tuigreet";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
