@@ -39,8 +39,3 @@ jobs:
           commit_message: "[CI]: update flake inputs"
           push_options: "--force"
           commit_user_name: GitHub Actions
-
-  build:
-    needs: update
-    uses: ./.github/workflows/build.yml
-    secrets: inherit

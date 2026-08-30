@@ -45,5 +45,5 @@ jobs:
         package: ${{ fromJSON(needs.find-uncached.outputs.uncached) }}
     uses: ./.github/workflows/nix.yml
     with:
-      command: nix build "github:notashelf/nyxexprs/${{ github.ref }}#${{ matrix.package }}"
+      command: nix build ".#${{ matrix.package }}"
     secrets: inherit
