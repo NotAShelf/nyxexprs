@@ -22,24 +22,10 @@
     # based on:
     # https://github.com/ronilaukkarinen/mastodon-bird-ui#make-mastodon-bird-ui-as-optional-by-integrating-it-as-site-theme-in-settings-for-all-users
     postPatch = ''
-      substituteInPlace layout-single-column.css layout-multiple-columns.css \
-        --replace-fail theme-contrast theme-mastodon-bird-ui-contrast \
-        --replace-fail theme-mastodon-light theme-mastodon-bird-ui-light
-
       mkdir mastodon-bird-ui
       mv layout-single-column.css mastodon-bird-ui/layout-single-column.scss
       mv layout-multiple-columns.css mastodon-bird-ui/layout-multiple-columns.scss
 
-      echo -e "@use 'contrast/variables';
-      @use 'application';
-      @use 'contrast/diff';
-      @use 'mastodon-bird-ui/layout-single-column.scss';
-      @use 'mastodon-bird-ui/layout-multiple-columns.scss';" > mastodon-bird-ui-contrast.scss
-      echo -e "@use 'mastodon-light/variables';
-      @use 'application';
-      @use 'mastodon-light/diff';
-      @use 'mastodon-bird-ui/layout-single-column.scss';
-      @use 'mastodon-bird-ui/layout-multiple-columns.scss';" > mastodon-bird-ui-light.scss
       echo -e "@use 'application';
       @use 'mastodon-bird-ui/layout-single-column.scss';
       @use 'mastodon-bird-ui/layout-multiple-columns.scss';" > mastodon-bird-ui-dark.scss
