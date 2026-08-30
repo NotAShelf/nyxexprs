@@ -303,31 +303,10 @@
         "nh": "nh",
         "nil": "nil",
         "nixpkgs": "nixpkgs",
-        "slight": "slight",
         "stash": "stash",
         "tailray": "tailray",
         "watt": "watt",
         "wiremix": "wiremix"
-      }
-    },
-    "slight": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1782359347,
-        "narHash": "sha256-PxDp1yvRqwyd0lBST/7ekZR6cLkVdzQf1n93TC1JXmU=",
-        "owner": "notashelf",
-        "repo": "slight",
-        "rev": "c39d0fcc3b83e8552b7b5337bb8fd823b73e5c24",
-        "type": "github"
-      },
-      "original": {
-        "owner": "notashelf",
-        "repo": "slight",
-        "type": "github"
       }
     },
     "stash": {

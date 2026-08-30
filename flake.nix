@@ -16,7 +16,7 @@
     ...
   } @ inputs:
     flake-parts.lib.mkFlake {inherit inputs self;} {
-      systems = ["x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin"];
+      systems = ["x86_64-linux" "aarch64-linux"];
       imports = [flake-parts.flakeModules.easyOverlay];
 
       perSystem = {
@@ -61,7 +61,6 @@
             "nh"
             "gh-notify"
             "stash"
-            "slight"
             "eh"
             "microfetch"
 
@@ -200,11 +199,6 @@
 
     stash = {
       url = "github:notashelf/stash";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    slight = {
-      url = "github:notashelf/slight";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
