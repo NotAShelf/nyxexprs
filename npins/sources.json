@@ -56,9 +56,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "765ca4070bb6f095fc58c030f2154ed03857701d",
+      "revision": "4697829af56b9fee24c1ef2901fe871c5b569cab",
       "url": null,
-      "hash": "sha256-A1OQOkpoLpuonxlpwUAU7G3D826XXWGSKzp+5SGZOrA="
+      "hash": "sha256-C6YrzewkpMju4YN9DQ863zs30V6riNQZek8iSspUW38="
     },
     "fuzzel": {
       "type": "Git",
@@ -68,9 +68,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "302f228bb87d3c861a8debd39b9d8e4a0ea81037",
+      "revision": "7f0dc9d788af311131bd3c7a19a77a5ef7578b9b",
       "url": null,
-      "hash": "sha256-gdBciE62m2M+b9TZ+PvipARYELe1d5vkSIM543uaqB0="
+      "hash": "sha256-9Uk5CiubPKpWNU8niUpr8g6dYmZ4m3hipdKTb1XwChA="
     },
     "headscale-ui": {
       "type": "GitRelease",
