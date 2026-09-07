@@ -11,10 +11,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v1.51",
-      "revision": "7cd4c923433eded951ca535c33d9a56fa5c5d58e",
-      "url": "https://api.github.com/repos/ai-robots-txt/ai.robots.txt/tarball/refs/tags/v1.51",
-      "hash": "sha256-X8pIqZgpSJUILptc1B4evccRM7vX2mWP5qCUovbIAj8="
+      "version": "v1.52",
+      "revision": "2acefa38cce025b5cf9911a4415f26b7285c42e8",
+      "url": "https://api.github.com/repos/ai-robots-txt/ai.robots.txt/tarball/refs/tags/v1.52",
+      "hash": "sha256-jgLm8qvmAIkVAZBGgUNUJrwX+Z4Y/OLTD/mlS71Ha2g="
     },
     "ani-cli": {
       "type": "GitRelease",
@@ -56,9 +56,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "4697829af56b9fee24c1ef2901fe871c5b569cab",
+      "revision": "180df200a35ce94cb2b38ae84d40b53c63467bd6",
       "url": null,
-      "hash": "sha256-C6YrzewkpMju4YN9DQ863zs30V6riNQZek8iSspUW38="
+      "hash": "sha256-QnZvx9XdLVJtxh5y8D5ucbTDZDEAhNQJaFhFtyZOA+o="
     },
     "fuzzel": {
       "type": "Git",
@@ -108,8 +108,8 @@
       "type": "Channel",
       "name": "nixpkgs-unstable",
       "artifact": "nixexprs.tar.xz",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1066699.5545adfad2e9/nixexprs.tar.xz",
-      "hash": "sha256-v4ZEET1Ah1K9+wMaIwPH/JTQK3MwW/gZC/SyjnlBX74="
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1067424.17de0b976395/nixexprs.tar.xz",
+      "hash": "sha256-STqRCiZb+updgn0k5fxafPeVapQKByLEekSAU67A0QQ="
     },
     "rat": {
       "type": "GitRelease",
