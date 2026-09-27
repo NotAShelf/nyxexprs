@@ -22,11 +22,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1781707694,
-        "narHash": "sha256-xNmvz86FgLo41jQHMol361/TI7PTa3MYE8Ywnqr7NlA=",
+        "lastModified": 1789981668,
+        "narHash": "sha256-TwOW72lsHoRWzghiR956HnZ8zPzb9OirK2mvT4IsnNA=",
         "owner": "notashelf",
         "repo": "eh",
-        "rev": "6351cb76a5256bd71807f244b541a79d5d4d3cd1",
+        "rev": "7a2de4f9bb1e3d64bec5899fa2a8ec9025c5ce17",
         "type": "github"
       },
       "original": {
@@ -218,11 +218,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1789457632,
-        "narHash": "sha256-Z8OBcBVOSgHByBMzq1vv9j6V2yE2hGkj+47TxDbUzJc=",
+        "lastModified": 1790364207,
+        "narHash": "sha256-K+D08OIxsOF/gFHmYmbo4KCILRObE3QGDC/+kfaOpzU=",
         "owner": "feel-co",
         "repo": "ndg",
-        "rev": "6b4557fd4c859ea6f736ce784d947bcf989e33d3",
+        "rev": "da8030f557f3b6ab81e48e99b334861429d049da",
         "type": "github"
       },
       "original": {
@@ -238,11 +238,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1789472992,
-        "narHash": "sha256-szdPOh5Vk1oB/iMMOWx0dGmbQujsyenSnbsQ1IugJlE=",
+        "lastModified": 1790455257,
+        "narHash": "sha256-aXAZlCWmRRLk+cSNXLFRP26yEnbJK//MZXnlx08cNKY=",
         "owner": "nix-community",
         "repo": "nh",
-        "rev": "3c05c012c090a20c5a8e6501e756a6109c86c459",
+        "rev": "b6869cdf986049621704136f313877c785244ad8",
         "type": "github"
       },
       "original": {
@@ -273,11 +273,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1789785513,
-        "narHash": "sha256-B44WL6h0XoLjJ41bUPJk0X5SDinLCII//6EcBLXKiJ0=",
+        "lastModified": 1790323409,
+        "narHash": "sha256-VVTPf+Hyd5ebpjBMHmrLMSBIeW6ls48Bqtosj7CNKLA=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+        "rev": "e94cb152ed51bd6e24eb4a41f1460252beb52cd2",
         "type": "github"
       },
       "original": {
@@ -317,11 +317,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1789501673,
-        "narHash": "sha256-HnKYO6TSX3RNkC2DDBgb6brX8bFrKw4kg0RBwZXZMDI=",
+        "lastModified": 1789939885,
+        "narHash": "sha256-locw/rxPYm5bGqndNjPDyM27kMt2vZin6ZrygTJhAwo=",
         "owner": "notashelf",
         "repo": "stash",
-        "rev": "dad5cc99a194561a5ee1df3ed2f925da08f19cbe",
+        "rev": "0a2dc8a4711432b975dfe537ba88844d962eb777",
         "type": "github"
       },
       "original": {
