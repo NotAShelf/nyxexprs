@@ -16,8 +16,11 @@ jobs:
     uses: ./.github/workflows/nix.yml
     with:
       command: ${{ matrix.command }}
+    secrets:
+      CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
 
   build:
     needs: check
     uses: ./.github/workflows/build.yml
-    secrets: inherit
+    secrets:
+      CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}

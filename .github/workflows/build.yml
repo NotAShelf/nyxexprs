@@ -23,27 +23,36 @@ jobs:
       - name: "Install Nix"
         uses: cachix/install-nix-action@v31.10.7
 
+      - uses: cachix/cachix-action@v17
+        with:
+          name: nyx
+
       - name: Find packages missing in the cache
         id: get-packages
         run: |
           set -euo pipefail
 
+          package_names="$(nix eval --json --apply builtins.attrNames .#packages.x86_64-linux | jq --raw-output '.[] | "packages.x86_64-linux.\(.)"')"
           packages='[]'
           while read -r package; do
-            path="$(nix eval --raw ".#$package" 2>/dev/null)"
-            if ! nix path-info --store https://nyx.cachix.org "$path" &>/dev/null; then
+            [[ -n "$package" ]] || continue
+            path="$(nix eval --raw ".#${package}.outPath")"
+            cached="$(nix path-info --json --json-format 1 --store https://nyx.cachix.org "$path" | jq --raw-output --arg path "$path" '.[$path] != null')"
+            if [[ "$cached" == false ]]; then
               echo "Building $package"
-              packages="$(echo -n "$packages" | jq --arg package "$package" --compact-output '. + [$package]')"
+              packages="$(jq --arg package "$package" --compact-output '. + [$package]' <<< "$packages")"
             fi
-          done < <(nix flake show --json 2>/dev/null | jq --raw-output '.packages."x86_64-linux" | keys_unsorted | map("packages.x86_64-linux.\(.)") | .[]')
+          done <<< "$package_names"
 
-          echo -n "packages=$packages" >> "$GITHUB_OUTPUT"
+          printf 'packages=%s\n' "$packages" >> "$GITHUB_OUTPUT"
   build-uncached:
     needs: find-uncached
+    if: needs.find-uncached.outputs.uncached != '[]'
     strategy:
       matrix:
         package: ${{ fromJSON(needs.find-uncached.outputs.uncached) }}
     uses: ./.github/workflows/nix.yml
     with:
       command: nix build ".#${{ matrix.package }}"
-    secrets: inherit
+    secrets:
+      CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
