@@ -1,13 +1,13 @@
 {
   lib,
   stdenvNoCC,
-  pins,
+  inputs,
 }: let
-  pin = pins.ai-robots-txt;
+  pin = inputs.ai-robots-txt;
 in
   stdenvNoCC.mkDerivation {
     pname = "ai-robots-txt";
-    inherit (pin) version;
+    version = inputs._meta.ai-robots-txt.version;
 
     dontUnpack = true;
     dontConfigure = true;

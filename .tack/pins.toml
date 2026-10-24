@@ -1,0 +1,114 @@
+[shorturls]
+gh = "github:{path}"
+
+[inputs.eh]
+url     = "github:notashelf/eh"
+follows = { nixpkgs = "nixpkgs" }
+
+[inputs.flint]
+url     = "github:NotAShelf/flint"
+follows = { nixpkgs = "nixpkgs" }
+
+[inputs.gcolor]
+url     = "github:notashelf/gcolor"
+follows = { nixpkgs = "nixpkgs" }
+
+[inputs.gh-notify]
+url     = "github:notashelf/gh-notify"
+follows = { nixpkgs = "nixpkgs" }
+
+[inputs.inquisitor]
+url     = "github:NotAShelf/inquisitor"
+follows = { nixpkgs = "nixpkgs" }
+
+[inputs.licenseit]
+url     = "github:notashelf/licenseit"
+follows = { nixpkgs = "nixpkgs" }
+
+[inputs.microfetch]
+url     = "github:notashelf/microfetch"
+follows = { nixpkgs = "nixpkgs" }
+
+[inputs.mrc]
+url     = "github:notashelf/mrc"
+follows = { nixpkgs = "nixpkgs" }
+
+[inputs.ndg]
+url     = "github:feel-co/ndg"
+follows = { nixpkgs = "nixpkgs" }
+
+[inputs.nh]
+url     = "github:nix-community/nh"
+follows = { nixpkgs = "nixpkgs" }
+
+# 3rd party flakes that I want to extract packages from
+[inputs.nil]
+url     = "github:oxalica/nil"
+follows = { nixpkgs = "nixpkgs" }
+
+[inputs.nixpkgs]
+url = "github:NixOS/nixpkgs/nixos-unstable"
+
+[inputs.stash]
+url     = "github:notashelf/stash"
+follows = { nixpkgs = "nixpkgs" }
+
+[inputs.tailray]
+url     = "github:notashelf/tailray"
+follows = { nixpkgs = "nixpkgs" }
+
+[inputs.watt]
+url     = "github:NotAShelf/watt"
+follows = { nixpkgs = "nixpkgs" }
+
+[inputs.wiremix]
+url     = "github:tsowell/wiremix"
+follows = { nixpkgs = "nixpkgs" }
+
+[inputs.ai-robots-txt]
+url  = "github:ai-robots-txt/ai.robots.txt"
+type = "fetch"
+tag  = "v{version}"
+
+[inputs.ani-cli]
+url  = "github:pystardust/ani-cli"
+type = "fetch"
+tag  = "v{version}"
+
+[inputs.cloneit]
+url  = "github:alok8bb/cloneit"
+type = "fetch"
+tag  = "{version}"
+
+[inputs.foot]
+url  = "git+https://codeberg.org/dnkl/foot?ref=master"
+type = "fetch"
+
+[inputs.fuzzel]
+url  = "git+https://codeberg.org/dnkl/fuzzel.git?ref=master"
+type = "fetch"
+
+[inputs.headscale-ui]
+url  = "github:gurucomputing/headscale-ui"
+type = "fetch"
+tag  = "{version}"
+
+[inputs.mov-cli]
+url  = "github:mov-cli/mov-cli"
+type = "fetch"
+tag  = "{version}"
+
+[inputs.rat]
+url  = "github:thinkingsand/rat"
+type = "fetch"
+tag  = "{version}"
+
+[inputs.rofi-calc]
+url  = "github:svenstaro/rofi-calc"
+type = "fetch"
+tag  = "v{version}"
+
+[inputs.rofi-emoji]
+url  = "github:Mange/rofi-emoji"
+type = "fetch"
+tag  = "v{version}"

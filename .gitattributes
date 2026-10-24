@@ -1,2 +1,2 @@
 # Don't diff churn
-flake.lock -diff
+.tack/

@@ -1,4 +1,4 @@
-name: Update flake
+name: Update tack pins
 
 on:
   workflow_dispatch:
@@ -26,16 +26,11 @@ jobs:
       - name: "Install Nix"
         uses: cachix/install-nix-action@v31.10.7
 
-      - uses: cachix/cachix-action@v17
-        with:
-          name: nyx
-          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
-
-      - name: Update flake
-        run: nix flake update
+      - name: Update tack pins
+        run: nix run nixpkgs#tack -- update
 
       - uses: stefanzweifel/git-auto-commit-action@v7
         with:
-          commit_message: "[CI]: update flake inputs"
+          commit_message: "[CI]: update tack pins"
           push_options: "--force"
           commit_user_name: GitHub Actions

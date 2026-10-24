@@ -12,7 +12,7 @@ jobs:
       matrix:
         command:
           - nix flake check --accept-flake-config
-          - nix run .#alejandra-custom -- -c . -e ./npins
+          - nix run .#alejandra-custom -- -c . -e ./.tack
     uses: ./.github/workflows/nix.yml
     with:
       command: ${{ matrix.command }}

@@ -1,6 +1,7 @@
 # 🌙 nyxexprs
 
 [Nyx]: https://github.com/notashelf/nyx
+[tack]: https://github.com/manic-systems/tack
 [Flint]: https://github.com/notashelf/flint
 
 Welcome to Nyxexprs! This is my personal package collection and overlay
@@ -12,16 +13,15 @@ have created or felt like packaging. It also contains packages I've refactored
 out of my personal NixOS configuration, [Nyx] (hence the name "nyxexprs.")
 
 > [!NOTE]
-> This repository is kept up to date with GitHub workflows, and npins for
-> tracking most dependencies. Flakes are used to "re-export" other flakes with a
+> This repository is kept up to date with GitHub workflows, and tack for
+> tracking dependencies. Flakes re-export the [tack]-managed inputs with a
 > unified Nixpkgs. Duplicates are detected via [Flint], which is packaged here
 > :)
 
 ## Usage
 
 All packages in Nyxexprs are exposed in the flake outputs, under `packages`. An
-overlay is also provided through [flake-parts](https://flake.parts)'
-[easy-overlay module](https://flake.parts/options/flake-parts-easyoverlay)
+overlay is also provided .
 
 ### Flakes
 

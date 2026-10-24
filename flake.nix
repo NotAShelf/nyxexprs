@@ -9,218 +9,129 @@
     extra-trusted-public-keys = ["nyx.cachix.org-1:xH6G0MO9PrpeGe7mHBtj1WbNzmnXr7jId2mCiq6hipE"];
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    flake-parts,
-    ...
-  } @ inputs:
-    flake-parts.lib.mkFlake {inherit inputs self;} {
-      systems = ["x86_64-linux" "aarch64-linux"];
-      imports = [flake-parts.flakeModules.easyOverlay];
+  outputs = {self, ...} @ args: let
+    inputs = (import ./.tack) {overrides = args.tackOverrides or {};};
+    inherit (inputs) nixpkgs;
+    inherit (nixpkgs) lib;
 
-      perSystem = {
-        system,
-        config,
-        pkgs,
-        lib,
-        ...
-      }: let
-        inherit (builtins) concatStringsSep match listToAttrs;
-        inherit (lib.attrsets) recursiveUpdate;
-        inherit (lib.filesystem) packagesFromDirectoryRecursive;
-        inherit (lib.customisation) callPackageWith;
+    inherit (builtins) concatStringsSep match listToAttrs;
+    inherit (lib.attrsets) genAttrs;
+    inherit (lib.filesystem) packagesFromDirectoryRecursive;
+    inherit (lib.customisation) callPackageWith;
 
-        pins = import ./npins;
-        date = concatStringsSep "-" (match "(.{4})(.{2})(.{2}).*" self.lastModifiedDate);
-      in {
-        _module.args.pkgs = import nixpkgs {
+    systems = ["x86_64-linux" "aarch64-linux"];
+    forAllSystems = f:
+      genAttrs systems (system:
+        f {
           inherit system;
-          config.allowUnfree = true;
-        };
-
-        overlayAttrs = config.packages;
-        packages = let
-          base = packagesFromDirectoryRecursive {
-            callPackage = callPackageWith (recursiveUpdate pkgs {inherit pins date;});
-            directory = ./pkgs;
+          pkgs = import nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
           };
+        });
 
-          # Borrowed diniamo/niqspkgs, with love <3
-          # (and without useless pipe operators)
-          fromInputs = [
-            # My packages
-            "watt"
-            "flint"
-            "inquisitor"
-            "ndg"
-            "licenseit"
-            "mrc"
-            "gcolor"
-            "tailray"
-            "nh"
-            "gh-notify"
-            "stash"
-            "eh"
-            "microfetch"
+    date = concatStringsSep "-" (match "(.{4})(.{2})(.{2}).*" self.lastModifiedDate);
 
-            # 3rd party packages
-            "wiremix"
-            "nil"
-          ];
-
-          mappedPkgs = listToAttrs (builtins.concatMap (input: let
-            pkg = ((inputs.${input}.packages or {}).${system} or {}).default or null;
-          in
-            lib.optional (pkg != null) {
-              name = input;
-              value = pkg;
-            })
-          fromInputs);
-        in
-          base // mappedPkgs;
-
-        # Formatter that traverses the entire tree and formats Nix files
-        formatter = pkgs.writeShellApplication {
-          name = "nix3-fmt-wrapper";
-
-          runtimeInputs = [
-            config.packages.alejandra-custom
-            pkgs.fd
-            pkgs.deno
-          ];
-
-          text = ''
-            fd "$@" -t f -e nix -x alejandra -q '{}'
-            fd "$@" -t f -e md -x deno fmt '{}'
-          '';
-        };
-
-        devShells = {
-          default = pkgs.mkShellNoCC {
-            name = "nyxexprs";
-            packages = [
-              pkgs.npins
-
-              # Also put the default formatter in the devshell
-              config.formatter
-            ];
-          };
-        };
-
-        apps = {
-          update-pkgs = {
-            type = "app";
-            program = lib.getExe (
-              pkgs.writeShellApplication {
-                name = "update";
-                text = ''
-                  nix-shell --show-trace "${nixpkgs.outPath}/maintainers/scripts/update.nix" \
-                    --argstr skip-prompt true \
-                    --arg predicate '(
-                      let prefix = builtins.toPath ./pkgs; prefixLen = builtins.stringLength prefix;
-                      in (_: p: p.meta ? position && (builtins.substring 0 prefixLen p.meta.position) == prefix)
-                    )'
-                '';
-              }
-            );
-          };
-        };
+    mkPackages = pkgs: let
+      system = pkgs.stdenv.hostPlatform.system;
+      base = packagesFromDirectoryRecursive {
+        callPackage = callPackageWith (pkgs // {inherit inputs date;});
+        directory = ./pkgs;
       };
 
-      flake = {
-        # In case I ever decide to use Hydra.
-        hydraJobs = self.packages;
+      # Borrowed diniamo/niqspkgs, with love <3
+      # (and without useless pipe operators)
+      fromInputs = [
+        # My packages
+        "watt"
+        "flint"
+        "inquisitor"
+        "ndg"
+        "licenseit"
+        "mrc"
+        "gcolor"
+        "tailray"
+        "nh"
+        "gh-notify"
+        "stash"
+        "eh"
+        "microfetch"
+
+        # 3rd party packages
+        "wiremix"
+        "nil"
+      ];
+
+      mappedPkgs = listToAttrs (builtins.concatMap (input: let
+        pkg = ((inputs.${input}.packages or {}).${system} or {}).default or null;
+      in
+        lib.optional (pkg != null) {
+          name = input;
+          value = pkg;
+        })
+      fromInputs);
+    in
+      base // mappedPkgs;
+  in {
+    packages = forAllSystems ({pkgs, ...}: mkPackages pkgs);
+
+    overlays.default = _: mkPackages;
+
+    # Formatter that traverses the entire tree and formats Nix files
+    formatter = forAllSystems ({
+      system,
+      pkgs,
+    }:
+      pkgs.writeShellApplication {
+        name = "nix3-fmt-wrapper";
+
+        runtimeInputs = [
+          self.packages.${system}.alejandra-custom
+          pkgs.fd
+          pkgs.deno
+        ];
+
+        text = ''
+          fd "$@" -t f -e nix -x alejandra -q '{}'
+          fd "$@" -t f -e md -x deno fmt '{}'
+        '';
+      });
+
+    devShells = forAllSystems ({
+      system,
+      pkgs,
+    }: {
+      default = pkgs.mkShellNoCC {
+        name = "nyxexprs";
+        packages = [
+          pkgs.tack
+
+          # Also put the default formatter in the devshell
+          self.formatter.${system}
+        ];
       };
-    };
+    });
 
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs?ref=nixos-unstable";
-    flake-parts = {
-      url = "github:hercules-ci/flake-parts";
-      inputs.nixpkgs-lib.follows = "nixpkgs";
-    };
+    apps = forAllSystems ({pkgs, ...}: {
+      update-pkgs = {
+        type = "app";
+        program = lib.getExe (
+          pkgs.writeShellApplication {
+            name = "update";
+            text = ''
+              nix-shell --show-trace "${nixpkgs.outPath}/maintainers/scripts/update.nix" \
+                --argstr skip-prompt true \
+                --arg predicate '(
+                  let prefix = builtins.toPath ./pkgs; prefixLen = builtins.stringLength prefix;
+                  in (_: p: p.meta ? position && (builtins.substring 0 prefixLen p.meta.position) == prefix)
+                )'
+            '';
+          }
+        );
+      };
+    });
 
-    flake-compat = {
-      url = "github:edolstra/flake-compat";
-      flake = false;
-    };
-
-    # Rest of my packages will be constructed from previous flakes
-    ndg = {
-      url = "github:feel-co/ndg";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nh = {
-      url = "github:nix-community/nh";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    watt = {
-      url = "github:NotAShelf/watt";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    flint = {
-      url = "github:NotAShelf/flint";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    inquisitor = {
-      url = "github:NotAShelf/inquisitor";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    licenseit = {
-      url = "github:notashelf/licenseit";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    mrc = {
-      url = "github:notashelf/mrc";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    gcolor = {
-      url = "github:notashelf/gcolor";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    tailray = {
-      url = "github:notashelf/tailray";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    gh-notify = {
-      url = "github:notashelf/gh-notify";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    stash = {
-      url = "github:notashelf/stash";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    microfetch = {
-      url = "github:notashelf/microfetch";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    eh = {
-      url = "github:notashelf/eh";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # 3rd party flakes that I want to extract packages from
-    wiremix = {
-      url = "github:tsowell/wiremix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nil = {
-      url = "github:oxalica/nil";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # In case I ever decide to use Hydra.
+    hydraJobs = self.packages;
   };
 }

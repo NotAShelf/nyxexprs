@@ -1,26 +1,17 @@
 {
   lib,
-  fetchFromGitea,
   foot,
-  pins,
+  inputs,
   date,
   # Settings
   withAlphaPatch ? true,
   ...
 }:
-foot.overrideAttrs (oldAttrs: let
-  pin = pins.foot;
-in {
+foot.overrideAttrs (oldAttrs: {
   pname = "foot-transparent";
   version = "0-unstable-${date}";
 
-  src = fetchFromGitea {
-    domain = "codeberg.org";
-    owner = "dnkl";
-    repo = "foot";
-    rev = pin.revision;
-    sha256 = pin.hash;
-  };
+  src = inputs.foot;
 
   patches =
     (oldAttrs.patches or [])

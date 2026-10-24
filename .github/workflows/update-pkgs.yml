@@ -26,16 +26,11 @@ jobs:
       - name: "Install Nix"
         uses: cachix/install-nix-action@v31.10.7
 
-      - uses: cachix/cachix-action@v17
-        with:
-          name: nyx
-          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
-
-      - name: Update npins
-        run: nix run nixpkgs#npins update
+      - name: Update tack pins
+        run: nix run nixpkgs#tack -- update
 
       - uses: stefanzweifel/git-auto-commit-action@v7
         with:
-          commit_message: "[CI]: update npins"
+          commit_message: "[CI]: update tack pins"
           push_options: "--force"
           commit_user_name: GitHub Actions
