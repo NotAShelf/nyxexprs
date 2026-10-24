@@ -4,23 +4,22 @@ on: [push, pull_request, workflow_dispatch]
 
 permissions:
   contents: read
-  id-token: write
 
 jobs:
   check:
     strategy:
       matrix:
-        command:
-          - nix flake check --accept-flake-config
-          - nix run .#alejandra-custom -- -c . -e ./.tack
-    uses: ./.github/workflows/nix.yml
+        operation:
+          - check
+          - format
+    uses: $/.github/workflows/nix.yml
     with:
-      command: ${{ matrix.command }}
+      operation: ${{ matrix.operation }}
     secrets:
       CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
 
   build:
     needs: check
-    uses: ./.github/workflows/build.yml
+    uses: $/.github/workflows/build.yml
     secrets:
       CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}

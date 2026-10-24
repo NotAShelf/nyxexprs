@@ -3,8 +3,11 @@ name: Nix
 on:
   workflow_call:
     inputs:
-      command:
+      operation:
         required: true
+        type: string
+      package:
+        required: false
         type: string
     secrets:
       CACHIX_AUTH_TOKEN:
@@ -12,19 +15,30 @@ on:
 
 permissions:
   contents: read
-  id-token: write
 
 jobs:
   nix:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
 
       - name: "Install Nix"
-        uses: cachix/install-nix-action@v31.10.7
+        uses: cachix/install-nix-action@a49548c11d9846ad46ecc0115273879b045f001c # v31.10.7
 
-      - uses: cachix/cachix-action@v17
+      - uses: cachix/cachix-action@38b082610b782e7e93e209c35fd730d399dee866 # v17
         with:
           name: nyx
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
-      - run: ${{ inputs.command }}
+      - name: Run Nix operation
+        env:
+          OPERATION: ${{ inputs.operation }}
+          PACKAGE: ${{ inputs.package }}
+        run: |
+          case "$OPERATION" in
+            check) nix flake check --accept-flake-config ;;
+            format) nix run .#alejandra-custom -- -c . -e ./.tack ;;
+            build) nix build ".#$PACKAGE" ;;
+            *) printf 'Unknown Nix operation: %s\n' "$OPERATION" >&2; exit 1 ;;
+          esac
