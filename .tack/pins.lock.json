@@ -1,27 +1,43 @@
 {
+  "$declared": {
+    "ai-robots-txt": "github:ai-robots-txt/ai.robots.txt",
+    "ani-cli": "github:pystardust/ani-cli",
+    "cloneit": "github:alok8bb/cloneit",
+    "headscale-ui": "github:gurucomputing/headscale-ui",
+    "mov-cli": "github:mov-cli/mov-cli",
+    "rat": "github:thinkingsand/rat",
+    "rofi-calc": "github:svenstaro/rofi-calc",
+    "rofi-emoji": "github:Mange/rofi-emoji"
+  },
   "ai-robots-txt": {
     "type": "github",
     "owner": "ai-robots-txt",
     "repo": "ai.robots.txt",
-    "rev": "3ef52d90329b1c4071be4e0dc5e8f3864df6b69f",
-    "narHash": "sha256-tRvf1f3l9w7Qe8cXngYf1ya9pD+Bb8RgvSMx46soB2Y=",
-    "lastModified": 1792809448
+    "rev": "da755f80525b7146e93ccdb4ffdd38ffd72b0685",
+    "narHash": "sha256-ZKYoXYkOf4qLwL8qSZx1HL/mEfBYTPU91hNWYkDzyu0=",
+    "lastModified": 1792205794,
+    "tag": "v2.1",
+    "version": "2.1"
   },
   "ani-cli": {
     "type": "github",
     "owner": "pystardust",
     "repo": "ani-cli",
-    "rev": "0301d67d5768d332b049821a30082ad43d9a215a",
-    "narHash": "sha256-NfC6dUwleAu0VX314EetbsxmjOFjWF9823zbwOcyw5s=",
-    "lastModified": 1792685647
+    "rev": "c99221dcecb35c66815a7a77e5ebebde16c8d06a",
+    "narHash": "sha256-lPQA3iO3F/9NS2IziQccsJ3aai6WMQy6YObdB3mDCZA=",
+    "lastModified": 1789153177,
+    "tag": "v5.1",
+    "version": "5.1"
   },
   "cloneit": {
     "type": "github",
     "owner": "alok8bb",
     "repo": "cloneit",
-    "rev": "58e9213ba5af457e76a7ea55696eb77f6d0d9025",
-    "narHash": "sha256-rvhUArJR8ipMRIWpzUY9NUBwqj9TWjX6qtBJp/v3p+Q=",
-    "lastModified": 1753179244
+    "rev": "6198556e810d964cc5938c446ef42fc21b55fe0b",
+    "narHash": "sha256-RP0/kquAlSwRMeB6cjvS5JB9qfdkT8IKLVxaxrmzJ+0=",
+    "lastModified": 1722143015,
+    "tag": "1.0.0",
+    "version": "1.0.0"
   },
   "eh": {
     "type": "github",
@@ -77,7 +93,7 @@
     "repo": "headscale-ui",
     "rev": "ce7569c8473b70f6f8359385f2dbd6af66f21e55",
     "narHash": "sha256-JR+VLwXqMKACWB+4AIgWLIpZh0xtU9uCsiskra71BHQ=",
-    "lastModified": 0,
+    "lastModified": 1773689575,
     "tag": "2026.03.17",
     "version": "2026.03.17"
   },
@@ -109,9 +125,11 @@
     "type": "github",
     "owner": "mov-cli",
     "repo": "mov-cli",
-    "rev": "13399f91b8b4e811afc4f739eb7f0da1cd6acb57",
-    "narHash": "sha256-dusBLNYIU6j/fgCXsFX52SQxfYzMSj79DgiHC8k8eZk=",
-    "lastModified": 1759703627
+    "rev": "19943349e68b3a8d2f927d4f215dbd90b2dcbd18",
+    "narHash": "sha256-sNeScHmQYR4Avr5OEFpE90Qn7udBgi1Ox5elFSyKXrY=",
+    "lastModified": 1741068318,
+    "tag": "4.4.19",
+    "version": "4.4.19"
   },
   "mrc": {
     "type": "github",
@@ -157,17 +175,21 @@
     "type": "github",
     "owner": "thinkingsand",
     "repo": "rat",
-    "rev": "17669ae521f825285b1df801c9ca0251ae5e0af6",
-    "narHash": "sha256-Q18u7g5XCF175+atnXotMmBfO4G4NDCv2m/tdvkIZq4=",
-    "lastModified": 1730048713
+    "rev": "03d2e16ea0ebe280d7dd472612ced8b4ee71960f",
+    "narHash": "sha256-EQo7Ydr0NLCIvdZPpkETyn1khAg1TgaTQkRv8Q3IeNM=",
+    "lastModified": 1703630001,
+    "tag": "2.0.1",
+    "version": "2.0.1"
   },
   "rofi-calc": {
     "type": "github",
     "owner": "svenstaro",
     "repo": "rofi-calc",
-    "rev": "42e67748c7a647526a5d35b0bdf7adcd1f9c3025",
-    "narHash": "sha256-GrVxlHdwiAQKTN0/+M2SD9CgGdDGqyGad/MSnaTK39k=",
-    "lastModified": 1771318457
+    "rev": "10b5e69efa95148a0d85e1c6c62e67c8289ee50c",
+    "narHash": "sha256-adDHONoLQeZP4Oi7yx/tSAaMHAaipj2UrG+xZz7EiQ4=",
+    "lastModified": 1771318359,
+    "tag": "v2.5.1",
+    "version": "2.5.1"
   },
   "rofi-emoji": {
     "type": "github",
@@ -175,7 +197,9 @@
     "repo": "rofi-emoji",
     "rev": "794fecfbb14a53016208793da527f69fbdff6ad5",
     "narHash": "sha256-Amaz+83mSPue+pjZq/pJiCxu5QczYvmJk6f96eraaK8=",
-    "lastModified": 1743801595
+    "lastModified": 1743801595,
+    "tag": "v4.1.0",
+    "version": "4.1.0"
   },
   "stash": {
     "type": "github",
@@ -184,6 +208,14 @@
     "rev": "f62c93f225acb0611427fa240d98921437d18882",
     "narHash": "sha256-az+utjR2K3kqG6UEolmP4Y+LpFhddN6WtEQYt9VazVY=",
     "lastModified": 1792001554
+  },
+  "tack": {
+    "type": "github",
+    "owner": "manic-systems",
+    "repo": "tack",
+    "rev": "f7cce4f7e53c9482661b158824522fefef2d7920",
+    "narHash": "sha256-vOIIx/QU6xEjMZTMZM8GNNXS/p4Idvw8V09KT5zNwTI=",
+    "lastModified": 1792630541
   },
   "tailray": {
     "type": "github",

@@ -57,6 +57,10 @@ follows = { nixpkgs = "nixpkgs" }
 url     = "github:notashelf/tailray"
 follows = { nixpkgs = "nixpkgs" }
 
+[inputs.tack]
+url  = "github:manic-systems/tack/f7cce4f7e53c9482661b158824522fefef2d7920"
+type = "fetch"
+
 [inputs.watt]
 url     = "github:NotAShelf/watt"
 follows = { nixpkgs = "nixpkgs" }

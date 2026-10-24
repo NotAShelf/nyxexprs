@@ -71,7 +71,7 @@
         })
       fromInputs);
     in
-      base // mappedPkgs;
+      base // mappedPkgs // {tack = pkgs.callPackage (inputs.tack + "/nix/package.nix") {};};
   in {
     packages = forAllSystems ({pkgs, ...}: mkPackages pkgs);
 
@@ -104,7 +104,7 @@
       default = pkgs.mkShellNoCC {
         name = "nyxexprs";
         packages = [
-          pkgs.tack
+          self.packages.${system}.tack
 
           # Also put the default formatter in the devshell
           self.formatter.${system}
