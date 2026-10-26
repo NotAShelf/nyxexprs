@@ -78,17 +78,17 @@
     "type": "git",
     "url": "https://codeberg.org/dnkl/foot",
     "ref": "refs/heads/master",
-    "rev": "cb2771788998f6a6288e2de8273c55a8214551e0",
-    "narHash": "sha256-zta40lOyR33V8pBFdWrS5onFyMdXLT3u3M2VEd8exXw=",
-    "lastModified": 1789731173
+    "rev": "152487e494993ad7fb5633a27c7d7ad0f8810ea5",
+    "narHash": "sha256-Ce3952fhRLHmn/7P2FNMpBbmlcAn44ZVBmSbgpavW/s=",
+    "lastModified": 1792926495
   },
   "fuzzel": {
     "type": "git",
     "url": "https://codeberg.org/dnkl/fuzzel.git",
     "ref": "refs/heads/master",
-    "rev": "815d4385afb844f74243a6bc1c7836c4fbebe830",
-    "narHash": "sha256-AIEQfbwMMzXQCocz6KLSSNCCN9cuoNKoWTxJ6qq8PJs=",
-    "lastModified": 1790345358
+    "rev": "54be0c3c58d9718aeaccbe35fd1047f22434cf27",
+    "narHash": "sha256-RIx+ToJqedsnEGsST4vB7ok2Ab9EAIrQwMmfUtDZDGw=",
+    "lastModified": 1792932843
   },
   "gcolor": {
     "type": "github",
