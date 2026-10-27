@@ -162,17 +162,17 @@
     "type": "github",
     "owner": "feel-co",
     "repo": "ndg",
-    "rev": "d4fc989b4ec6937ac05cb5f5e5004a8c151770a7",
-    "narHash": "sha256-am76V1R+9at4eOWkWjgMNIRlQ4gmA7txt2HaKJ1MzGg=",
-    "lastModified": 1791821370
+    "rev": "de8ced10c8535e370bb1563891579a9c1a2435d7",
+    "narHash": "sha256-cdPb5wHj0BZxy24qJ7gAQOhDz25zsbsbM4blQLHFX9k=",
+    "lastModified": 1793044311
   },
   "nh": {
     "type": "github",
     "owner": "nix-community",
     "repo": "nh",
-    "rev": "7be3a6c37f7762833caf3520e1832eaec9a14ed5",
-    "narHash": "sha256-AUTqod3UnB00p5Scy67zzce/+TARO1HtxNG6IXWJUr0=",
-    "lastModified": 1792878187
+    "rev": "b832a15fdfd087a7f5a43f1fb5a12dfbad5ce084",
+    "narHash": "sha256-m042q1bq0D39gsKKkYpJTdeGnoxEyyfeRI86q72/uIE=",
+    "lastModified": 1793031409
   },
   "nil": {
     "type": "github",
