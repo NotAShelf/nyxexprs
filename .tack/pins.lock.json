@@ -170,9 +170,9 @@
     "type": "github",
     "owner": "nix-community",
     "repo": "nh",
-    "rev": "b738091e2d44785095f6d7b4cc41db13b635dca5",
-    "narHash": "sha256-YIMFBD5N+QJ8HYMovZj2jbJmbGYRMomimeZq+jJB9TI=",
-    "lastModified": 1793148286
+    "rev": "74d60e6b998e583c1e0acab1e513ff28b11c4c3b",
+    "narHash": "sha256-zRJ4SBYMYN3JfAPqTtt1GSRp79SXSvzUHYVoVN6oxmA=",
+    "lastModified": 1793318278
   },
   "nil": {
     "type": "github",
