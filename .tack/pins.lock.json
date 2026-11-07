@@ -86,9 +86,9 @@
     "type": "git",
     "url": "https://codeberg.org/dnkl/fuzzel.git",
     "ref": "refs/heads/master",
-    "rev": "54be0c3c58d9718aeaccbe35fd1047f22434cf27",
-    "narHash": "sha256-RIx+ToJqedsnEGsST4vB7ok2Ab9EAIrQwMmfUtDZDGw=",
-    "lastModified": 1792932843
+    "rev": "c8e6c4da18d44ac87b034a4544452dc33477d17c",
+    "narHash": "sha256-ssIE8/fL7kJdV7oVGwcO1RzrrIhaTSYajOT3vLZnkY8=",
+    "lastModified": 1793967559
   },
   "gcolor": {
     "type": "github",
