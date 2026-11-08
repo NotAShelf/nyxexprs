@@ -136,9 +136,9 @@
     "type": "github",
     "owner": "notashelf",
     "repo": "microfetch",
-    "rev": "cc5c76ab0a4de525130a69422868206102b30383",
-    "narHash": "sha256-swVwHoxZmn5kjxlDJi5mOl0EEJot2a00OzV8CFgBydY=",
-    "lastModified": 1793556681
+    "rev": "b06c987bf6ea9606f203a6304cb4764eca56984a",
+    "narHash": "sha256-t3L3DmVj9F4pvamxo6pP4uqn34XwThNhu96RQO8afQg=",
+    "lastModified": 1794048914
   },
   "mov-cli": {
     "type": "github",
@@ -186,9 +186,9 @@
     "type": "github",
     "owner": "NixOS",
     "repo": "nixpkgs",
-    "rev": "1d060086d60cb76a40cf37109f979d88a5bd6396",
-    "narHash": "sha256-jQp1wKvbwWdLBASTXkSi/VYmDJ5AbBi1WvcMt9HWJC8=",
-    "lastModified": 1793726008
+    "rev": "f9a75f41be3a74eab55d3a7679d34ad6cc0da977",
+    "narHash": "sha256-Wojg9lIH/hDH91iDVH2/EPw8oDSpxjxhXONbU1yf4Zg=",
+    "lastModified": 1793876309
   },
   "rat": {
     "type": "github",
