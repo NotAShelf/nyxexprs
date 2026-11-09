@@ -170,9 +170,9 @@
     "type": "github",
     "owner": "nix-community",
     "repo": "nh",
-    "rev": "c063ba16c9d954a0f42ba9be5fb2b5810a4de8fc",
-    "narHash": "sha256-YTRHibnanvLrmGPVMowNbKkbrksxBW3hErla5Kis/mo=",
-    "lastModified": 1793576535
+    "rev": "d165bcc2d41a5c5c0aed4def351a9d770a3e1f69",
+    "narHash": "sha256-Hr/0O3CpOWGrvIkBMRko/TyXPjVB8Hsf7xhjbFHF6sc=",
+    "lastModified": 1794170686
   },
   "nil": {
     "type": "github",
@@ -186,9 +186,9 @@
     "type": "github",
     "owner": "NixOS",
     "repo": "nixpkgs",
-    "rev": "f9a75f41be3a74eab55d3a7679d34ad6cc0da977",
-    "narHash": "sha256-Wojg9lIH/hDH91iDVH2/EPw8oDSpxjxhXONbU1yf4Zg=",
-    "lastModified": 1793876309
+    "rev": "f4a03c008967841f2a0b3cb7c436fc6fc31671f6",
+    "narHash": "sha256-ziZn2PvCJE5JEEpqTdxXwJpPB+L3YqoCpTAMCzyaP3U=",
+    "lastModified": 1794042290
   },
   "rat": {
     "type": "github",
